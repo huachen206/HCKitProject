@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20D0168EEC68B4CEB4F45E99 /* libPods-HCKitProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */; };
+		BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB191C1A5A2900C3CF4E /* main.m */; };
+		BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */; };
+		BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB1F1C1A5A2900C3CF4E /* ViewController.m */; };
+		BF49CB231C1A5A2900C3CF4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF49CB211C1A5A2900C3CF4E /* Main.storyboard */; };
+		BF49CB251C1A5A2900C3CF4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF49CB241C1A5A2900C3CF4E /* Assets.xcassets */; };
+		BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */; };
+		BF49CB331C1A5A2900C3CF4E /* HCKitProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB321C1A5A2900C3CF4E /* HCKitProjectTests.m */; };
+		BF49CB3E1C1A5A2900C3CF4E /* HCKitProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */; };
+		BF49CB581C1A5A6A00C3CF4E /* HCBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB591C1A5A6A00C3CF4E /* HCBaseDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB5C1C1A5A6A00C3CF4E /* NSObject+tableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF49CB2F1C1A5A2900C3CF4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF49CB0D1C1A5A2800C3CF4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF49CB141C1A5A2900C3CF4E;
+			remoteInfo = HCKitProject;
+		};
+		BF49CB3A1C1A5A2900C3CF4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF49CB0D1C1A5A2800C3CF4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF49CB141C1A5A2900C3CF4E;
+			remoteInfo = HCKitProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCKitProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52386ACEE0B0CFADFE384476 /* Pods-HCKitProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.release.xcconfig"; sourceTree = "<group>"; };
+		BF49CB151C1A5A2900C3CF4E /* HCKitProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCKitProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF49CB191C1A5A2900C3CF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF49CB1B1C1A5A2900C3CF4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF49CB1E1C1A5A2900C3CF4E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF49CB1F1C1A5A2900C3CF4E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF49CB221C1A5A2900C3CF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF49CB241C1A5A2900C3CF4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF49CB271C1A5A2900C3CF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF49CB291C1A5A2900C3CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF49CB2E1C1A5A2900C3CF4E /* HCKitProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCKitProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF49CB321C1A5A2900C3CF4E /* HCKitProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCKitProjectTests.m; sourceTree = "<group>"; };
+		BF49CB341C1A5A2900C3CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF49CB391C1A5A2900C3CF4E /* HCKitProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCKitProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCKitProjectUITests.m; sourceTree = "<group>"; };
+		BF49CB3F1C1A5A2900C3CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF49CB4C1C1A5A6A00C3CF4E /* HCBaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBaseDAO.h; sourceTree = "<group>"; };
+		BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBaseDAO.m; sourceTree = "<group>"; };
+		BF49CB4E1C1A5A6A00C3CF4E /* HCBaseDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBaseDBHelper.h; sourceTree = "<group>"; };
+		BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBaseDBHelper.m; sourceTree = "<group>"; };
+		BF49CB501C1A5A6A00C3CF4E /* HCBaseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBaseTable.h; sourceTree = "<group>"; };
+		BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBaseTable.m; sourceTree = "<group>"; };
+		BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBManager.h; sourceTree = "<group>"; };
+		BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBManager.m; sourceTree = "<group>"; };
+		BF49CB541C1A5A6A00C3CF4E /* NSObject+tableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+tableModel.h"; sourceTree = "<group>"; };
+		BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+tableModel.m"; sourceTree = "<group>"; };
+		BF49CB561C1A5A6A00C3CF4E /* SQLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLHelper.h; sourceTree = "<group>"; };
+		BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLHelper.m; sourceTree = "<group>"; };
+		BF49CB5E1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMainTableViewTableViewController.h; sourceTree = "<group>"; };
+		BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMainTableViewTableViewController.m; sourceTree = "<group>"; };
+		BF49CB611C1A5D5D00C3CF4E /* HCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBViewController.h; sourceTree = "<group>"; };
+		BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBViewController.m; sourceTree = "<group>"; };
+		BF49CB651C1A69C000C3CF4E /* HCTestDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDAO.h; sourceTree = "<group>"; };
+		BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDAO.m; sourceTree = "<group>"; };
+		BF49CB681C1A6AFC00C3CF4E /* HCTestTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestTable.h; sourceTree = "<group>"; };
+		BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestTable.m; sourceTree = "<group>"; };
+		BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel.h; sourceTree = "<group>"; };
+		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
+		EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF49CB121C1A5A2900C3CF4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20D0168EEC68B4CEB4F45E99 /* libPods-HCKitProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF49CB2B1C1A5A2900C3CF4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF49CB361C1A5A2900C3CF4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AC2C71BC861FF21C1B31CF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */,
+				52386ACEE0B0CFADFE384476 /* Pods-HCKitProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		64FEB889458E65A5B6ED1D09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF49CB0C1C1A5A2800C3CF4E = {
+			isa = PBXGroup;
+			children = (
+				BF49CB4B1C1A5A6A00C3CF4E /* HCDB */,
+				BF49CB171C1A5A2900C3CF4E /* HCKitProject */,
+				BF49CB311C1A5A2900C3CF4E /* HCKitProjectTests */,
+				BF49CB3C1C1A5A2900C3CF4E /* HCKitProjectUITests */,
+				BF49CB161C1A5A2900C3CF4E /* Products */,
+				0AC2C71BC861FF21C1B31CF8 /* Pods */,
+				64FEB889458E65A5B6ED1D09 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF49CB161C1A5A2900C3CF4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB151C1A5A2900C3CF4E /* HCKitProject.app */,
+				BF49CB2E1C1A5A2900C3CF4E /* HCKitProjectTests.xctest */,
+				BF49CB391C1A5A2900C3CF4E /* HCKitProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF49CB171C1A5A2900C3CF4E /* HCKitProject */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB641C1A699000C3CF4E /* DBTestField */,
+				BF49CB1B1C1A5A2900C3CF4E /* AppDelegate.h */,
+				BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */,
+				BF49CB1E1C1A5A2900C3CF4E /* ViewController.h */,
+				BF49CB1F1C1A5A2900C3CF4E /* ViewController.m */,
+				BF49CB5E1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.h */,
+				BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */,
+				BF49CB211C1A5A2900C3CF4E /* Main.storyboard */,
+				BF49CB241C1A5A2900C3CF4E /* Assets.xcassets */,
+				BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */,
+				BF49CB291C1A5A2900C3CF4E /* Info.plist */,
+				BF49CB181C1A5A2900C3CF4E /* Supporting Files */,
+			);
+			path = HCKitProject;
+			sourceTree = "<group>";
+		};
+		BF49CB181C1A5A2900C3CF4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB191C1A5A2900C3CF4E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF49CB311C1A5A2900C3CF4E /* HCKitProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB321C1A5A2900C3CF4E /* HCKitProjectTests.m */,
+				BF49CB341C1A5A2900C3CF4E /* Info.plist */,
+			);
+			path = HCKitProjectTests;
+			sourceTree = "<group>";
+		};
+		BF49CB3C1C1A5A2900C3CF4E /* HCKitProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */,
+				BF49CB3F1C1A5A2900C3CF4E /* Info.plist */,
+			);
+			path = HCKitProjectUITests;
+			sourceTree = "<group>";
+		};
+		BF49CB4B1C1A5A6A00C3CF4E /* HCDB */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB4C1C1A5A6A00C3CF4E /* HCBaseDAO.h */,
+				BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */,
+				BF49CB4E1C1A5A6A00C3CF4E /* HCBaseDBHelper.h */,
+				BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */,
+				BF49CB501C1A5A6A00C3CF4E /* HCBaseTable.h */,
+				BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */,
+				BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */,
+				BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */,
+				BF49CB541C1A5A6A00C3CF4E /* NSObject+tableModel.h */,
+				BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */,
+				BF49CB561C1A5A6A00C3CF4E /* SQLHelper.h */,
+				BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */,
+			);
+			path = HCDB;
+			sourceTree = "<group>";
+		};
+		BF49CB641C1A699000C3CF4E /* DBTestField */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CB611C1A5D5D00C3CF4E /* HCDBViewController.h */,
+				BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */,
+				BF49CB651C1A69C000C3CF4E /* HCTestDAO.h */,
+				BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */,
+				BF49CB681C1A6AFC00C3CF4E /* HCTestTable.h */,
+				BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */,
+				BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */,
+				BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */,
+			);
+			name = DBTestField;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF49CB141C1A5A2900C3CF4E /* HCKitProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF49CB421C1A5A2900C3CF4E /* Build configuration list for PBXNativeTarget "HCKitProject" */;
+			buildPhases = (
+				E9DABE19D5D0A5A1FC6BABC4 /* Check Pods Manifest.lock */,
+				BF49CB111C1A5A2900C3CF4E /* Sources */,
+				BF49CB121C1A5A2900C3CF4E /* Frameworks */,
+				BF49CB131C1A5A2900C3CF4E /* Resources */,
+				F58241B55AF74362FD9BFC17 /* Embed Pods Frameworks */,
+				22841978F2414D407FAF4894 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HCKitProject;
+			productName = HCKitProject;
+			productReference = BF49CB151C1A5A2900C3CF4E /* HCKitProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF49CB2D1C1A5A2900C3CF4E /* HCKitProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF49CB451C1A5A2900C3CF4E /* Build configuration list for PBXNativeTarget "HCKitProjectTests" */;
+			buildPhases = (
+				BF49CB2A1C1A5A2900C3CF4E /* Sources */,
+				BF49CB2B1C1A5A2900C3CF4E /* Frameworks */,
+				BF49CB2C1C1A5A2900C3CF4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF49CB301C1A5A2900C3CF4E /* PBXTargetDependency */,
+			);
+			name = HCKitProjectTests;
+			productName = HCKitProjectTests;
+			productReference = BF49CB2E1C1A5A2900C3CF4E /* HCKitProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF49CB381C1A5A2900C3CF4E /* HCKitProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF49CB481C1A5A2900C3CF4E /* Build configuration list for PBXNativeTarget "HCKitProjectUITests" */;
+			buildPhases = (
+				BF49CB351C1A5A2900C3CF4E /* Sources */,
+				BF49CB361C1A5A2900C3CF4E /* Frameworks */,
+				BF49CB371C1A5A2900C3CF4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF49CB3B1C1A5A2900C3CF4E /* PBXTargetDependency */,
+			);
+			name = HCKitProjectUITests;
+			productName = HCKitProjectUITests;
+			productReference = BF49CB391C1A5A2900C3CF4E /* HCKitProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF49CB0D1C1A5A2800C3CF4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "花晨";
+				TargetAttributes = {
+					BF49CB141C1A5A2900C3CF4E = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					BF49CB2D1C1A5A2900C3CF4E = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = BF49CB141C1A5A2900C3CF4E;
+					};
+					BF49CB381C1A5A2900C3CF4E = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = BF49CB141C1A5A2900C3CF4E;
+					};
+				};
+			};
+			buildConfigurationList = BF49CB101C1A5A2800C3CF4E /* Build configuration list for PBXProject "HCKitProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF49CB0C1C1A5A2800C3CF4E;
+			productRefGroup = BF49CB161C1A5A2900C3CF4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF49CB141C1A5A2900C3CF4E /* HCKitProject */,
+				BF49CB2D1C1A5A2900C3CF4E /* HCKitProjectTests */,
+				BF49CB381C1A5A2900C3CF4E /* HCKitProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF49CB131C1A5A2900C3CF4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */,
+				BF49CB251C1A5A2900C3CF4E /* Assets.xcassets in Resources */,
+				BF49CB231C1A5A2900C3CF4E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF49CB2C1C1A5A2900C3CF4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF49CB371C1A5A2900C3CF4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22841978F2414D407FAF4894 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9DABE19D5D0A5A1FC6BABC4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F58241B55AF74362FD9BFC17 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF49CB111C1A5A2900C3CF4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF49CB581C1A5A6A00C3CF4E /* HCBaseDAO.m in Sources */,
+				BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */,
+				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
+				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
+				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,
+				BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */,
+				BF49CB5C1C1A5A6A00C3CF4E /* NSObject+tableModel.m in Sources */,
+				BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */,
+				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
+				BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */,
+				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
+				BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */,
+				BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */,
+				BF49CB591C1A5A6A00C3CF4E /* HCBaseDBHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF49CB2A1C1A5A2900C3CF4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF49CB331C1A5A2900C3CF4E /* HCKitProjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF49CB351C1A5A2900C3CF4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF49CB3E1C1A5A2900C3CF4E /* HCKitProjectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF49CB301C1A5A2900C3CF4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF49CB141C1A5A2900C3CF4E /* HCKitProject */;
+			targetProxy = BF49CB2F1C1A5A2900C3CF4E /* PBXContainerItemProxy */;
+		};
+		BF49CB3B1C1A5A2900C3CF4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF49CB141C1A5A2900C3CF4E /* HCKitProject */;
+			targetProxy = BF49CB3A1C1A5A2900C3CF4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF49CB211C1A5A2900C3CF4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF49CB221C1A5A2900C3CF4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF49CB271C1A5A2900C3CF4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF49CB401C1A5A2900C3CF4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BF49CB411C1A5A2900C3CF4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF49CB431C1A5A2900C3CF4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HCKitProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BF49CB441C1A5A2900C3CF4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52386ACEE0B0CFADFE384476 /* Pods-HCKitProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HCKitProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BF49CB461C1A5A2900C3CF4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HCKitProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCKitProject.app/HCKitProject";
+			};
+			name = Debug;
+		};
+		BF49CB471C1A5A2900C3CF4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HCKitProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCKitProject.app/HCKitProject";
+			};
+			name = Release;
+		};
+		BF49CB491C1A5A2900C3CF4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HCKitProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HCKitProject;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BF49CB4A1C1A5A2900C3CF4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HCKitProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HCKitProject;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF49CB101C1A5A2800C3CF4E /* Build configuration list for PBXProject "HCKitProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF49CB401C1A5A2900C3CF4E /* Debug */,
+				BF49CB411C1A5A2900C3CF4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF49CB421C1A5A2900C3CF4E /* Build configuration list for PBXNativeTarget "HCKitProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF49CB431C1A5A2900C3CF4E /* Debug */,
+				BF49CB441C1A5A2900C3CF4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF49CB451C1A5A2900C3CF4E /* Build configuration list for PBXNativeTarget "HCKitProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF49CB461C1A5A2900C3CF4E /* Debug */,
+				BF49CB471C1A5A2900C3CF4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF49CB481C1A5A2900C3CF4E /* Build configuration list for PBXNativeTarget "HCKitProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF49CB491C1A5A2900C3CF4E /* Debug */,
+				BF49CB4A1C1A5A2900C3CF4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF49CB0D1C1A5A2800C3CF4E /* Project object */;
+}
