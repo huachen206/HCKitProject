@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "56E06794E859BFF7096252DA416A1CA37B4BF6C4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "770dcf4c-4b34-48bd-af27-079dc1091ccc++5496" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "770dcf4c-4b34-48bd-af27-079dc1091ccc++5496" : 0,
+    "56E06794E859BFF7096252DA416A1CA37B4BF6C4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A25AE614-22F7-4A50-B2A7-BED6F019169F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "770dcf4c-4b34-48bd-af27-079dc1091ccc++5496" : "HCKitProject\/HCDB\/",
+    "56E06794E859BFF7096252DA416A1CA37B4BF6C4" : "HCKitProject\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HCKitProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HCKitProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/huachen206\/HCKitProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "56E06794E859BFF7096252DA416A1CA37B4BF6C4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/172.18.10.41:18080\/svn\/app",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "770dcf4c-4b34-48bd-af27-079dc1091ccc++5496"
+    }
+  ]
+}

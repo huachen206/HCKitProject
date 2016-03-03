@@ -16,17 +16,18 @@
 		BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */; };
 		BF49CB331C1A5A2900C3CF4E /* HCKitProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB321C1A5A2900C3CF4E /* HCKitProjectTests.m */; };
 		BF49CB3E1C1A5A2900C3CF4E /* HCKitProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */; };
-		BF49CB581C1A5A6A00C3CF4E /* HCBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB591C1A5A6A00C3CF4E /* HCBaseDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB5C1C1A5A6A00C3CF4E /* NSObject+tableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; settings = {ASSET_TAGS = (); }; };
-		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; settings = {ASSET_TAGS = (); }; };
+		BF49CB581C1A5A6A00C3CF4E /* HCBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */; };
+		BF49CB591C1A5A6A00C3CF4E /* HCBaseDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */; };
+		BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */; };
+		BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */; };
+		BF49CB5C1C1A5A6A00C3CF4E /* NSObject+tableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */; };
+		BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */; };
+		BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */; };
+		BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */; };
+		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; };
+		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; };
+		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; };
+		BFF028CF1C7197910051D14B /* NSObject+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF028CE1C7197910051D14B /* NSObject+HCExtend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestTable.m; sourceTree = "<group>"; };
 		BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel.h; sourceTree = "<group>"; };
 		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
+		BFF028CD1C7197910051D14B /* NSObject+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCExtend.h"; sourceTree = "<group>"; };
+		BFF028CE1C7197910051D14B /* NSObject+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCExtend.m"; sourceTree = "<group>"; };
 		EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +219,8 @@
 				BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */,
 				BF49CB561C1A5A6A00C3CF4E /* SQLHelper.h */,
 				BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */,
+				BFF028CD1C7197910051D14B /* NSObject+HCExtend.h */,
+				BFF028CE1C7197910051D14B /* NSObject+HCExtend.m */,
 			);
 			path = HCDB;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */,
 				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
 				BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */,
+				BFF028CF1C7197910051D14B /* NSObject+HCExtend.m in Sources */,
 				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
 				BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */,
 				BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */,
