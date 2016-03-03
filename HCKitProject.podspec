@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
     	core.source_files = 'HCDB/*.{h,m}'
-	mk.ios.dependency  'FMDB', '~> 2.3'
+	core.ios.dependency  'FMDB', '~> 2.3'
 
   end
 
