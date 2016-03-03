@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = “HCKitProject”
+  s.name         = "HCKitProject"
   s.version      = "0.0.1"
   s.summary      = "a Encapsulation of FMDB."
   s.ios.deployment_target = '7.1'
