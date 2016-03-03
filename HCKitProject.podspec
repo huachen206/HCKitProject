@@ -1,11 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "HCKitProject"
   s.version      = "0.0.1"
-  s.summary      = "a Encapsulation of FMDB."
   s.ios.deployment_target = '7.1'
   s.license = 'MIT'
+  s.summary      = "a Encapsulation of FMDB."
   s.homepage     = "https://github.com/huachen206/HCKitProject.git"
-
   s.author             = { "HuaChen" => "huachen206@163.com" }
   s.source       = { :git => "https://github.com/huachen206/HCKitProject.git", :tag => s.version }
 
