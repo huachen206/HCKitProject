@@ -14,7 +14,7 @@ static inline NSString *getDocumentPath()
     return [paths objectAtIndex:0];
 }
 
-@interface HCBaseDBHelper : NSObject
+@interface HCDBHelper : NSObject
 @property (nonatomic,strong) NSString *dbPath;/**< db文件所在的完整路劲*/
 @property (nonatomic,strong) FMDatabaseQueue *fmDbQueue;
 @property(nonatomic, assign)BOOL isOpened;

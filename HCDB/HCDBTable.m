@@ -1,21 +1,22 @@
 //
-//  HCBaseTable.m
+//  HCDBTable.m
 //  Lottery
 //
 //  Created by 花晨 on 15/8/29.
 //  Copyright (c) 2015年 花晨. All rights reserved.
 //
 
-#import "HCBaseTable.h"
+#import "HCDBTable.h"
 
-@interface HCBaseTable()
+@interface HCDBTable()
 @property (nonatomic,strong) NSMutableArray *elements;
 @end
 
-@implementation HCBaseTable
+@implementation HCDBTable
 +(instancetype)table{
-    NSAssert(NO, @"override me");
-    return nil;
+    HCDBTable *table = [[self alloc] init];
+    table.columns = [NSMutableDictionary dictionaryWithDictionary:[[table tableModelClass] hc_columnAndSqlDataType]];
+    return table;
 }
 
 //重写此方法可重命名表名
@@ -116,7 +117,7 @@
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@",self.tableName]];
         while ([rs next]) {
             if (self.tableModelClass) {
-                NSObject *model = [[self.tableModelClass alloc] initWithFMResultSet:rs columns:self.columns.allKeys];
+                NSObject *model = [[self.tableModelClass alloc] hc_initWithFMResultSet:rs columns:self.columns.allKeys];
 
                 [models addObject:model];
             }
@@ -156,16 +157,16 @@
 
 #pragma mark insert or replace
 -(NSDictionary *)valueAndColumnWithModel:(NSObject *)baseModel{
-    NSDictionary *dic = [baseModel properties_aps];
+    NSDictionary *dic = [baseModel hc_propertyNameAndValue];
     
     NSArray *columnNames =self.columns.allKeys;
     
-    NSArray *both = [self objectIn:dic.allKeys andIn:columnNames];
+    NSArray *bothNameList = [dic.allKeys hc_objectAlsoIn:columnNames];
     NSMutableDictionary *mdic = [NSMutableDictionary dictionary];
-    for (NSString *columnName in both) {
+    for (NSString *columnName in bothNameList) {
         [mdic setObject:[dic objectForKey:columnName] forKey:columnName];
     }
-    return dic;
+    return mdic;
 }
 -(NSDictionary *)removePrimaryKey:(NSDictionary *)mdic{
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:mdic];
@@ -338,7 +339,7 @@
     }
     return holeElementString;
 }
--(HCBaseDBHelper *)baseDBHelper{
+-(HCDBHelper *)baseDBHelper{
     return self.DAO.baseDBHelper;
 }
 

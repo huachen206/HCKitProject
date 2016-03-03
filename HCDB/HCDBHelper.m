@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 花晨. All rights reserved.
 //
 
-#import "HCBaseDBHelper.h"
+#import "HCDBHelper.h"
 
-@implementation HCBaseDBHelper
+@implementation HCDBHelper
 +(NSString *)dbPathWithFileName:(NSString *)fileName{
     return [getDocumentPath() stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@/%@.db",@"DBFile",fileName]];
 }

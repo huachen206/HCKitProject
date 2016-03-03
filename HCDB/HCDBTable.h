@@ -1,5 +1,5 @@
 //
-//  HCBaseTable.h
+//  HCDBTable.h
 //  Lottery
 //
 //  Created by 花晨 on 15/8/29.
@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+tableModel.h"
-#import "HCBaseDAO.h"
+#import "NSObject+HCDBExtend.h"
+#import "HCDAO.h"
 
-@class HCBaseDAO;
-@interface HCBaseTable : NSObject /**< 表信息*/
+@class HCDAO;
+@interface HCDBTable : NSObject /**< 表信息*/
 @property (nonatomic,strong) NSString *tableName;
 //@property (nonatomic,strong) NSMutableArray *dataTypeNames;/**< 数据类型*/
 //@property (nonatomic,strong) NSMutableArray *columnNames;/**< 列名*/
 @property (nonatomic,strong) FMDatabaseQueue *fmDbQueue;
-@property (nonatomic,strong) HCBaseDBHelper *baseDBHelper;
-@property (nonatomic,weak) HCBaseDAO *DAO;
+@property (nonatomic,strong) HCDBHelper *baseDBHelper;
+@property (nonatomic,weak) HCDAO *DAO;
 @property (nonatomic,strong) Class tableModelClass;
 
 @property (nonatomic,strong) NSMutableDictionary *columns;/**< key:列名同属性名；value 属性名*/

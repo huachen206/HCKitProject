@@ -1,5 +1,5 @@
 //
-//  HCBaseDAO.h
+//  HCDAO.h
 //  Lottery
 //
 //  Created by 花晨 on 15/8/29.
@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HCBaseDBHelper.h"
+#import "HCDBHelper.h"
 #import "FMDB.h"
 #import "HCDBManager.h"
-#import "HCBaseTable.h"
+#import "HCDBTable.h"
 
-@class HCBaseTable;
+@class HCDBTable;
 #define PADBQuickCheck(SomeBool)            \
 {                                           \
 if (!(SomeBool)) {                      \
@@ -43,9 +43,9 @@ return;                                                 \
 }                                                           \
 }
 
-@interface HCBaseDAO : NSObject
+@interface HCDAO : NSObject
 @property (nonatomic,strong) FMDatabaseQueue *fmDbQueue;
-@property (nonatomic,strong) HCBaseDBHelper *baseDBHelper;
+@property (nonatomic,strong) HCDBHelper *baseDBHelper;
 +(instancetype)dao;
 
 @end

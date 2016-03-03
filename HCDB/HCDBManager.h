@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HCBaseDBHelper.h"
+#import "HCDBHelper.h"
 @interface HCDBManager : NSObject
 @property (nonatomic,strong) NSMutableArray *arry_dbHelper;
 
 + (instancetype)shared;
--(void)addDBHelper:(HCBaseDBHelper *)helper;
--(HCBaseDBHelper *)dbHelperWithDbPath:(NSString *)dbPath;
+-(void)addDBHelper:(HCDBHelper *)helper;
+-(HCDBHelper *)dbHelperWithDbPath:(NSString *)dbPath;
 -(void)closeAll;
 @end

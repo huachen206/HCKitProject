@@ -24,9 +24,15 @@
     
     HCTestDBModel *db = [[HCTestDBModel alloc] init];
     db.name = @"feixiao";
+    db.nickName = @"a dog";
     
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db isIgnorePrimaryKey:YES];
     
+    NSArray *results = [[HCTestDAO dao].testTable selectAll];
+    for (HCTestDBModel *td in results) {
+        NSLog(@"name:%@ -- nickName:%@",td.name,td.nickName);
+        
+    }
     
 }
 

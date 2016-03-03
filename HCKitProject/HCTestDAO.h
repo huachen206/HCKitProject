@@ -6,9 +6,9 @@
 //  Copyright © 2015年 花晨. All rights reserved.
 //
 
-#import "HCBaseDAO.h"
+#import "HCDAO.h"
 #import "HCTestTable.h"
 
-@interface HCTestDAO : HCBaseDAO
+@interface HCTestDAO : HCDAO
 @property (nonatomic,strong) HCTestTable *testTable;
 @end

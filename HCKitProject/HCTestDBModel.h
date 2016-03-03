@@ -7,23 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+tableModel.h"
+#import "NSObject+HCDBExtend.h"
 
 
 VARCHAR(20);
 INTEGER_PRIMARY_KEY_AUTOINCREMENT();
 INTEGER();
 
-@interface HCTableFlg : NSObject
-
-@end
 
 @interface HCTestDBModel : NSObject
 @property (nonatomic,assign) NSInteger TABLECOL_VAR(<INTEGER_PRIMARY_KEY_AUTOINCREMENT>,test_id);
 @property (nonatomic,strong) NSString TABLECOL_OBJ(<VARCHAR_20>,*name);
+@property (nonatomic,strong) NSString *nickName;
 
-
-+(NSDictionary *)properties_pan;
-+(NSDictionary *)tableColumnAndDataType;
 
 @end

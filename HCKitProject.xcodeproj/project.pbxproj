@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20D0168EEC68B4CEB4F45E99 /* libPods-HCKitProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */; };
+		BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */; };
 		BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB191C1A5A2900C3CF4E /* main.m */; };
 		BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */; };
 		BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB1F1C1A5A2900C3CF4E /* ViewController.m */; };
@@ -16,18 +17,15 @@
 		BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */; };
 		BF49CB331C1A5A2900C3CF4E /* HCKitProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB321C1A5A2900C3CF4E /* HCKitProjectTests.m */; };
 		BF49CB3E1C1A5A2900C3CF4E /* HCKitProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */; };
-		BF49CB581C1A5A6A00C3CF4E /* HCBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */; };
-		BF49CB591C1A5A6A00C3CF4E /* HCBaseDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */; };
-		BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */; };
+		BF49CB581C1A5A6A00C3CF4E /* HCDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */; };
+		BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */; };
+		BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */; };
 		BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */; };
-		BF49CB5C1C1A5A6A00C3CF4E /* NSObject+tableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */; };
-		BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */; };
 		BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */; };
 		BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */; };
 		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; };
 		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; };
 		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; };
-		BFF028CF1C7197910051D14B /* NSObject+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF028CE1C7197910051D14B /* NSObject+HCExtend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +48,8 @@
 /* Begin PBXFileReference section */
 		3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCKitProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52386ACEE0B0CFADFE384476 /* Pods-HCKitProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.release.xcconfig"; sourceTree = "<group>"; };
+		BF28FB681C87CD2C0014CBBC /* NSObject+HCDBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCDBExtend.h"; sourceTree = "<group>"; };
+		BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCDBExtend.m"; sourceTree = "<group>"; };
 		BF49CB151C1A5A2900C3CF4E /* HCKitProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCKitProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF49CB191C1A5A2900C3CF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF49CB1B1C1A5A2900C3CF4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,18 +66,14 @@
 		BF49CB391C1A5A2900C3CF4E /* HCKitProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCKitProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCKitProjectUITests.m; sourceTree = "<group>"; };
 		BF49CB3F1C1A5A2900C3CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF49CB4C1C1A5A6A00C3CF4E /* HCBaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBaseDAO.h; sourceTree = "<group>"; };
-		BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBaseDAO.m; sourceTree = "<group>"; };
-		BF49CB4E1C1A5A6A00C3CF4E /* HCBaseDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBaseDBHelper.h; sourceTree = "<group>"; };
-		BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBaseDBHelper.m; sourceTree = "<group>"; };
-		BF49CB501C1A5A6A00C3CF4E /* HCBaseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBaseTable.h; sourceTree = "<group>"; };
-		BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBaseTable.m; sourceTree = "<group>"; };
+		BF49CB4C1C1A5A6A00C3CF4E /* HCDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDAO.h; sourceTree = "<group>"; };
+		BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDAO.m; sourceTree = "<group>"; };
+		BF49CB4E1C1A5A6A00C3CF4E /* HCDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBHelper.h; sourceTree = "<group>"; };
+		BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBHelper.m; sourceTree = "<group>"; };
+		BF49CB501C1A5A6A00C3CF4E /* HCDBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBTable.h; sourceTree = "<group>"; };
+		BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTable.m; sourceTree = "<group>"; };
 		BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBManager.h; sourceTree = "<group>"; };
 		BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBManager.m; sourceTree = "<group>"; };
-		BF49CB541C1A5A6A00C3CF4E /* NSObject+tableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+tableModel.h"; sourceTree = "<group>"; };
-		BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+tableModel.m"; sourceTree = "<group>"; };
-		BF49CB561C1A5A6A00C3CF4E /* SQLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLHelper.h; sourceTree = "<group>"; };
-		BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLHelper.m; sourceTree = "<group>"; };
 		BF49CB5E1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMainTableViewTableViewController.h; sourceTree = "<group>"; };
 		BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMainTableViewTableViewController.m; sourceTree = "<group>"; };
 		BF49CB611C1A5D5D00C3CF4E /* HCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBViewController.h; sourceTree = "<group>"; };
@@ -88,8 +84,6 @@
 		BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestTable.m; sourceTree = "<group>"; };
 		BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel.h; sourceTree = "<group>"; };
 		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
-		BFF028CD1C7197910051D14B /* NSObject+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCExtend.h"; sourceTree = "<group>"; };
-		BFF028CE1C7197910051D14B /* NSObject+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCExtend.m"; sourceTree = "<group>"; };
 		EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,20 +201,16 @@
 		BF49CB4B1C1A5A6A00C3CF4E /* HCDB */ = {
 			isa = PBXGroup;
 			children = (
-				BF49CB4C1C1A5A6A00C3CF4E /* HCBaseDAO.h */,
-				BF49CB4D1C1A5A6A00C3CF4E /* HCBaseDAO.m */,
-				BF49CB4E1C1A5A6A00C3CF4E /* HCBaseDBHelper.h */,
-				BF49CB4F1C1A5A6A00C3CF4E /* HCBaseDBHelper.m */,
-				BF49CB501C1A5A6A00C3CF4E /* HCBaseTable.h */,
-				BF49CB511C1A5A6A00C3CF4E /* HCBaseTable.m */,
+				BF49CB4C1C1A5A6A00C3CF4E /* HCDAO.h */,
+				BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */,
+				BF49CB4E1C1A5A6A00C3CF4E /* HCDBHelper.h */,
+				BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */,
+				BF49CB501C1A5A6A00C3CF4E /* HCDBTable.h */,
+				BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */,
 				BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */,
 				BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */,
-				BF49CB541C1A5A6A00C3CF4E /* NSObject+tableModel.h */,
-				BF49CB551C1A5A6A00C3CF4E /* NSObject+tableModel.m */,
-				BF49CB561C1A5A6A00C3CF4E /* SQLHelper.h */,
-				BF49CB571C1A5A6A00C3CF4E /* SQLHelper.m */,
-				BFF028CD1C7197910051D14B /* NSObject+HCExtend.h */,
-				BFF028CE1C7197910051D14B /* NSObject+HCExtend.m */,
+				BF28FB681C87CD2C0014CBBC /* NSObject+HCDBExtend.h */,
+				BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */,
 			);
 			path = HCDB;
 			sourceTree = "<group>";
@@ -421,21 +411,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF49CB581C1A5A6A00C3CF4E /* HCBaseDAO.m in Sources */,
+				BF49CB581C1A5A6A00C3CF4E /* HCDAO.m in Sources */,
 				BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */,
 				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
 				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,
 				BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */,
-				BF49CB5C1C1A5A6A00C3CF4E /* NSObject+tableModel.m in Sources */,
-				BF49CB5A1C1A5A6A00C3CF4E /* HCBaseTable.m in Sources */,
+				BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */,
 				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
 				BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */,
-				BFF028CF1C7197910051D14B /* NSObject+HCExtend.m in Sources */,
 				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
+				BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */,
 				BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */,
-				BF49CB5D1C1A5A6A00C3CF4E /* SQLHelper.m in Sources */,
-				BF49CB591C1A5A6A00C3CF4E /* HCBaseDBHelper.m in Sources */,
+				BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

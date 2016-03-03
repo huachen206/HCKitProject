@@ -23,17 +23,17 @@
 }
 
 -(void)closeAll{
-    for (HCBaseDBHelper *dbhelper in self.arry_dbHelper) {
+    for (HCDBHelper *dbhelper in self.arry_dbHelper) {
         [dbhelper close];
     }
 }
 
--(void)addDBHelper:(HCBaseDBHelper *)helper{
+-(void)addDBHelper:(HCDBHelper *)helper{
     [self.arry_dbHelper addObject:helper];
 }
 
--(HCBaseDBHelper *)dbHelperWithDbPath:(NSString *)dbPath{
-    for (HCBaseDBHelper *helper in self.arry_dbHelper) {
+-(HCDBHelper *)dbHelperWithDbPath:(NSString *)dbPath{
+    for (HCDBHelper *helper in self.arry_dbHelper) {
         if ([helper.dbPath isEqualToString:dbPath]) {
             return helper;
         }

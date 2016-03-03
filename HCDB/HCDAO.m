@@ -1,14 +1,14 @@
 //
-//  HCBaseDAO.m
+//  HCDAO.m
 //  Lottery
 //
 //  Created by 花晨 on 15/8/29.
 //  Copyright (c) 2015年 花晨. All rights reserved.
 //
 
-#import "HCBaseDAO.h"
+#import "HCDAO.h"
 
-@implementation HCBaseDAO
+@implementation HCDAO
 +(instancetype)dao{
     static id _sharedInstance = nil;
     static dispatch_once_t onceToke;
@@ -22,11 +22,11 @@
     if (self = [super init]) {
         BOOL flag =[self.baseDBHelper open];
         PADBQuickCheck(flag);
-        NSDictionary *nameAndClassNameDic = [[self class] properties_pan];
+        NSDictionary *nameAndClassNameDic = [[self class] hc_propertyNameAndClassName];
         for (NSString *propertyName in nameAndClassNameDic.allKeys) {
             NSString *propertyClassName = [nameAndClassNameDic objectForKey:propertyName];
-            if (NSClassFromString(propertyClassName)&&[NSClassFromString(propertyClassName) isSubclassOfClass:[HCBaseTable class]]) {
-                HCBaseTable *table = [NSClassFromString(propertyClassName) table];
+            if (NSClassFromString(propertyClassName)&&[NSClassFromString(propertyClassName) isSubclassOfClass:[HCDBTable class]]) {
+                HCDBTable *table = [NSClassFromString(propertyClassName) table];
                 table.DAO = self;
                 [table creatOrUpgradeTable];
                 [self setValue:table forKey:propertyName];
@@ -38,11 +38,11 @@
 }
 
 //需要指定sql文件路径时子类重写这个方法。
--(HCBaseDBHelper *)baseDBHelper{
+-(HCDBHelper *)baseDBHelper{
     if (!_baseDBHelper) {
-        _baseDBHelper =[[HCDBManager shared] dbHelperWithDbPath:[HCBaseDBHelper defaultDBPath]];
+        _baseDBHelper =[[HCDBManager shared] dbHelperWithDbPath:[HCDBHelper defaultDBPath]];
         if (!_baseDBHelper) {
-            _baseDBHelper = [[HCBaseDBHelper alloc] initDefault];
+            _baseDBHelper = [[HCDBHelper alloc] initDefault];
             [[HCDBManager shared] addDBHelper:_baseDBHelper];
         }
     }

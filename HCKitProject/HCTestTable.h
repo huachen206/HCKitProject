@@ -6,9 +6,9 @@
 //  Copyright © 2015年 花晨. All rights reserved.
 //
 
-#import "HCBaseTable.h"
+#import "HCDBTable.h"
 #import "HCTestDBModel.h"
 
-@interface HCTestTable : HCBaseTable
+@interface HCTestTable : HCDBTable
 
 @end

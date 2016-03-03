@@ -1,25 +1,26 @@
 //
-//  NSObject+tableModel.m
-//  KTVGroupBuy
+//  NSObject+HCDBExtend.m
+//  HCKitProject
 //
-//  Created by 花晨 on 15/8/31.
-//  Copyright (c) 2015年 HuaChen. All rights reserved.
+//  Created by HuaChen on 16/3/3.
+//  Copyright © 2016年 花晨. All rights reserved.
 //
 
-#import "NSObject+tableModel.h"
+#import "NSObject+HCDBExtend.h"
 #import "objc/runtime.h"
+#import "FMResultSet.h"
 
-@implementation NSObject (tableModel)
-+(NSArray *)modelListWithDicArray:(NSArray *)array{
+@implementation NSObject (HCDBExtend)
++(NSArray *)hc_modelListWithDicArray:(NSArray *)array{
     NSMutableArray *modelList = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in array) {
-        [modelList addObject:[[self alloc] initWithDictionary:dic]];
+        [modelList addObject:[[self alloc] hc_initWithDictionary:dic]];
     }
     return modelList;
 }
--(id)initWithDictionary:(NSDictionary *)dic{
-    if (self = [self init]) {
-        NSArray *propertyNames = [[self class] properties];
+-(id)hc_initWithDictionary:(NSDictionary *)dic{
+    if (self == [self init]) {
+        NSArray *propertyNames = [[self class] hc_propertyNameList];
         for (NSString *propertyName in propertyNames) {
             id value = [dic objectForKey:propertyName];
             if (value) {
@@ -29,17 +30,17 @@
     }
     return self;
 }
--(id)initWithDictionary:(NSDictionary *)dic addOther:(NSDictionary *)ortherDic{
+-(id)hc_initWithDictionary:(NSDictionary *)dic addOther:(NSDictionary *)ortherDic{
     NSMutableDictionary *totalDic = [NSMutableDictionary dictionaryWithDictionary:dic];
     [totalDic setDictionary:ortherDic];
-    return [self initWithDictionary:totalDic];
+    return [self hc_initWithDictionary:totalDic];
 }
--(id)initWithFMResultSet:(FMResultSet *)result columns:(NSArray *)columns{
-    if (self = [self init]) {
-        NSDictionary *tmpDic = [[self class] properties_pan];
+-(id)hc_initWithFMResultSet:(FMResultSet *)result columns:(NSArray *)columns{
+    if (self == [self init]) {
+        NSDictionary *tmpDic = [[self class] hc_propertyNameAndClassName];
         NSArray *propertyNames;
         if (columns) {
-            propertyNames =[self objectIn:tmpDic.allKeys andIn:columns];
+            propertyNames =[tmpDic.allKeys hc_objectAlsoIn:columns];
         }else{
             propertyNames = tmpDic.allKeys;
         }
@@ -67,15 +68,15 @@
     return self;
 }
 
--(id)initWithFMResultSet:(FMResultSet *)result{
-    return [self initWithFMResultSet:result columns:nil];
+-(id)hc_initWithFMResultSet:(FMResultSet *)result{
+    return [self hc_initWithFMResultSet:result columns:nil];
 }
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [self init];
     if (self)
     {
-        for (NSString *property in [[self class] properties]) {
+        for (NSString *property in [[self class] hc_propertyNameList]) {
             [self setValue:[aDecoder decodeObjectForKey:property] forKey:property];
         }
         
@@ -84,15 +85,14 @@
 }
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    for (NSString *property in [[self class] properties]) {
+    for (NSString *property in [[self class] hc_propertyNameList]) {
         [aCoder encodeObject:[self valueForKey:property] forKey:property];
     }
 }
 
-
-- (NSDictionary *)properties_aps
++ (NSArray *)hc_propertyNameList
 {
-    NSMutableDictionary *props = [NSMutableDictionary dictionary];
+    NSMutableArray *props = [NSMutableArray array];
     unsigned int outCount, i;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
     for (i = 0; i<outCount; i++)
@@ -100,14 +100,12 @@
         objc_property_t property = properties[i];
         const char* char_f =property_getName(property);
         NSString *propertyName = [NSString stringWithUTF8String:char_f];
-        id propertyValue = [self valueForKey:(NSString *)propertyName];
-        if (propertyValue) [props setObject:propertyValue forKey:propertyName];
+        [props addObject:propertyName];
     }
     free(properties);
     return props;
 }
-
-+(NSDictionary *)properties_pan{
++(NSDictionary *)hc_propertyNameAndClassName{
     NSMutableDictionary *props = [NSMutableDictionary dictionary];
     unsigned int outCount, i;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
@@ -118,7 +116,7 @@
         NSString *propertyName = [NSString stringWithUTF8String:char_f];
         const char* char_a =property_getAttributes(property);
         NSString *propertyClassName = [NSString stringWithUTF8String:char_a];
-//        NSLog(@"%@",propertyClassName);
+        NSLog(@"%@",propertyClassName);
         if ([propertyClassName hasPrefix:@"T@"])//这是一个对象
         {
             propertyClassName = [[propertyClassName componentsSeparatedByString:@","] firstObject];
@@ -133,11 +131,11 @@
         }else if([propertyClassName hasPrefix:@"Ti,N"])//int
         {
             propertyClassName = @"int";
-
+            
         }else if([propertyClassName hasPrefix:@"Tf,N"])//float
         {
             propertyClassName = @"float";
-
+            
         }else if([propertyClassName hasPrefix:@"Td,N"])//double
         {
             propertyClassName = @"double";
@@ -155,32 +153,73 @@
     }
     free(properties);
     return props;
-    
 }
-+(NSArray*)propertieClassNames{
-    
-    NSMutableArray *props = [NSMutableArray array];
+
++(NSDictionary *)hc_columnAndSqlDataType{
+    NSMutableDictionary *colunms = [NSMutableDictionary dictionary];
     unsigned int outCount, i;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+    NSScanner* scanner = nil;
+    
     for (i = 0; i<outCount; i++)
     {
         objc_property_t property = properties[i];
-        const char* char_f =property_getAttributes(property);
-        NSString *propertyClassName = [NSString stringWithUTF8String:char_f];
-        propertyClassName = [[propertyClassName componentsSeparatedByString:@","] firstObject];
-        propertyClassName = [propertyClassName substringFromIndex:3];
-        propertyClassName = [propertyClassName substringToIndex:propertyClassName.length-1];
-
-        [props addObject:propertyClassName];
+        const char* char_f =property_getName(property);
+        NSString *propertyName = [NSString stringWithUTF8String:char_f];
+        if ([propertyName hasSuffix:@"_HCTABLECOL"]) {
+            //get property attributes
+            const char *attrs = property_getAttributes(property);
+            NSString* propertyAttributes = @(attrs);
+            NSLog(@"%@",propertyAttributes);
+            scanner = [NSScanner scannerWithString: propertyAttributes];
+            [scanner scanUpToString:@"T" intoString: nil];
+            [scanner scanString:@"T" intoString:nil];
+            NSString* propertyType = nil;
+            
+            if ([scanner scanString:@"@\"" intoString: &propertyType]) {
+                [scanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\"<"]
+                                        intoString:&propertyType];
+                
+                while ([scanner scanString:@"<" intoString:NULL]) {
+                    NSString* protocolName = nil;
+                    [scanner scanUpToString:@">" intoString: &protocolName];
+                    NSString *dataType = [self hc_sqlDataTypeWithProtocolName:protocolName];
+                    propertyName = [propertyName substringToIndex:[propertyName rangeOfString:@"_HCTABLECOL"].location];
+                    [colunms setValue:dataType forKey:propertyName];
+                    NSLog(@"dataType:%@----propertyName:%@",dataType,propertyName);
+                    [scanner scanString:@">" intoString:NULL];
+                }
+                NSLog(@"propertyType:%@",propertyType);
+            }
+        }
     }
-    free(properties);
-    return props;
-
+    return colunms;
+}
+/**
+ *  从构造的协议名称中获取sql数据类型
+ *
+ *  @param protocolName 属性协议名称
+ *
+ *  @return sql数据类型
+ */
++(NSString *)hc_sqlDataTypeWithProtocolName:(NSString *)protocolName{
+    NSArray* attributeItems = [protocolName componentsSeparatedByString:@"_"];
+    NSString *sqlDataType = [attributeItems componentsJoinedByString:@" "];
+    
+    NSCharacterSet* nonDigits =[[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    int value =[[sqlDataType stringByTrimmingCharactersInSet:nonDigits] intValue];
+    
+    if (value) {
+        NSMutableString *mutDataType = [NSMutableString stringWithString:sqlDataType];
+        [mutDataType replaceCharactersInRange:[sqlDataType rangeOfString:[@(value) stringValue]] withString:[NSString stringWithFormat:@"(%d)",value]];
+        sqlDataType = mutDataType;
+    }
+    return sqlDataType;
 }
 
-+ (NSArray *)properties
+- (NSDictionary *)hc_propertyNameAndValue
 {
-    NSMutableArray *props = [NSMutableArray array];
+    NSMutableDictionary *props = [NSMutableDictionary dictionary];
     unsigned int outCount, i;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
     for (i = 0; i<outCount; i++)
@@ -188,15 +227,20 @@
         objc_property_t property = properties[i];
         const char* char_f =property_getName(property);
         NSString *propertyName = [NSString stringWithUTF8String:char_f];
-        [props addObject:propertyName];
+        id propertyValue = [self valueForKey:(NSString *)propertyName];
+        if (propertyValue) [props setObject:propertyValue forKey:propertyName];
     }
     free(properties);
     return props;
 }
--(NSArray *)objectIn:(NSArray *)array1 andIn:(NSArray *)array2{
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"(SELF IN %@)",array2];
-    NSArray * filter = [array1 filteredArrayUsingPredicate:filterPredicate];
-    return filter;
-}
 
 @end
+
+@implementation NSArray(HCDBExtend)
+-(NSArray *)hc_objectAlsoIn:(NSArray *)array{
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"(SELF IN %@)",array];
+    NSArray * filter = [self filteredArrayUsingPredicate:filterPredicate];
+    return filter;
+}
+@end
+
