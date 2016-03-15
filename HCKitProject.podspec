@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'HCDB' do |mk|
     	mk.source_files = 'HCDB/*.{h,m}','HCDB/Resources/*'
+      mk.preserve_paths = 'HCDB/Resources/*'
 	mk.ios.dependency  'FMDB', '~> 2.3'
   end
 
