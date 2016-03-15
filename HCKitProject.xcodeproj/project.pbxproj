@@ -26,6 +26,7 @@
 		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; };
 		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; };
 		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; };
+		BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB513B61C97E28E005AAEDF /* HCEncoding.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestTable.m; sourceTree = "<group>"; };
 		BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel.h; sourceTree = "<group>"; };
 		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
+		BFB513B61C97E28E005AAEDF /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = HCEncoding.plist; sourceTree = "<group>"; };
 		EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 		BF49CB4B1C1A5A6A00C3CF4E /* HCDB */ = {
 			isa = PBXGroup;
 			children = (
+				BFB513B51C97E28E005AAEDF /* Resources */,
 				BF49CB4C1C1A5A6A00C3CF4E /* HCDAO.h */,
 				BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */,
 				BF49CB4E1C1A5A6A00C3CF4E /* HCDBHelper.h */,
@@ -228,6 +231,14 @@
 				BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */,
 			);
 			name = DBTestField;
+			sourceTree = "<group>";
+		};
+		BFB513B51C97E28E005AAEDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFB513B61C97E28E005AAEDF /* HCEncoding.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */,
+				BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */,
 				BF49CB251C1A5A2900C3CF4E /* Assets.xcassets in Resources */,
 				BF49CB231C1A5A2900C3CF4E /* Main.storyboard in Resources */,
 			);

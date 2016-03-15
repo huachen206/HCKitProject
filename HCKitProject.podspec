@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HCKitProject"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.ios.deployment_target = '6.0'
   s.license = 'MIT'
   s.summary      = "a Encapsulation of FMDB."
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |core|
-    	core.source_files = 'HCDB/*.{h,m}'
+    	core.source_files = 'HCDB/*.{h,m}','HCDB/Resources/*'
 	core.ios.dependency  'FMDB', '~> 2.3'
 
   end

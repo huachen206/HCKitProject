@@ -8,17 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol INTEGER
+@end
+@protocol INTEGER_PRIMARY_KEY_AUTOINCREMENT
+@end
+@protocol TEXT
+@end
+@protocol BLOB
+@end
+@protocol CLOB
+@end
+@protocol BOOLEAN
+@end
+@protocol FLOAT
+@end
+@protocol TIMESTAMP
+@end
+
 #define VARCHAR(NUM) \
 @protocol VARCHAR_##NUM \
 @end
 
-#define INTEGER(NUM) \
-@protocol INTEGER_##NUM \
-@end
-
-#define INTEGER_PRIMARY_KEY_AUTOINCREMENT(NUM) \
-@protocol INTEGER##NUM##_PRIMARY_KEY_AUTOINCREMENT \
-@end
+VARCHAR(5);
+VARCHAR(10);
+VARCHAR(20);
 
 
 #define TABLECOL_OBJ(dataType,columnName) columnName;\
@@ -26,7 +39,6 @@
 
 #define TABLECOL_VAR(dataType,columnName) columnName;\
 @property (nonatomic,strong) HCDBTableFlg dataType *columnName##_HCTABLECOL
-
 
 
 
