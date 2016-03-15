@@ -22,14 +22,14 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |core|
-    	core.source_files = 'HCDB/*.{h,m}','HCDB/Resources/*'
+    	core.source_files = 'HCDB/*.{h,m}'
 	core.ios.dependency  'FMDB', '~> 2.3'
 
   end
 
   s.subspec 'HCDB' do |mk|
-    	mk.source_files = 'HCDB/*.{h,m}','HCDB/Resources/*'
-      mk.preserve_paths = 'HCDB/Resources/*'
+    	mk.source_files = 'HCDB/*.{h,m}'
+      mk.resource = 'HCDB/Resources/*'
 	mk.ios.dependency  'FMDB', '~> 2.3'
   end
 
