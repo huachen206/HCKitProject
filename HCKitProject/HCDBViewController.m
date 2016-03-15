@@ -27,12 +27,14 @@
     db.nickName = @"a dog";
     
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db isIgnorePrimaryKey:YES];
+    NSLog(@"%@",[[HCTestDAO dao].testTable description]);
     
-    NSArray *results = [[HCTestDAO dao].testTable selectAll];
-    for (HCTestDBModel *td in results) {
-        NSLog(@"name:%@ -- nickName:%@",td.name,td.nickName);
-        
-    }
+    
+//    NSArray *results = [[HCTestDAO dao].testTable selectAll];
+//    for (HCTestDBModel *td in results) {
+//        NSLog(@"name:%@ -- nickName:%@",td.name,td.nickName);
+//        
+//    }
     
 }
 

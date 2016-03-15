@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #define VARCHAR(NUM) \
 @protocol VARCHAR_##NUM \
 @end
@@ -20,12 +21,14 @@
 @end
 
 
-
 #define TABLECOL_OBJ(dataType,columnName) columnName;\
 @property (nonatomic,strong) HCDBTableFlg dataType columnName##_HCTABLECOL
 
 #define TABLECOL_VAR(dataType,columnName) columnName;\
 @property (nonatomic,strong) HCDBTableFlg dataType *columnName##_HCTABLECOL
+
+
+
 
 @class FMResultSet;
 @interface NSObject (HCDBExtend)

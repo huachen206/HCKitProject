@@ -122,27 +122,27 @@
             propertyClassName = [[propertyClassName componentsSeparatedByString:@","] firstObject];
             propertyClassName = [propertyClassName substringFromIndex:3];
             propertyClassName = [propertyClassName substringToIndex:propertyClassName.length-1];
-        }else if([propertyClassName hasPrefix:@"Tq,N"])//NSInteger,long,long long
+        }else if([propertyClassName hasPrefix:@"Tq"])//NSInteger,long,long long
         {
             propertyClassName = @"NSInteger";
-        }else if([propertyClassName hasPrefix:@"TQ,N"])//NSUInteger
+        }else if([propertyClassName hasPrefix:@"TQ"])//NSUInteger
         {
             propertyClassName = @"NSUInteger";
-        }else if([propertyClassName hasPrefix:@"Ti,N"])//int
+        }else if([propertyClassName hasPrefix:@"Ti"])//int
         {
             propertyClassName = @"int";
             
-        }else if([propertyClassName hasPrefix:@"Tf,N"])//float
+        }else if([propertyClassName hasPrefix:@"Tf"])//float
         {
             propertyClassName = @"float";
             
-        }else if([propertyClassName hasPrefix:@"Td,N"])//double
+        }else if([propertyClassName hasPrefix:@"Td"])//double
         {
             propertyClassName = @"double";
-        }else if([propertyClassName hasPrefix:@"Tc,N"])//char
+        }else if([propertyClassName hasPrefix:@"Tc"])//char
         {
             propertyClassName = @"char";
-        }else if ([propertyClassName hasPrefix:@"TB,N"])//bool
+        }else if ([propertyClassName hasPrefix:@"TB"])//bool
         {
             propertyClassName = @"bool";
         }

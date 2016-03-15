@@ -346,5 +346,12 @@
 -(FMDatabaseQueue*)fmDbQueue{
     return self.DAO.fmDbQueue;
 }
-
+-(NSString *)description{
+    NSMutableString *text = [[NSMutableString alloc] init];
+    for (NSString *key in self.columns) {
+        [text appendString:key];
+        [text appendString:@","];
+    }
+    return [NSString stringWithFormat:@"\nTable description----\ntableName:%@\ncolumns:%@\n",self.tableName,text];
+}
 @end
