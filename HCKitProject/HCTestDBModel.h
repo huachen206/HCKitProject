@@ -7,15 +7,34 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+HCDBExtend.h"
+#import "HCDBModel.h"
 
 
-@interface HCTestDBModel : NSObject
-@property (nonatomic,assign) NSInteger TABLECOL_VAR(<INTEGER_PRIMARY_KEY_AUTOINCREMENT>,test_id);
-@property (nonatomic,strong) NSString TABLECOL_OBJ(<VARCHAR_20>,*name);
-@property (nonatomic,strong) NSString TABLECOL_OBJ(<TEXT>,*atext);
-@property (nonatomic,assign) BOOL TABLECOL_VAR(<BOOLEAN>,abool);
-@property (nonatomic,strong) NSString *nickName;
+@interface HCTestDBModel : HCDBModel
+
+@property(nonatomic,assign) NSInteger HC_PRIMARY_KEY_AUTOINCREMENT(index);
+@property(nonatomic,strong) NSString* HC_VARCHAR_20(astring);
+@property(nonatomic,assign) BOOL abool;
+@property(nonatomic,assign) id aid;
+@property(nonatomic,assign) char achar;
+@property(nonatomic,assign) int aint;
+@property(nonatomic,assign) short ashort;
+@property(nonatomic,assign) long along;
+@property(nonatomic,assign) unsigned char auchar;
+@property(nonatomic,assign) unsigned int auint;
+@property(nonatomic,assign) unsigned short aushort;
+@property(nonatomic,assign) unsigned long aulong;
+@property(nonatomic,assign) float afloat;
+@property(nonatomic,assign) double adouble;
+@property(nonatomic,assign) void *avoid;
+@property(nonatomic,assign) char *axchar;
+@property(nonatomic,assign) Class aclass;
+@property(nonatomic,assign) SEL asel;
+@property(nonatomic,assign) Point apoint;
+@property(nonatomic,strong) NSArray *aarray;
+@property(nonatomic,strong) NSDictionary *adic;
+@property(nonatomic,strong) HCDBModel *ahelp;
+
 
 
 @end

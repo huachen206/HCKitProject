@@ -8,6 +8,7 @@
 
 #import "HCDBViewController.h"
 #import "HCTestDAO.h"
+#import "HCDBModel.h"
 
 @interface HCDBViewController ()
 
@@ -19,17 +20,12 @@
     [super viewDidLoad];
     self.title = @"DB";
     
-//    [HCTestDBModel properties_pan];
-//    NSDictionary *column =  [HCTestDBModel tableColumnAndDataType];
-    
     HCTestDBModel *db = [[HCTestDBModel alloc] init];
-    db.name = @"feixiao";
-    db.nickName = @"a dog";
-    db.atext = @"atextatextatextatextatextatextatextatextatextatextatextatextatextatext";
-    db.abool = NO;
-    
+    for (HCPropertyInfo *pi in [[db class] hc_propertyInfos]) {
+        NSLog(@"%@",pi);
+    }
+    [HCTestDBModel hc_propertyNameList];
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db isIgnorePrimaryKey:YES];
-    
     NSArray *models = [[HCTestDAO dao].testTable selectAll];
     
     NSLog(@"%@",[[HCTestDAO dao].testTable description]);

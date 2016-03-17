@@ -9,5 +9,14 @@
 #import "HCTestDBModel.h"
 
 @implementation HCTestDBModel
+-(id)init{
+    if (self == [super init]) {
+        
+    }
+    return self;
+}
+-(void)creatTestData{
+
+}
 
 @end
