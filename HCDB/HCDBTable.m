@@ -10,12 +10,15 @@
 
 @interface HCDBTable()
 @property (nonatomic,strong) NSMutableArray *elements;
+@property (nonatomic,strong) NSArray *tableColumns;
 @end
 
 @implementation HCDBTable
 +(instancetype)table{
     HCDBTable *table = [[self alloc] init];
-    table.columns = [NSMutableDictionary dictionaryWithDictionary:[[table tableModelClass] hc_columnAndSqlDataType]];
+    table.fieldList = [[table tableModelClass] hc_tableFieldList];
+    
+//    table.columns = [NSMutableDictionary dictionaryWithDictionary:[[table tableModelClass] hc_columnAndSqlDataType]];
     return table;
 }
 
@@ -31,46 +34,71 @@
 
 -(id)init{
     if (self = [super init]) {
-        self.columns = [[NSMutableDictionary alloc] init];
-//        self.elements = [[NSMutableArray alloc] init];
+//        self.columns = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 -(id)initWithDataTypeNames:(NSArray *)dataTypeNames columnNames:(NSArray *)columnNames{
     if (self = [super init]) {
-        self.columns = [[NSMutableDictionary alloc] initWithObjects:dataTypeNames forKeys:columnNames];
+//        self.columns = [[NSMutableDictionary alloc] initWithObjects:dataTypeNames forKeys:columnNames];
 
     }
     return self;
 }
 -(void)addDataTypeName:(NSString *)dataTypeName columnName:(NSString *)columnName{
-    [self.columns setValue:dataTypeName forKey:columnName];
-    
-//    NSString *tmpStr = [NSString stringWithFormat:@"%@ %@",columnName,dataTypeName];
-//    [self.elements addObject:tmpStr];
-    
+//    [self.columns setValue:dataTypeName forKey:columnName];
 }
 
+-(NSArray *)tableColumns{
+    if (!_tableColumns) {
+        _tableColumns = [self.fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            HCDBTableField *field = (HCDBTableField *)obj;
+            return field.columnName;
+        }];
+    }
+    return _tableColumns;
+}
+-(HCDBTableField *)tableFieldForColumn:(NSString *)columnName{
+    __block HCDBTableField *tableField = nil;
+    [self.fieldList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        HCDBTableField *field = (HCDBTableField *)obj;
+        if ([field.columnName isEqualToString:columnName]) {
+            tableField = field;
+        }
+    }];
+    return tableField;
+}
 -(NSMutableArray *)elements{
     if (!_elements) {
         _elements = [[NSMutableArray alloc] init];
-        for (NSString *key in self.columns) {
-            NSString *tmpStr = [NSString stringWithFormat:@"%@ %@",key,[self.columns objectForKey:key]];
+        for (HCDBTableField *field in self.fieldList) {
+            NSString *tmpStr = [NSString stringWithFormat:@"%@ %@",field.columnName,field.dataType];
             [self.elements addObject:tmpStr];
         }
-        
     }
     return _elements;
 }
--(NSString*)primaryColumnName{
-    for (NSString *columnName in self.columns.allKeys) {
-        NSString *dataTypeName = [self.columns objectForKey:columnName];
-        if ([dataTypeName rangeOfString:@"PRIMARY KEY"].length) {
-            return columnName;
+
+-(HCDBTableField *)primaryTableField{
+    __block HCDBTableField *tableField = nil;
+    [self.fieldList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        HCDBTableField *field = (HCDBTableField *)obj;
+        if (field.isPrimaryKey) {
+            tableField = field;
         }
-    }
-    return nil;
+    }];
+    return tableField;
+
 }
+//-(NSString*)primaryColumnName{
+//    for (NSString *columnName in self.columns.allKeys) {
+//        NSString *dataTypeName = [self.columns objectForKey:columnName];
+//        if ([dataTypeName rangeOfString:@"PRIMARY KEY"].length) {
+//            return columnName;
+//        }
+//    }
+//    return nil;
+//}
 
 #pragma mark creat upgrade
 -(BOOL)creatOrUpgradeTable{
@@ -89,13 +117,19 @@
 -(BOOL)upgradeTable{
     __block BOOL flag = YES;
     
-    NSArray *adds = [self objectIn:self.columns.allKeys withOut:[self getTableFields]];
-    NSArray *drops = [self objectIn:[self getTableFields] withOut:self.columns.allKeys];
+    NSArray *adds = [[self tableColumns] hc_objectWithOut:[self getTableFields]];
     
+//    NSArray *adds = [self objectIn:self.columns.allKeys withOut:[self getTableFields]];
+    NSArray *drops = [self objectIn:[self getTableFields] withOut:[self tableColumns]];
+    if (!adds.count) {
+        return YES;
+    }
     [self.fmDbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         for (NSString *column in adds) {
-            NSString *dataTypeName = self.columns[column];
-            NSString *addSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ %@",[self tableName],column,dataTypeName];
+            HCDBTableField *field = [self tableFieldForColumn:column];
+            
+//            NSString *dataTypeName = self.columns[column];
+            NSString *addSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ %@",[self tableName],field.columnName,field.dataType];
             flag = flag&&[db executeUpdate:addSql];
         }
         
@@ -117,7 +151,7 @@
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@",self.tableName]];
         while ([rs next]) {
             if (self.tableModelClass) {
-                NSObject *model = [[self.tableModelClass alloc] hc_initWithFMResultSet:rs columns:self.columns.allKeys];
+                NSObject *model = [[self.tableModelClass alloc] hc_initWithFMResultSet:rs columns:[self tableColumns]];
 
                 [models addObject:model];
             }
@@ -159,7 +193,7 @@
 -(NSDictionary *)valueAndColumnWithModel:(NSObject *)baseModel{
     NSDictionary *dic = [baseModel hc_propertyNameAndValue];
     
-    NSArray *columnNames =self.columns.allKeys;
+    NSArray *columnNames =[self tableColumns];
     
     NSArray *bothNameList = [dic.allKeys hc_objectAlsoIn:columnNames];
     NSMutableDictionary *mdic = [NSMutableDictionary dictionary];
@@ -170,10 +204,11 @@
 }
 -(NSDictionary *)removePrimaryKey:(NSDictionary *)mdic{
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:mdic];
-    for (NSString *columnName in self.columns.allKeys) {
-        NSString *dataTypeName = [self.columns objectForKey:columnName];
-        if ([dataTypeName rangeOfString:@"PRIMARY KEY AUTOINCREMENT"].length) {
+    for (NSString *columnName in mdic.allKeys) {
+        HCDBTableField *field = [self tableFieldForColumn:columnName];
+        if (field.isPrimaryKey) {
             [dic removeObjectForKey:columnName];
+            return dic;
         }
     }
     return dic;
@@ -348,7 +383,7 @@
 }
 -(NSString *)description{
     NSMutableString *text = [[NSMutableString alloc] init];
-    for (NSString *key in self.columns) {
+    for (NSString *key in [self tableColumns]) {
         [text appendString:key];
         [text appendString:@","];
     }

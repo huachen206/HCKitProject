@@ -21,14 +21,22 @@
     self.title = @"DB";
     
     HCTestDBModel *db = [[HCTestDBModel alloc] init];
+    [db creatTestData];
+    
     for (HCPropertyInfo *pi in [[db class] hc_propertyInfos]) {
         NSLog(@"%@",pi);
     }
-    [HCTestDBModel hc_propertyNameList];
+    NSArray *plist = [HCTestDBModel hc_propertyNameList];
+    NSArray *fList = [HCTestDBModel tableFieldList];
+    
+    
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db isIgnorePrimaryKey:YES];
+//
     NSArray *models = [[HCTestDAO dao].testTable selectAll];
     
-    NSLog(@"%@",[[HCTestDAO dao].testTable description]);
+    
+    
+//    NSLog(@"%@",[[HCTestDAO dao].testTable description]);
     
     
 //    NSArray *results = [[HCTestDAO dao].testTable selectAll];

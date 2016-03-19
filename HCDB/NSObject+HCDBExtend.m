@@ -39,6 +39,9 @@
 }
 -(id)hc_initWithFMResultSet:(FMResultSet *)result columns:(NSArray *)columns{
     if (self == [self init]) {
+        for (NSString *columnName in columns) {
+            HCDBTableField *tableField = [[self class] hc_propertyInfos];
+        }
         NSDictionary *tmpDic = [[self class] hc_propertyNameAndClassName];
         NSArray *propertyNames;
         if (columns) {
@@ -274,6 +277,14 @@
 +(NSArray *)hc_propertyInfos{
     return [HCPropertyInfo propertiesForClass:[self class]];
 }
+//+(HCPropertyInfo *)hc_propertyInfoWithPropertyName:(NSString *)propertyName{
+//    
+//}
++(NSArray *)hc_tableFieldList{
+    return [HCDBTableField tableFieldListWithPropertyInfos:[self hc_propertyInfos]];
+}
+
+
 @end
 
 @implementation NSArray(HCDBExtend)
@@ -282,6 +293,12 @@
     NSArray * filter = [self filteredArrayUsingPredicate:filterPredicate];
     return filter;
 }
+-(NSArray *)hc_objectWithOut:(NSArray *)array{
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",array];
+    NSArray * filter = [self filteredArrayUsingPredicate:filterPredicate];
+    return filter;
+}
+
 -(NSArray*)hc_enumerateObjectsForArrayUsingBlock:(id(^)(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop))usingBlock{
     NSMutableArray *results = [NSMutableArray array];
     BOOL *stop = (BOOL *)malloc(sizeof(BOOL));

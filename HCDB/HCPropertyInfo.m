@@ -15,6 +15,7 @@
     Class _hostClass;
     NSString * _typeName;
     Class _typeClass;
+    NSString *_typeEncoding;
     NSString *_protocolName;
     NSString * _setterName;
     NSString * _getterName;
@@ -148,6 +149,14 @@
     
     return _typeClass;
 }
+-(NSString *)typeEncoding{
+    if (!_typeEncoding) {
+        if (!_isAttributeNameFilled) {
+            [self fillAttributeName];
+        }
+    }
+    return _typeEncoding;
+}
 -(NSString *)protocolName{
     if (!_protocolName) {
         if (!_isAttributeNameFilled) {
@@ -252,6 +261,7 @@ static const char * kPropertyInfoCopiedSpecifier = "C";
 
 - (void)fillAttributeName {
     NSString *attributeName = [[self class] propertyAttributeNameForField:"T" property:_property];
+    _typeEncoding = attributeName;
     _typeName = [HCTypeDecoder nameFromTypeEncoding:attributeName];
     _primitive = [HCTypeDecoder HC_isPrimitiveType:attributeName];
     

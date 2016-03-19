@@ -12,10 +12,11 @@
 
 @interface HCTestDBModel : HCDBModel
 
-@property(nonatomic,assign) NSInteger HC_PRIMARY_KEY_AUTOINCREMENT(index);
-@property(nonatomic,strong) NSString* HC_VARCHAR_20(astring);
+@property(nonatomic,assign) NSInteger HC_PRIMARY_KEY_AUTOINCREMENT(aindex);
+//@property(nonatomic,assign) NSInteger aIndex;
+
+@property(nonatomic,strong) NSString* astring;
 @property(nonatomic,assign) BOOL abool;
-@property(nonatomic,assign) id aid;
 @property(nonatomic,assign) char achar;
 @property(nonatomic,assign) int aint;
 @property(nonatomic,assign) short ashort;
@@ -26,15 +27,8 @@
 @property(nonatomic,assign) unsigned long aulong;
 @property(nonatomic,assign) float afloat;
 @property(nonatomic,assign) double adouble;
-@property(nonatomic,assign) void *avoid;
-@property(nonatomic,assign) char *axchar;
-@property(nonatomic,assign) Class aclass;
-@property(nonatomic,assign) SEL asel;
-@property(nonatomic,assign) Point apoint;
-@property(nonatomic,strong) NSArray *aarray;
-@property(nonatomic,strong) NSDictionary *adic;
-@property(nonatomic,strong) HCDBModel *ahelp;
-
-
+@property(nonatomic,assign) NSData *adata;
+@property(nonatomic,strong) HCDBTableField *HC_IGNORE(field);
+-(void)creatTestData;
 
 @end

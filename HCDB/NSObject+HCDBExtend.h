@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HCPropertyInfo.h"
+#import "HCDBTableField.h"
 
 @protocol INTEGER
 @end
@@ -17,26 +18,10 @@
 @end
 @protocol BLOB
 @end
-@protocol CLOB
-@end
 @protocol BOOLEAN
 @end
-@protocol FLOAT
+@protocol REAL
 @end
-@protocol TIMESTAMP
-@end
-
-
-
-#define VARCHAR(NUM) \
-@protocol VARCHAR_##NUM \
-@end
-
-VARCHAR(5);
-VARCHAR(10);
-VARCHAR(20);
-
-
 
 
 #define TABLECOL_OBJ(dataType,columnName) columnName;\
@@ -58,6 +43,9 @@ VARCHAR(20);
 #define _CreatTableFlgPropertayWithProtocol(propertyName,protocol) propertyName;\
 @property (nonatomic,strong) HCDBTableFlg protocol *A8BB31B5B938FBCF_##propertyName
 
+#define HC_IGNORE(propertyName)\
+_CreatTableFlgPropertayWithProtocol(propertyName,<IGNORE>)
+
 #define HC_PRIMARY_KEY(propertyName)\
 _CreatTableFlgPropertayWithProtocol(propertyName,<PRIMARY_KEY>)
 
@@ -67,20 +55,7 @@ _CreatTableFlgPropertayWithProtocol(propertyName,<AUTOINCREMENT>)
 #define HC_PRIMARY_KEY_AUTOINCREMENT(propertyName)\
 _CreatTableFlgPropertayWithProtocol(propertyName,<PRIMARY_KEY_AUTOINCREMENT>)
 
-#define HC_IGNORE(propertyName)\
-_CreatTableFlgPropertayWithProtocol(propertyName,<IGNORE>)
 
-#define HC_VARCHAR_5(propertyName)\
-_CreatTableFlgPropertayWithProtocol(propertyName,<VARCHAR_5>)
-
-#define HC_VARCHAR_10(propertyName)\
-_CreatTableFlgPropertayWithProtocol(propertyName,<VARCHAR_10>)
-
-#define HC_VARCHAR_20(propertyName)\
-_CreatTableFlgPropertayWithProtocol(propertyName,<VARCHAR_20>)
-
-#define HC_TEXT(propertyName)\
-_CreatTableFlgPropertayWithProtocol(propertyName,<TEXT>)
 
 
 @class FMResultSet;
@@ -102,11 +77,14 @@ _CreatTableFlgPropertayWithProtocol(propertyName,<TEXT>)
 -(id)hc_initWithDictionary:(NSDictionary *)dic addOther:(NSDictionary *)ortherDic;
 
 +(NSArray *)hc_propertyInfos;
+
++(NSArray *)hc_tableFieldList;
 @end
 
 @interface NSArray(HCDBExtend)
 
 -(NSArray *)hc_objectAlsoIn:(NSArray *)array;
+-(NSArray *)hc_objectWithOut:(NSArray *)array;
 -(NSArray*)hc_enumerateObjectsForArrayUsingBlock:(_Nullable id(^_Nullable)(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop))usingBlock;
 @end
 @interface HCDBTableFlg : NSObject

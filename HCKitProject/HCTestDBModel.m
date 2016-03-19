@@ -16,7 +16,8 @@
     return self;
 }
 -(void)creatTestData{
-
+    self.astring = @"astring";
+    self.aint = 1234;
 }
 
 @end

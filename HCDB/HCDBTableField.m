@@ -19,42 +19,136 @@
 @implementation HCDBTableField
 @synthesize primaryKey = _primaryKey,autoIncrement=_autoIncrement;
 
+
++(NSArray *)tableFieldListWithPropertyInfos:(NSArray*)pinfos{
+    NSMutableArray *fieldList = [[NSMutableArray alloc] init];
+    [pinfos enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [fieldList addObject:[HCDBTableField tableFieldWithPropertyInfo:obj]];
+    }];
+    return [self filtTableFields:fieldList];
+}
+
++(NSArray *)filtTableFields:(NSArray*)fieldList{
+    NSMutableArray *noMarkFields = [NSMutableArray array];
+    NSArray *beMarkedFields = [fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        HCDBTableField *field = (HCDBTableField *)obj;
+        if ([field isBeMarked]) {
+            return field;
+        }else{
+            [noMarkFields addObject:field];
+            return nil;
+        }
+    }];
+    
+    NSArray *filtedList = [noMarkFields hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        HCDBTableField *field = (HCDBTableField *)obj;
+        for (HCDBTableField *markedfield in beMarkedFields) {
+            if ([markedfield.columnName isEqualToString:field.columnName]) {
+                if (![markedfield.dataType isEqualToString:@"IGNORE"]) {
+                    [markedfield changeDataType:field.dataType];
+                }
+                return nil;
+            }
+        }
+        return field;
+    }];
+    
+    NSArray *results =[[beMarkedFields arrayByAddingObjectsFromArray:filtedList] hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        HCDBTableField *field = (HCDBTableField *)obj;
+        if (field.dataType.length) {
+            if ([field.dataType isEqualToString:@"IGNORE"]) {
+                return nil;
+            }
+            return field;
+        }else{
+            NSAssert(NO, @"这个类型不被支持存入SQL，请用HC_IGNORE标记");
+            return nil;
+        }
+    }];
+    return results;
+}
+
+
+/**
+ *  NSString,char,还有数值类型可以被转换为tablefield。
+ */
 +(instancetype)tableFieldWithPropertyInfo:(HCPropertyInfo*)pi{
     return [[self alloc] initWithPropertyInfo:pi];
 }
 -(id)initWithPropertyInfo:(HCPropertyInfo *)pi{
+    NSDictionary *dataTypeEncodingDic = @{
+                          @"c":@"TEXT",
+                          @"i":@"INTEGER",
+                          @"s":@"INTEGER",
+                          @"l":@"INTEGER",
+                          @"q":@"INTEGER",
+                          @"C":@"TEXT",
+                          @"I":@"INTEGER",
+                          @"S":@"INTEGER",
+                          @"L":@"INTEGER",
+                          @"Q":@"INTEGER",
+                          @"f":@"REAL",
+                          @"d":@"REAL",
+                          @"B":@"BOOLEAN",
+                          };
     if (self == [super init]) {
-        if ([pi.propertyName hasPrefix:@HCDBFeature]) {
+        _propertyInfo = pi;
+        if ([self isBeMarked]) {
             _columnName = [pi.propertyName substringFromIndex:@HCDBFeature.length+1];
-            if (!pi.isPrimitive) {
-                _dataType = [[self class] hc_sqlDataTypeWithProtocolName:pi.protocolName];
+            _dataType = [[self class] hc_sqlDataTypeWithProtocolName:pi.protocolName];
+            if (_dataType.length) {
+                if ([_dataType rangeOfString:@"PRIMARY KEY"].length) {
+                    _primaryKey = YES;
+                }
+                if ([_dataType rangeOfString:@"AUTOINCREMENT"].length) {
+                    _autoIncrement = YES;
+                }
+                if (![_dataType isEqualToString:@"IGNORE"]) {
+                    _dataType = @"";
+                }
             }
+            
+
         }else{
             _columnName = pi.propertyName;
             if (!pi.isPrimitive) {
-                
+                if ([pi.typeClass isSubclassOfClass:[NSString class]]) {
+                    _dataType = @"TEXT";
+                }else if ([pi.typeClass isSubclassOfClass:[NSData class]]){
+                    _dataType = @"BLOB";
+                }
+                else{
+                    
+                }
             }else{
-                
+                _dataType = dataTypeEncodingDic[pi.typeEncoding];
             }
         }
-        
     }
     return self;
 }
--(BOOL)isPrimaryKey{
-    if (self.dataType.length) {
-        if ([self.dataType rangeOfString:@"PRIMARY KEY"].length) {
-            _primaryKey = YES;
-        }
+-(NSString *)fieldDataType{
+    NSString *fieldDataType = _dataType;
+    if (self.isPrimaryKey) {
+        fieldDataType = [@[fieldDataType,@"PRIMARY KEY"] componentsJoinedByString:@" "];
     }
+    if (self.isAutoIncrement) {
+        fieldDataType = [@[fieldDataType,@"AUTOINCREMENT"] componentsJoinedByString:@" "];
+    }
+    return fieldDataType;
+}
+-(void)changeDataType:(NSString *)dataType {
+    _dataType = dataType;
+}
+
+//是否是用属性标记过的
+-(BOOL)isBeMarked{
+    return [_propertyInfo.propertyName hasPrefix:@HCDBFeature];
+}
+-(BOOL)isPrimaryKey{
     return _primaryKey;
 }
 -(BOOL)isAutoIncrement{
-    if (self.dataType.length) {
-        if ([self.dataType rangeOfString:@"AUTOINCREMENT"].length) {
-            _autoIncrement = YES;
-        }
-    }
     return _autoIncrement;
 }
 
@@ -72,5 +166,11 @@
     }
     return sqlDataType;
 }
+
+-(NSString *)description{
+    return [NSString stringWithFormat:@"---------------------\ncoloumn name     = %@\ndata tyape       = %@\nis primarykey    = %@\nis autoIncrement = %@",self.columnName,self.dataType,self.isPrimaryKey?@"YES":@"NO",self.isAutoIncrement?@"YES":@"NO"];
+    
+}
+
 
 @end

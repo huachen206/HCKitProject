@@ -12,7 +12,8 @@
 #import "NSObject+HCDBExtend.h"
 #import "HCPropertyInfo.h"
 #import "HCMethodInfo.h"
-
+#import "HCDBTableField.h"
 
 @interface HCDBModel : NSObject
++(NSArray*)tableFieldList;
 @end

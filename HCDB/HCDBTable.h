@@ -20,8 +20,9 @@
 @property (nonatomic,weak) HCDAO *DAO;
 @property (nonatomic,strong) Class tableModelClass;
 
-@property (nonatomic,strong) NSMutableDictionary *columns;/**< key:列名同属性名；value 属性名*/
+//@property (nonatomic,strong) NSMutableDictionary *columns;/**< key:列名同属性名；value 属性名*/
 
+@property (nonatomic,strong) NSArray *fieldList;
 
 /**
  *  eg:

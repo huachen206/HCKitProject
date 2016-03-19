@@ -79,6 +79,11 @@
  */
 @property (readonly, nonatomic) Class typeClass;
 /**
+ *  The typeEncoding is the encode of typeClass;
+ */
+@property (readonly, nonatomic) NSString *typeEncoding;
+
+/**
  * The protocol name of the property if applicable.
  * If the property haven't protocal ,this is Nil.
  */

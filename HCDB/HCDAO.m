@@ -22,17 +22,15 @@
     if (self = [super init]) {
         BOOL flag =[self.baseDBHelper open];
         PADBQuickCheck(flag);
-        NSDictionary *nameAndClassNameDic = [[self class] hc_propertyNameAndClassName];
-        for (NSString *propertyName in nameAndClassNameDic.allKeys) {
-            NSString *propertyClassName = [nameAndClassNameDic objectForKey:propertyName];
-            if (NSClassFromString(propertyClassName)&&[NSClassFromString(propertyClassName) isSubclassOfClass:[HCDBTable class]]) {
-                HCDBTable *table = [NSClassFromString(propertyClassName) table];
+        for (HCPropertyInfo *info in [[self class] hc_propertyInfos]) {
+            if ([info.typeClass isSubclassOfClass:[HCDBTable class]]) {
+                HCDBTable *table = [info.typeClass table];
                 table.DAO = self;
                 [table creatOrUpgradeTable];
-                [self setValue:table forKey:propertyName];
+                [self setValue:table forKey:info.propertyName];
             }
-
         }
+        
     }
     return self;
 }
