@@ -30,10 +30,11 @@
     NSArray *fList = [HCTestDBModel tableFieldList];
     
     
-    [[HCTestDAO dao].testTable insertOrReplaceWithModel:db isIgnorePrimaryKey:YES];
+    [[HCTestDAO dao].testTable insertOrReplaceWithModel:db autoPrimaryKey:YES];
+    
 //
     NSArray *models = [[HCTestDAO dao].testTable selectAll];
-    
+    NSLog(@"%@",models);
     
     
 //    NSLog(@"%@",[[HCTestDAO dao].testTable description]);

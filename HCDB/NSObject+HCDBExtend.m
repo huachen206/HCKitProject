@@ -152,52 +152,6 @@
     return props;
 }
 
-+(NSDictionary *)hc_columnAndSqlDataType{
-    NSArray *cc = [[self hc_propertyInfos] hc_enumerateObjectsForArrayUsingBlock:^id(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        HCPropertyInfo *pi = (HCPropertyInfo *)obj;
-        HCDBTableField *tableField = [HCDBTableField tableFieldWithPropertyInfo:pi];
-        return tableField;
-    }];
-    
-    NSMutableDictionary *colunms = [NSMutableDictionary dictionary];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-    NSScanner* scanner = nil;
-    
-    for (i = 0; i<outCount; i++)
-    {
-        objc_property_t property = properties[i];
-        const char* char_f =property_getName(property);
-        NSString *propertyName = [NSString stringWithUTF8String:char_f];
-        if ([propertyName hasSuffix:@"_HCTABLECOL"]) {
-            //get property attributes
-            const char *attrs = property_getAttributes(property);
-            NSString* propertyAttributes = @(attrs);
-            NSLog(@"%@",propertyAttributes);
-            scanner = [NSScanner scannerWithString: propertyAttributes];
-            [scanner scanUpToString:@"T" intoString: nil];
-            [scanner scanString:@"T" intoString:nil];
-            NSString* propertyType = nil;
-            
-            if ([scanner scanString:@"@\"" intoString: &propertyType]) {
-                [scanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\"<"]
-                                        intoString:&propertyType];
-                
-                while ([scanner scanString:@"<" intoString:NULL]) {
-                    NSString* protocolName = nil;
-                    [scanner scanUpToString:@">" intoString: &protocolName];
-                    NSString *dataType = [self hc_sqlDataTypeWithProtocolName:protocolName];
-                    propertyName = [propertyName substringToIndex:[propertyName rangeOfString:@"_HCTABLECOL"].location];
-                    [colunms setValue:dataType forKey:propertyName];
-                    NSLog(@"dataType:%@----propertyName:%@",dataType,propertyName);
-                    [scanner scanString:@">" intoString:NULL];
-                }
-                NSLog(@"propertyType:%@",propertyType);
-            }
-        }
-    }
-    return colunms;
-}
 /**
  *  从构造的协议名称中获取sql数据类型
  *
@@ -281,7 +235,7 @@
 //    
 //}
 +(NSArray *)hc_tableFieldList{
-    return [HCDBTableField tableFieldListWithPropertyInfos:[self hc_propertyInfos]];
+    return [HCDBTableField tableFieldListWithClass:[self class]];
 }
 
 

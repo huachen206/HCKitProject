@@ -11,52 +11,27 @@
 
 @implementation HCDBModel
 +(NSArray*)tableFieldList{
-    return [HCDBTableField tableFieldListWithPropertyInfos:[self hc_propertyInfos]];
+    return [HCDBTableField tableFieldListWithClass:[self class]];
 }
 
 -(id)initWithFMResultSet:(FMResultSet *)result tableFields:(NSArray*)tableFields{
     if (self == [super init]) {
         [tableFields enumerateObjectsUsingBlock:^(HCDBTableField *tableField, NSUInteger idx, BOOL * _Nonnull stop) {
-//            if (tableField.dataType)) {
-//                <#statements#>
-//            }
-            
+            if ([tableField.dataType isEqualToString:@"INTEGER"]) {
+                [self setValue:@([result longLongIntForColumn:tableField.columnName]) forKey:tableField.columnName];
+            }else if ([tableField.dataType isEqualToString:@"TEXT"]) {
+                [self setValue:[result stringForColumn:tableField.columnName] forKey:tableField.columnName];
+            }else if ([tableField.dataType isEqualToString:@"BOOLEAN"]) {
+                [self setValue:@([result boolForColumn:tableField.columnName]) forKey:tableField.columnName];
+            }else if ([tableField.dataType isEqualToString:@"REAL"]) {
+                [self setValue:@([result doubleForColumn:tableField.columnName]) forKey:tableField.columnName];
+            }else if ([tableField.dataType isEqualToString:@"BLOB"]){
+                [self setValue:[result dataForColumn:tableField.columnName] forKey:tableField.columnName];
+            }else{
+                NSAssert(NO, @"还有没考虑到的吗？");
+            }
+         
         }];
-    }
-    return self;
-}
--(id)hc_initWithFMResultSet:(FMResultSet *)result columns:(NSArray *)columns{
-    if (self == [self init]) {
-        for (NSString *columnName in columns) {
-            HCDBTableField *tableField = [[self class] hc_propertyInfos];
-        }
-        NSDictionary *tmpDic = [[self class] hc_propertyNameAndClassName];
-        NSArray *propertyNames;
-        if (columns) {
-            propertyNames =[tmpDic.allKeys hc_objectAlsoIn:columns];
-        }else{
-            propertyNames = tmpDic.allKeys;
-        }
-        for (NSString *propertyName in propertyNames) {
-            NSString *className = [tmpDic objectForKey:propertyName];
-            if ([className isEqualToString:NSStringFromClass([NSString class])]) {
-                [self setValue:[result stringForColumn:propertyName] forKey:propertyName];
-            }else if ([className isEqualToString:@"NSInteger"]){
-                [self setValue:@([result longForColumn:propertyName]) forKey:propertyName];
-            }else if ([className isEqualToString:@"double"]||[className isEqualToString:@"float"]){
-                [self setValue:@([result doubleForColumn:propertyName]) forKey:propertyName];
-            }else if ([className isEqualToString:@"int"]){
-                [self setValue:@([result intForColumn:propertyName]) forKey:propertyName];
-            }else if ([className isEqualToString:@"bool"]){
-                [self setValue:@([result boolForColumn:propertyName]) forKey:propertyName];
-            }else if ([className isEqualToString:@"char"]){
-                [self setValue:@([result intForColumn:propertyName]) forKey:propertyName];
-            }
-            else{
-                NSAssert(NO, @"添加更多的类型吧");
-            }
-            //TODO:判断更多的类型
-        }
     }
     return self;
 }

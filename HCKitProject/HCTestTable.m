@@ -8,11 +8,6 @@
 
 #import "HCTestTable.h"
 @implementation HCTestTable
-//+(instancetype)table{
-//    HCTestTable *table = [[self alloc] init];
-//    table.columns = [NSMutableDictionary dictionaryWithDictionary:[HCTestDBModel hc_columnAndSqlDataType]];
-//    return table;
-//}
 
 -(Class)tableModelClass{
     return [HCTestDBModel class];

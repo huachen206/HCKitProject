@@ -9,29 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "NSObject+HCDBExtend.h"
 #import "HCDAO.h"
+#import "HCDBModel.h"
 
 @class HCDAO;
 @interface HCDBTable : NSObject /**< 表信息*/
 @property (nonatomic,strong) NSString *tableName;
-//@property (nonatomic,strong) NSMutableArray *dataTypeNames;/**< 数据类型*/
-//@property (nonatomic,strong) NSMutableArray *columnNames;/**< 列名*/
 @property (nonatomic,strong) FMDatabaseQueue *fmDbQueue;
 @property (nonatomic,strong) HCDBHelper *baseDBHelper;
 @property (nonatomic,weak) HCDAO *DAO;
 @property (nonatomic,strong) Class tableModelClass;
 
-//@property (nonatomic,strong) NSMutableDictionary *columns;/**< key:列名同属性名；value 属性名*/
 
 @property (nonatomic,strong) NSArray *fieldList;
 
 /**
  *  eg:
- *  +(instancetype)table{
- *      HCTestTable *table = [[self alloc] init];
- *      [table adddataTypeName:@"INTEGER PRIMARY KEY AUTOINCREMENT" columnName:@"testId"];
- *      [table adddataTypeName:@"VARCHAR(20)" columnName:@"name"];
- *      return table;
- *   }
  *
  *  -(Class)tableModelClass{
  *      return [HCTestDBModel class];
@@ -40,28 +32,39 @@
  */
 +(instancetype)table;
 /**
- *
- *
- *  @param dataTypeNames   数据类型
- *  @param columnNames 列名
- *
- *  @return self
+ *  如果没有表则建表。如果检测到数据模型中的字段名多于现有表，则更新表；若少于，则报错。
  */
--(id)initWithDataTypeNames:(NSArray *)dataTypeNames columnNames:(NSArray *)columnNames;
-
--(void)addDataTypeName:(NSString *)dataTypeName columnName:(NSString *)columnName;
--(NSString*)primaryColumnName;
-
-
 -(BOOL)creatOrUpgradeTable;
+/**
+ *  取出表中所有数据
+ */
 -(NSArray *)selectAll;
+/**
+ *  @return 返回表中记录的数据个数
+ */
 -(NSInteger)countOfRecord;
--(BOOL)insertWithModel:(NSObject*)baseModel;
--(BOOL)insertWithModel:(NSObject*)baseModel isIgnorePrimaryKey:(BOOL)isIgnore;/**< 主键自增时用此方法*/
--(BOOL)insertOrReplaceWithModel:(NSObject *)baseModel;
--(BOOL)insertOrReplaceWithModel:(NSObject *)baseModel isIgnorePrimaryKey:(BOOL)isIgnore;/**< 主键自增时用此方法*/
--(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList;
--(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList  isIgnorePrimaryKey:(BOOL)isIgnore;/**< 主键自增时用此方法*/
+/**
+ *  根据实际MODEL删除数据
+ */
 -(BOOL)deleteWithModel:(id)model;
+
+/**
+ *  插入或替换数据
+ *  @param isAuto  YES：主键自增，主键值不会插入；NO：主键有值，会根据逐渐插入或替换
+ *  @return 是否成功
+ */
+-(BOOL)insertOrReplaceWithModel:(HCDBModel *)DBModel autoPrimaryKey:(BOOL)isAuto;
+/**
+ *  插入或替换数据
+ *  @param isAuto  YES：主键自增，主键值不会插入；NO：主键有值，会根据逐渐插入或替换
+ *  @return 是否成功
+ */
+-(BOOL)insertWithModel:(HCDBModel*)DBModel autoPrimaryKey:(BOOL)isAuto;
+/**
+ *  插入或替换数据
+ *  @param isAuto  YES：主键自增，主键值不会插入；NO：主键有值，会根据逐渐插入或替换
+ *  @return 是否成功
+ */
+-(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList autoPrimaryKey:(BOOL)isAuto;
 
 @end

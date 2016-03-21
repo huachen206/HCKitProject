@@ -7,10 +7,10 @@
 //
 
 #import "HCDBTable.h"
+#import "HCDBModel.h"
 
 @interface HCDBTable()
-@property (nonatomic,strong) NSMutableArray *elements;
-@property (nonatomic,strong) NSArray *tableColumns;
+@property (nonatomic,strong) NSArray *tableColumnNameList;
 @end
 
 @implementation HCDBTable
@@ -18,7 +18,6 @@
     HCDBTable *table = [[self alloc] init];
     table.fieldList = [[table tableModelClass] hc_tableFieldList];
     
-//    table.columns = [NSMutableDictionary dictionaryWithDictionary:[[table tableModelClass] hc_columnAndSqlDataType]];
     return table;
 }
 
@@ -32,31 +31,14 @@
     return nil;
 }
 
--(id)init{
-    if (self = [super init]) {
-//        self.columns = [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
--(id)initWithDataTypeNames:(NSArray *)dataTypeNames columnNames:(NSArray *)columnNames{
-    if (self = [super init]) {
-//        self.columns = [[NSMutableDictionary alloc] initWithObjects:dataTypeNames forKeys:columnNames];
 
-    }
-    return self;
-}
--(void)addDataTypeName:(NSString *)dataTypeName columnName:(NSString *)columnName{
-//    [self.columns setValue:dataTypeName forKey:columnName];
-}
-
--(NSArray *)tableColumns{
-    if (!_tableColumns) {
-        _tableColumns = [self.fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            HCDBTableField *field = (HCDBTableField *)obj;
+-(NSArray *)tableColumnNameList{
+    if (!_tableColumnNameList) {
+        _tableColumnNameList = [self.fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(HCDBTableField *field, NSUInteger idx, BOOL * _Nonnull stop) {
             return field.columnName;
         }];
     }
-    return _tableColumns;
+    return _tableColumnNameList;
 }
 -(HCDBTableField *)tableFieldForColumn:(NSString *)columnName{
     __block HCDBTableField *tableField = nil;
@@ -67,16 +49,6 @@
         }
     }];
     return tableField;
-}
--(NSMutableArray *)elements{
-    if (!_elements) {
-        _elements = [[NSMutableArray alloc] init];
-        for (HCDBTableField *field in self.fieldList) {
-            NSString *tmpStr = [NSString stringWithFormat:@"%@ %@",field.columnName,field.dataType];
-            [self.elements addObject:tmpStr];
-        }
-    }
-    return _elements;
 }
 
 -(HCDBTableField *)primaryTableField{
@@ -90,60 +62,51 @@
     return tableField;
 
 }
-//-(NSString*)primaryColumnName{
-//    for (NSString *columnName in self.columns.allKeys) {
-//        NSString *dataTypeName = [self.columns objectForKey:columnName];
-//        if ([dataTypeName rangeOfString:@"PRIMARY KEY"].length) {
-//            return columnName;
-//        }
-//    }
-//    return nil;
-//}
 
 #pragma mark creat upgrade
 -(BOOL)creatOrUpgradeTable{
     __block BOOL flag = NO;
-    NSString *creatSql = [self creatString];
+    NSString *creatTableSqlStr = [self sqlStrForCreatTable];
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
-        flag = [db executeUpdate:creatSql];
+        flag = [db executeUpdate:creatTableSqlStr];
     }];
     PADBQuickCheck(flag);
     if (flag) {
         flag = [self upgradeTable];
     }
     return flag;
-    
 }
 -(BOOL)upgradeTable{
     __block BOOL flag = YES;
     
-    NSArray *adds = [[self tableColumns] hc_objectWithOut:[self getTableFields]];
+    NSArray *adds = [[self tableColumnNameList] hc_objectWithOut:[self tableFieldsFromDB]];
     
-//    NSArray *adds = [self objectIn:self.columns.allKeys withOut:[self getTableFields]];
-    NSArray *drops = [self objectIn:[self getTableFields] withOut:[self tableColumns]];
+    NSArray *drops = [[self tableFieldsFromDB] hc_objectWithOut:[self tableColumnNameList]];
     if (!adds.count) {
         return YES;
     }
     [self.fmDbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         for (NSString *column in adds) {
             HCDBTableField *field = [self tableFieldForColumn:column];
-            
-//            NSString *dataTypeName = self.columns[column];
             NSString *addSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ %@",[self tableName],field.columnName,field.dataType];
             flag = flag&&[db executeUpdate:addSql];
         }
-        
         if (drops.count>0) {
             DebugAssert(NO, @"少定义字段");
         }
-        
         PADBTransactionSQLCheck(flag,rollback);
         
     }];
-    
     return flag;
     
 }
+-(NSString *)sqlStrForCreatTable{
+    NSArray *tmps = [self.fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(HCDBTableField *field, NSUInteger idx, BOOL * _Nonnull stop) {
+        return [NSString stringWithFormat:@"%@ %@",field.columnName,field.fieldDataType];
+    }];
+    return [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@)",self.tableName,[tmps componentsJoinedByString:@","]];
+}
+
 #pragma mark read
 -(NSArray *)selectAll{
     __block NSMutableArray *models = [NSMutableArray array];
@@ -151,9 +114,11 @@
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@",self.tableName]];
         while ([rs next]) {
             if (self.tableModelClass) {
-                NSObject *model = [[self.tableModelClass alloc] hc_initWithFMResultSet:rs columns:[self tableColumns]];
-
-                [models addObject:model];
+                NSObject *model = nil;
+                if ([self.tableModelClass isSubclassOfClass:[HCDBModel class]]) {
+                    model = [[self.tableModelClass alloc] initWithFMResultSet:rs tableFields:self.fieldList];
+                    [models addObject:model];
+                }
             }
         }
         [rs close];
@@ -190,56 +155,36 @@
 }
 
 #pragma mark insert or replace
--(NSDictionary *)valueAndColumnWithModel:(NSObject *)baseModel{
-    NSDictionary *dic = [baseModel hc_propertyNameAndValue];
-    
-    NSArray *columnNames =[self tableColumns];
-    
-    NSArray *bothNameList = [dic.allKeys hc_objectAlsoIn:columnNames];
-    NSMutableDictionary *mdic = [NSMutableDictionary dictionary];
-    for (NSString *columnName in bothNameList) {
-        [mdic setObject:[dic objectForKey:columnName] forKey:columnName];
-    }
+-(NSDictionary *)valueAndColumnListWithModel:(HCDBModel*)dbModel containPrimary:(BOOL)containPrimary{
+    NSMutableDictionary *mdic = [[NSMutableDictionary alloc] init];
+    [self.fieldList enumerateObjectsUsingBlock:^(HCDBTableField* field, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (field.isPrimaryKey && !containPrimary) {
+        }else{
+            NSString *key = field.columnName;
+            id value =[dbModel valueForKey:key];
+            if (value) {
+                [mdic setObject:value forKey:key];
+            }
+        }
+    }];
     return mdic;
 }
--(NSDictionary *)removePrimaryKey:(NSDictionary *)mdic{
-    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:mdic];
-    for (NSString *columnName in mdic.allKeys) {
-        HCDBTableField *field = [self tableFieldForColumn:columnName];
-        if (field.isPrimaryKey) {
-            [dic removeObjectForKey:columnName];
-            return dic;
-        }
-    }
-    return dic;
+-(NSString *)sqlWithAction:(NSString *)actionStr{
+    return [NSString stringWithFormat:@"%@ %@ (%@) values (:%@)",actionStr,self.tableName,[self.tableColumnNameList componentsJoinedByString:@","],[self.tableColumnNameList componentsJoinedByString:@",:"]];
 }
 
--(BOOL)insertWithModel:(NSObject*)baseModel{
-    return [self insertWithModel:baseModel isIgnorePrimaryKey:NO];
-}
--(BOOL)insertWithModel:(NSObject*)baseModel isIgnorePrimaryKey:(BOOL)isIgnore{
+-(BOOL)insertWithModel:(HCDBModel*)DBModel autoPrimaryKey:(BOOL)isAuto{
     __block BOOL flag;
-    NSDictionary *mdic;
-    if (isIgnore) {
-        mdic = [self removePrimaryKey:[self valueAndColumnWithModel:baseModel]];
-    }else{
-        mdic = [self valueAndColumnWithModel:baseModel];
-    }
+    NSDictionary *mdic = [self valueAndColumnListWithModel:DBModel containPrimary:!isAuto];
     NSString *sql = [self createInsertSqlByDictionary:mdic tablename:self.tableName];
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
         flag = [db executeUpdate:sql withParameterDictionary:mdic];
     }];
     return flag;
 }
-
--(BOOL)insertOrReplaceWithModel:(NSObject *)baseModel isIgnorePrimaryKey:(BOOL)isIgnore{
+-(BOOL)insertOrReplaceWithModel:(HCDBModel *)DBModel autoPrimaryKey:(BOOL)isAuto{
     __block BOOL flag;
-    NSDictionary *mdic;
-    if (isIgnore) {
-        mdic = [self removePrimaryKey:[self valueAndColumnWithModel:baseModel]];
-    }else{
-        mdic = [self valueAndColumnWithModel:baseModel];
-    }
+    NSDictionary *mdic = [self valueAndColumnListWithModel:DBModel containPrimary:!isAuto];
     NSString *sql = [self createInsertOrReplaceSqlByDictionary:mdic tablename:self.tableName];
     
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
@@ -247,23 +192,12 @@
     }];
     return flag;
 }
--(BOOL)insertOrReplaceWithModel:(NSObject *)baseModel{
-    return [self insertOrReplaceWithModel:baseModel isIgnorePrimaryKey:NO];
-}
 
--(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList{
-    return [self insertOrReplaceWithModelList:modelList isIgnorePrimaryKey:NO];
-}
--(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList  isIgnorePrimaryKey:(BOOL)isIgnore{
+-(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList autoPrimaryKey:(BOOL)isAuto{
     __block BOOL flag = YES;
     [self.fmDbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        for (NSObject *model in modelList) {
-            NSDictionary *mdic;
-            if (isIgnore) {
-                mdic = [self removePrimaryKey:[self valueAndColumnWithModel:model]];
-            }else{
-                mdic = [self valueAndColumnWithModel:model];
-            }
+        for (HCDBModel *DBModel in modelList) {
+            NSDictionary *mdic = [self valueAndColumnListWithModel:DBModel containPrimary:!isAuto];
             NSString *sql = [self createInsertOrReplaceSqlByDictionary:mdic tablename:self.tableName];
             flag = flag&&[db executeUpdate:sql withParameterDictionary:mdic];
         }
@@ -275,18 +209,19 @@
 #pragma mark delete
 -(BOOL)deleteWithModel:(id)model{
     //以primarykey删除
-    if (!self.primaryColumnName) {
+    if (![self primaryTableField]) {
         NSAssert(NO, @"没有设置主键，无法删除");
         return NO;
     }
-    id value = [model valueForKey:self.primaryColumnName];
+    NSString *primaryKey = [self primaryTableField].columnName;
+    id value = [model valueForKey:primaryKey];
     if (!value) {
         NSAssert(NO, @"主键无值，无法删除");
         return NO;
     }
     __block BOOL flag = NO;
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
-        NSString *sqlstr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = %@",[self tableName],self.primaryColumnName,value];
+        NSString *sqlstr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = %@",[self tableName],primaryKey,value];
         flag = [db executeUpdate:sqlstr];
         PADBQuickCheck(flag);
     }];
@@ -295,20 +230,8 @@
 }
 
 
--(NSArray *)objectIn:(NSArray *)array1 andIn:(NSArray *)array2{
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"(SELF IN %@)",array2];
-    NSArray * filter = [array1 filteredArrayUsingPredicate:filterPredicate];
-    return filter;
-}
 
-
--(NSArray *)objectIn:(NSArray *)array1 withOut:(NSArray *)array2{
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",array2];
-    NSArray * filter = [array1 filteredArrayUsingPredicate:filterPredicate];
-    return filter;
-}
-
--(NSArray *)getTableFields{
+-(NSArray *)tableFieldsFromDB{
     NSString *sql = [NSString stringWithFormat:@"select * from %@ limit 1",self.tableName];
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -323,14 +246,6 @@
 }
 
 
-
-
--(NSString *)creatString{
-    NSString *creatTable = @"CREATE TABLE IF NOT EXISTS %@ ()";
-    creatTable =[NSString stringWithFormat:creatTable,self.tableName];
-    
-    return [creatTable stringByReplacingOccurrencesOfString:@"()" withString:[NSString stringWithFormat:@"(%@)",[self holeElementString]]];
-}
 -(NSString *)createInsertSqlByDictionary:(NSDictionary *)dict tablename:(NSString *)table{
     return [self createSqlStrWithHeadString:@"insert into" Dictionary:dict tablename:table];
 }
@@ -338,42 +253,11 @@
 -(NSString *)createInsertOrReplaceSqlByDictionary:(NSDictionary *)dict tablename:(NSString *)table{
     return [self createSqlStrWithHeadString:@"INSERT OR REPLACE INTO" Dictionary:dict tablename:table];
 }
+
 -(NSString *)createSqlStrWithHeadString:(NSString *)headString Dictionary:(NSDictionary *)dict tablename:(NSString *)table{
-    NSMutableString *sql = [[NSMutableString alloc] init];
-    [sql appendFormat:@"%@ %@ (",headString,table] ;
-    NSInteger i = 0;
-    for (NSString *key in dict.allKeys) {
-        if (i>0) {
-            [sql appendString:@","];
-        }
-        [sql appendFormat:@"%@",key];
-        i++;
-    }
-    [sql appendString:@") values ("];
-    i = 0;
-    for (NSString *key in dict.allKeys) {
-        if (i>0) {
-            [sql appendString:@","];
-        }
-        [sql appendFormat:@":%@",key];
-        i++;
-    }
-    [sql appendString:@")"];
-    return sql;
-
+    return [NSString stringWithFormat:@"%@ %@ (%@) values (:%@)",headString,table,[dict.allKeys componentsJoinedByString:@","],[dict.allKeys componentsJoinedByString:@",:"]];
 }
 
--(NSString *)holeElementString{
-    NSString *holeElementString = @"";
-    for (NSString *elStr in self.elements) {
-        if (holeElementString.length == 0) {
-            holeElementString = elStr;
-        }else{
-            holeElementString = [[holeElementString stringByAppendingString:@","] stringByAppendingString:elStr];
-        }
-    }
-    return holeElementString;
-}
 -(HCDBHelper *)baseDBHelper{
     return self.DAO.baseDBHelper;
 }
@@ -382,11 +266,6 @@
     return self.DAO.fmDbQueue;
 }
 -(NSString *)description{
-    NSMutableString *text = [[NSMutableString alloc] init];
-    for (NSString *key in [self tableColumns]) {
-        [text appendString:key];
-        [text appendString:@","];
-    }
-    return [NSString stringWithFormat:@"\nTable description----\ntableName:%@\ncolumns:%@\n",self.tableName,text];
+    return [NSString stringWithFormat:@"-------------------\nTable Name:%@\nfield list:%@\nrecord count:%ld\n-------------------",self.tableName,[[self tableColumnNameList] componentsJoinedByString:@","],[self countOfRecord]];
 }
 @end

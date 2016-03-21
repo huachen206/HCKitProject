@@ -18,6 +18,9 @@
 -(void)creatTestData{
     self.astring = @"astring";
     self.aint = 1234;
+    self.auchar = [@"achar" characterAtIndex:0];
+    self.achar = 98;
+    
 }
 
 @end

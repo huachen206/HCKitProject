@@ -16,4 +16,5 @@
 
 @interface HCDBModel : NSObject
 +(NSArray*)tableFieldList;
+-(id)initWithFMResultSet:(FMResultSet *)result tableFields:(NSArray*)tableFields;
 @end

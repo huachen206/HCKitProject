@@ -17,8 +17,7 @@
 @property (nonatomic,strong,readonly) NSString *fieldDataType;
 @property (nonatomic,assign,readonly,getter=isPrimaryKey) BOOL primaryKey;/**<是否为主键*/
 @property (nonatomic,assign,readonly,getter=isAutoIncrement) BOOL autoIncrement;/**<是否自增*/
-+(instancetype)tableFieldWithPropertyInfo:(HCPropertyInfo*)pi;
-+(NSArray *)tableFieldListWithPropertyInfos:(NSArray*)pinfos;
++(NSArray *)tableFieldListWithClass:(Class)aclass;
 
 -(void)changeDataType:(NSString *)dataType;
 @end

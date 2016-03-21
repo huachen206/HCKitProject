@@ -9,6 +9,7 @@
 #import "HCDBTableField.h"
 #import "HCPropertyInfo.h"
 #import "NSObject+HCDBExtend.h"
+#import "HCDBModel.h"
 
 @interface HCDBTableField(){
     HCPropertyInfo *_propertyInfo;
@@ -20,6 +21,9 @@
 @synthesize primaryKey = _primaryKey,autoIncrement=_autoIncrement;
 
 
++(NSArray *)tableFieldListWithClass:(Class)aclass{
+    return [self tableFieldListWithPropertyInfos:[aclass hc_propertyInfos]];
+}
 +(NSArray *)tableFieldListWithPropertyInfos:(NSArray*)pinfos{
     NSMutableArray *fieldList = [[NSMutableArray alloc] init];
     [pinfos enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -77,12 +81,12 @@
 }
 -(id)initWithPropertyInfo:(HCPropertyInfo *)pi{
     NSDictionary *dataTypeEncodingDic = @{
-                          @"c":@"TEXT",
+                          @"c":@"INTEGER",
                           @"i":@"INTEGER",
                           @"s":@"INTEGER",
                           @"l":@"INTEGER",
                           @"q":@"INTEGER",
-                          @"C":@"TEXT",
+                          @"C":@"INTEGER",
                           @"I":@"INTEGER",
                           @"S":@"INTEGER",
                           @"L":@"INTEGER",

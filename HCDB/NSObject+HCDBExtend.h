@@ -60,15 +60,9 @@ _CreatTableFlgPropertayWithProtocol(propertyName,<PRIMARY_KEY_AUTOINCREMENT>)
 
 @class FMResultSet;
 @interface NSObject (HCDBExtend)
-+ (NSArray *)hc_propertyNameList;/**< 类的属性名称列表*/
++(NSArray *)hc_propertyNameList;/**< 类的属性名称列表*/
 +(NSDictionary *)hc_propertyNameAndClassName;/**< 类的属性名称+类型名称 字典*/
-/**
- *  取sql数据类型，建表数据需要
- *
- *  @return key：字段名，value：sql数据类型
- */
-+(NSDictionary *)hc_columnAndSqlDataType;
-- (NSDictionary *)hc_propertyNameAndValue;/**< 实例的属性名称+值 字典*/
+-(NSDictionary *)hc_propertyNameAndValue;/**< 实例的属性名称+值 字典*/
 -(id)hc_initWithDictionary:(NSDictionary *)dic;/**< 配对数据源字典中的键与model中的属性名，进行赋值*/
 -(id)hc_initWithFMResultSet:(FMResultSet *)result;/**< 从数据库的查询结果，初始化model*/
 -(id)hc_initWithFMResultSet:(FMResultSet *)result columns:(NSArray *)columns;/**< 从数据库的查询结果，初始化model*/
