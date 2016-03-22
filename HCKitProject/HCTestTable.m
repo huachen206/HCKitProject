@@ -10,7 +10,7 @@
 @implementation HCTestTable
 
 -(Class)tableModelClass{
-    return [HCTestDBModel class];
+    return [HCTestDBModel_depth2 class];
 }
 
 @end

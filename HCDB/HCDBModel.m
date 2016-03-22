@@ -36,6 +36,10 @@
     return self;
 }
 
++(NSInteger)depth {
+    return 1;
+}
+
 @end
 @implementation HCDBTableFlg
 

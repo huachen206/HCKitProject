@@ -18,9 +18,13 @@
 -(void)creatTestData{
     self.astring = @"astring";
     self.aint = 1234;
-    self.auchar = [@"achar" characterAtIndex:0];
     self.achar = 98;
-    
+    self.abool = YES;
+    self.ashort = 4;
+    self.along = 8;
+    self.afloat = 10.5;
+    self.adouble = 9.7;
+    self.adata = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HCEncoding" ofType:@"plist"]];
 }
 
 @end

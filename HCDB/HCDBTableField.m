@@ -23,7 +23,7 @@
 
 
 +(NSArray *)tableFieldListWithClass:(Class)aclass{
-    return [self tableFieldListWithPropertyInfos:[aclass hc_propertyInfos]];
+    return [self tableFieldListWithPropertyInfos:[aclass hc_propertyInfosWithdepth:[aclass depth]]];
 }
 +(NSArray *)tableFieldListWithPropertyInfos:(NSArray*)pinfos{
     NSMutableArray *fieldList = [[NSMutableArray alloc] init];

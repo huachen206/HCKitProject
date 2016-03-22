@@ -91,6 +91,9 @@
             NSString *addSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ %@",[self tableName],field.columnName,field.dataType];
             flag = flag&&[db executeUpdate:addSql];
         }
+        if (flag) {
+            DebugLog(@"add COLUMN SUCCESS:%@",adds);
+        }
         if (drops.count>0) {
             DebugAssert(NO, @"少定义字段");
         }

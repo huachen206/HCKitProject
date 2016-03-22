@@ -9,6 +9,7 @@
 #import "HCDBViewController.h"
 #import "HCTestDAO.h"
 #import "HCDBModel.h"
+#import "HCTestDBModel_depth2.h"
 
 @interface HCDBViewController ()
 
@@ -20,14 +21,14 @@
     [super viewDidLoad];
     self.title = @"DB";
     
-    HCTestDBModel *db = [[HCTestDBModel alloc] init];
+    HCTestDBModel_depth2 *db = [[HCTestDBModel_depth2 alloc] init];
     [db creatTestData];
     
-    for (HCPropertyInfo *pi in [[db class] hc_propertyInfos]) {
+    for (HCPropertyInfo *pi in [[db class] hc_propertyInfosWithdepth:2]) {
         NSLog(@"%@",pi);
     }
-    NSArray *plist = [HCTestDBModel hc_propertyNameList];
-    NSArray *fList = [HCTestDBModel tableFieldList];
+//    NSArray *plist = [HCTestDBModel hc_propertyNameList];
+//    NSArray *fList = [HCTestDBModel tableFieldList];
     
     
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db autoPrimaryKey:YES];

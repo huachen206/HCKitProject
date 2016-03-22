@@ -17,12 +17,35 @@
 
 @end
 @interface NSObject (HCRuntime)
-+(NSArray *)hc_propertyNameList;/**< 类的属性名称列表*/
--(id)hc_initWithDictionary:(NSDictionary *)dic;/**< 配对数据源字典中的键与model中的属性名，进行赋值*/
-+(NSArray *)hc_modelListWithDicArray:(NSArray *)array;/**< 批量生成model*/
+/**
+ *  runtime取类的属性
+ *
+ *  @return 数组，元素为HCPropertyInfo类型
+ */
++(NSArray <HCPropertyInfo *>*)hc_propertyInfos;
++(NSArray <HCPropertyInfo *>*)hc_propertyInfosWithdepth:(NSInteger)depth;
+/**
+ *  runtime取类的属性名称
+ *
+ *  @return 数组，元素为NSString类型
+ */
++(NSArray *)hc_propertyNameList;
++ (NSArray *)hc_propertyNameListWithdepth:(NSInteger)depth;
 
+/**
+ *  配对数据源字典中的键与model中的属性名，进行赋值
+ *
+ *  @param dic 键与值，与属性对应
+ *
+ *  @return 本类的实例
+ */
+-(id)hc_initWithDictionary:(NSDictionary *)dic;
 -(id)hc_initWithDictionary:(NSDictionary *)dic addOther:(NSDictionary *)ortherDic;
+/**
+ *  上面一个方法的批量方法
+ */
++(NSArray *)hc_modelListWithDicArray:(NSArray *)array;
 
-+(NSArray *)hc_propertyInfos;
+
 
 @end

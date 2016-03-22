@@ -7,7 +7,7 @@
 //
 
 #import "HCDBTable.h"
-#import "HCTestDBModel.h"
+#import "HCTestDBModel_depth2.h"
 
 @interface HCTestTable : HCDBTable
 
