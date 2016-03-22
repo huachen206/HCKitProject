@@ -17,6 +17,7 @@
 }
 
 @end
+
 @implementation HCDBTableField
 @synthesize primaryKey = _primaryKey,autoIncrement=_autoIncrement;
 
@@ -79,22 +80,25 @@
 +(instancetype)tableFieldWithPropertyInfo:(HCPropertyInfo*)pi{
     return [[self alloc] initWithPropertyInfo:pi];
 }
+static NSDictionary * dataTypeEncodingDic;
 -(id)initWithPropertyInfo:(HCPropertyInfo *)pi{
-    NSDictionary *dataTypeEncodingDic = @{
-                          @"c":@"INTEGER",
-                          @"i":@"INTEGER",
-                          @"s":@"INTEGER",
-                          @"l":@"INTEGER",
-                          @"q":@"INTEGER",
-                          @"C":@"INTEGER",
-                          @"I":@"INTEGER",
-                          @"S":@"INTEGER",
-                          @"L":@"INTEGER",
-                          @"Q":@"INTEGER",
-                          @"f":@"REAL",
-                          @"d":@"REAL",
-                          @"B":@"BOOLEAN",
-                          };
+    if (!dataTypeEncodingDic) {
+        dataTypeEncodingDic = @{
+                                @"c":@"INTEGER",
+                                @"i":@"INTEGER",
+                                @"s":@"INTEGER",
+                                @"l":@"INTEGER",
+                                @"q":@"INTEGER",
+                                @"C":@"INTEGER",
+                                @"I":@"INTEGER",
+                                @"S":@"INTEGER",
+                                @"L":@"INTEGER",
+                                @"Q":@"INTEGER",
+                                @"f":@"REAL",
+                                @"d":@"REAL",
+                                @"B":@"BOOLEAN",
+                                };
+    }
     if (self == [super init]) {
         _propertyInfo = pi;
         if ([self isBeMarked]) {
@@ -111,8 +115,6 @@
                     _dataType = @"";
                 }
             }
-            
-
         }else{
             _columnName = pi.propertyName;
             if (!pi.isPrimitive) {
@@ -122,7 +124,6 @@
                     _dataType = @"BLOB";
                 }
                 else{
-                    
                 }
             }else{
                 _dataType = dataTypeEncodingDic[pi.typeEncoding];
