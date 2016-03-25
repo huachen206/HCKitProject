@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		20D0168EEC68B4CEB4F45E99 /* libPods-HCKitProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */; };
+		BF0DED651CA50B1F00B10C46 /* HCDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED511CA50B1F00B10C46 /* HCDiskCache.m */; };
+		BF0DED661CA50B1F00B10C46 /* HCIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED531CA50B1F00B10C46 /* HCIvarInfo.m */; };
+		BF0DED671CA50B1F00B10C46 /* HCMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED551CA50B1F00B10C46 /* HCMethodInfo.m */; };
+		BF0DED681CA50B1F00B10C46 /* HCProfileService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED571CA50B1F00B10C46 /* HCProfileService.m */; };
+		BF0DED691CA50B1F00B10C46 /* HCPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED591CA50B1F00B10C46 /* HCPropertyInfo.m */; };
+		BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED5B1CA50B1F00B10C46 /* HCTypeDecoder.m */; };
+		BF0DED6B1CA50B1F00B10C46 /* NSArray+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED5E1CA50B1F00B10C46 /* NSArray+HCExtend.m */; };
+		BF0DED6C1CA50B1F00B10C46 /* NSObject+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED601CA50B1F00B10C46 /* NSObject+HCExtend.m */; };
+		BF0DED6D1CA50B1F00B10C46 /* UIColor+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED621CA50B1F00B10C46 /* UIColor+HCExtend.m */; };
+		BF0DED6E1CA50B1F00B10C46 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED641CA50B1F00B10C46 /* UILabel+StringFrame.m */; };
+		BF0DED711CA5113600B10C46 /* NSString+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED701CA5113600B10C46 /* NSString+HCExtend.m */; };
 		BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */; };
 		BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB191C1A5A2900C3CF4E /* main.m */; };
 		BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */; };
@@ -29,12 +40,6 @@
 		BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB513B61C97E28E005AAEDF /* HCEncoding.plist */; };
 		BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C21C9A8173005AAEDF /* HCDBTableField.m */; };
 		BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C51C9A88AD005AAEDF /* HCDBModel.m */; };
-		BFBDBF901CA0DA9400918F43 /* NSObject+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBF8F1CA0DA9400918F43 /* NSObject+HCExtend.m */; };
-		BFBDBF931CA0DAB300918F43 /* NSArray+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBF921CA0DAB300918F43 /* NSArray+HCExtend.m */; };
-		BFBDBF9A1CA0DE1400918F43 /* HCMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBF951CA0DE1400918F43 /* HCMethodInfo.m */; };
-		BFBDBF9B1CA0DE1400918F43 /* HCPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBF971CA0DE1400918F43 /* HCPropertyInfo.m */; };
-		BFBDBF9C1CA0DE1400918F43 /* HCTypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBF991CA0DE1400918F43 /* HCTypeDecoder.m */; };
-		BFBDBF9F1CA1110000918F43 /* HCIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBF9E1CA1110000918F43 /* HCIvarInfo.m */; };
 		BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +63,30 @@
 /* Begin PBXFileReference section */
 		3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCKitProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52386ACEE0B0CFADFE384476 /* Pods-HCKitProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.release.xcconfig"; sourceTree = "<group>"; };
+		BF0DED471CA504AB00B10C46 /* HCUtilityFuc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUtilityFuc.h; sourceTree = "<group>"; };
+		BF0DED481CA504AB00B10C46 /* HCUtilityMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUtilityMacro.h; sourceTree = "<group>"; };
+		BF0DED501CA50B1F00B10C46 /* HCDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDiskCache.h; sourceTree = "<group>"; };
+		BF0DED511CA50B1F00B10C46 /* HCDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDiskCache.m; sourceTree = "<group>"; };
+		BF0DED521CA50B1F00B10C46 /* HCIvarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIvarInfo.h; sourceTree = "<group>"; };
+		BF0DED531CA50B1F00B10C46 /* HCIvarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIvarInfo.m; sourceTree = "<group>"; };
+		BF0DED541CA50B1F00B10C46 /* HCMethodInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMethodInfo.h; sourceTree = "<group>"; };
+		BF0DED551CA50B1F00B10C46 /* HCMethodInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMethodInfo.m; sourceTree = "<group>"; };
+		BF0DED561CA50B1F00B10C46 /* HCProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCProfileService.h; sourceTree = "<group>"; };
+		BF0DED571CA50B1F00B10C46 /* HCProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCProfileService.m; sourceTree = "<group>"; };
+		BF0DED581CA50B1F00B10C46 /* HCPropertyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPropertyInfo.h; sourceTree = "<group>"; };
+		BF0DED591CA50B1F00B10C46 /* HCPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPropertyInfo.m; sourceTree = "<group>"; };
+		BF0DED5A1CA50B1F00B10C46 /* HCTypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTypeDecoder.h; sourceTree = "<group>"; };
+		BF0DED5B1CA50B1F00B10C46 /* HCTypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTypeDecoder.m; sourceTree = "<group>"; };
+		BF0DED5D1CA50B1F00B10C46 /* NSArray+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HCExtend.h"; sourceTree = "<group>"; };
+		BF0DED5E1CA50B1F00B10C46 /* NSArray+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HCExtend.m"; sourceTree = "<group>"; };
+		BF0DED5F1CA50B1F00B10C46 /* NSObject+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCExtend.h"; sourceTree = "<group>"; };
+		BF0DED601CA50B1F00B10C46 /* NSObject+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCExtend.m"; sourceTree = "<group>"; };
+		BF0DED611CA50B1F00B10C46 /* UIColor+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HCExtend.h"; sourceTree = "<group>"; };
+		BF0DED621CA50B1F00B10C46 /* UIColor+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HCExtend.m"; sourceTree = "<group>"; };
+		BF0DED631CA50B1F00B10C46 /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
+		BF0DED641CA50B1F00B10C46 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
+		BF0DED6F1CA5113600B10C46 /* NSString+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HCExtend.h"; sourceTree = "<group>"; };
+		BF0DED701CA5113600B10C46 /* NSString+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HCExtend.m"; sourceTree = "<group>"; };
 		BF28FB681C87CD2C0014CBBC /* NSObject+HCDBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCDBExtend.h"; sourceTree = "<group>"; };
 		BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCDBExtend.m"; sourceTree = "<group>"; };
 		BF49CB151C1A5A2900C3CF4E /* HCKitProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCKitProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,18 +128,6 @@
 		BFB513C21C9A8173005AAEDF /* HCDBTableField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTableField.m; sourceTree = "<group>"; };
 		BFB513C41C9A88AD005AAEDF /* HCDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBModel.h; sourceTree = "<group>"; };
 		BFB513C51C9A88AD005AAEDF /* HCDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBModel.m; sourceTree = "<group>"; };
-		BFBDBF8E1CA0DA9400918F43 /* NSObject+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCExtend.h"; sourceTree = "<group>"; };
-		BFBDBF8F1CA0DA9400918F43 /* NSObject+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCExtend.m"; sourceTree = "<group>"; };
-		BFBDBF911CA0DAB300918F43 /* NSArray+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HCExtend.h"; sourceTree = "<group>"; };
-		BFBDBF921CA0DAB300918F43 /* NSArray+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HCExtend.m"; sourceTree = "<group>"; };
-		BFBDBF941CA0DE1400918F43 /* HCMethodInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMethodInfo.h; sourceTree = "<group>"; };
-		BFBDBF951CA0DE1400918F43 /* HCMethodInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMethodInfo.m; sourceTree = "<group>"; };
-		BFBDBF961CA0DE1400918F43 /* HCPropertyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPropertyInfo.h; sourceTree = "<group>"; };
-		BFBDBF971CA0DE1400918F43 /* HCPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPropertyInfo.m; sourceTree = "<group>"; };
-		BFBDBF981CA0DE1400918F43 /* HCTypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTypeDecoder.h; sourceTree = "<group>"; };
-		BFBDBF991CA0DE1400918F43 /* HCTypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTypeDecoder.m; sourceTree = "<group>"; };
-		BFBDBF9D1CA1110000918F43 /* HCIvarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIvarInfo.h; sourceTree = "<group>"; };
-		BFBDBF9E1CA1110000918F43 /* HCIvarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIvarInfo.m; sourceTree = "<group>"; };
 		BFBDBFA01CA11AA700918F43 /* HCTestDBModel_depth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel_depth2.h; sourceTree = "<group>"; };
 		BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel_depth2.m; sourceTree = "<group>"; };
 		EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitProject/Pods-HCKitProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +174,42 @@
 				3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF0DED4F1CA50B1F00B10C46 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF0DED501CA50B1F00B10C46 /* HCDiskCache.h */,
+				BF0DED511CA50B1F00B10C46 /* HCDiskCache.m */,
+				BF0DED521CA50B1F00B10C46 /* HCIvarInfo.h */,
+				BF0DED531CA50B1F00B10C46 /* HCIvarInfo.m */,
+				BF0DED541CA50B1F00B10C46 /* HCMethodInfo.h */,
+				BF0DED551CA50B1F00B10C46 /* HCMethodInfo.m */,
+				BF0DED561CA50B1F00B10C46 /* HCProfileService.h */,
+				BF0DED571CA50B1F00B10C46 /* HCProfileService.m */,
+				BF0DED581CA50B1F00B10C46 /* HCPropertyInfo.h */,
+				BF0DED591CA50B1F00B10C46 /* HCPropertyInfo.m */,
+				BF0DED5A1CA50B1F00B10C46 /* HCTypeDecoder.h */,
+				BF0DED5B1CA50B1F00B10C46 /* HCTypeDecoder.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BF0DED5C1CA50B1F00B10C46 /* CommonCategory */ = {
+			isa = PBXGroup;
+			children = (
+				BF0DED5D1CA50B1F00B10C46 /* NSArray+HCExtend.h */,
+				BF0DED5E1CA50B1F00B10C46 /* NSArray+HCExtend.m */,
+				BF0DED5F1CA50B1F00B10C46 /* NSObject+HCExtend.h */,
+				BF0DED601CA50B1F00B10C46 /* NSObject+HCExtend.m */,
+				BF0DED611CA50B1F00B10C46 /* UIColor+HCExtend.h */,
+				BF0DED621CA50B1F00B10C46 /* UIColor+HCExtend.m */,
+				BF0DED631CA50B1F00B10C46 /* UILabel+StringFrame.h */,
+				BF0DED641CA50B1F00B10C46 /* UILabel+StringFrame.m */,
+				BF0DED6F1CA5113600B10C46 /* NSString+HCExtend.h */,
+				BF0DED701CA5113600B10C46 /* NSString+HCExtend.m */,
+			);
+			path = CommonCategory;
 			sourceTree = "<group>";
 		};
 		BF49CB0C1C1A5A2800C3CF4E = {
@@ -278,18 +331,10 @@
 		BFBDBF8D1CA0DA6B00918F43 /* HCCore */ = {
 			isa = PBXGroup;
 			children = (
-				BFBDBF8E1CA0DA9400918F43 /* NSObject+HCExtend.h */,
-				BFBDBF8F1CA0DA9400918F43 /* NSObject+HCExtend.m */,
-				BFBDBF911CA0DAB300918F43 /* NSArray+HCExtend.h */,
-				BFBDBF921CA0DAB300918F43 /* NSArray+HCExtend.m */,
-				BFBDBF941CA0DE1400918F43 /* HCMethodInfo.h */,
-				BFBDBF951CA0DE1400918F43 /* HCMethodInfo.m */,
-				BFBDBF961CA0DE1400918F43 /* HCPropertyInfo.h */,
-				BFBDBF971CA0DE1400918F43 /* HCPropertyInfo.m */,
-				BFBDBF9D1CA1110000918F43 /* HCIvarInfo.h */,
-				BFBDBF9E1CA1110000918F43 /* HCIvarInfo.m */,
-				BFBDBF981CA0DE1400918F43 /* HCTypeDecoder.h */,
-				BFBDBF991CA0DE1400918F43 /* HCTypeDecoder.m */,
+				BF0DED4F1CA50B1F00B10C46 /* Classes */,
+				BF0DED5C1CA50B1F00B10C46 /* CommonCategory */,
+				BF0DED471CA504AB00B10C46 /* HCUtilityFuc.h */,
+				BF0DED481CA504AB00B10C46 /* HCUtilityMacro.h */,
 			);
 			path = HCCore;
 			sourceTree = "<group>";
@@ -479,24 +524,29 @@
 				BF49CB581C1A5A6A00C3CF4E /* HCDAO.m in Sources */,
 				BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */,
 				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
-				BFBDBF931CA0DAB300918F43 /* NSArray+HCExtend.m in Sources */,
-				BFBDBF901CA0DA9400918F43 /* NSObject+HCExtend.m in Sources */,
+				BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
 				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,
 				BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */,
-				BFBDBF9B1CA0DE1400918F43 /* HCPropertyInfo.m in Sources */,
-				BFBDBF9A1CA0DE1400918F43 /* HCMethodInfo.m in Sources */,
+				BF0DED671CA50B1F00B10C46 /* HCMethodInfo.m in Sources */,
+				BF0DED6B1CA50B1F00B10C46 /* NSArray+HCExtend.m in Sources */,
+				BF0DED6C1CA50B1F00B10C46 /* NSObject+HCExtend.m in Sources */,
+				BF0DED661CA50B1F00B10C46 /* HCIvarInfo.m in Sources */,
+				BF0DED6E1CA50B1F00B10C46 /* UILabel+StringFrame.m in Sources */,
 				BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */,
 				BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */,
 				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
+				BF0DED651CA50B1F00B10C46 /* HCDiskCache.m in Sources */,
 				BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */,
 				BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */,
 				BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */,
 				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
+				BF0DED691CA50B1F00B10C46 /* HCPropertyInfo.m in Sources */,
+				BF0DED711CA5113600B10C46 /* NSString+HCExtend.m in Sources */,
 				BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */,
-				BFBDBF9F1CA1110000918F43 /* HCIvarInfo.m in Sources */,
+				BF0DED6D1CA50B1F00B10C46 /* UIColor+HCExtend.m in Sources */,
 				BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */,
-				BFBDBF9C1CA0DE1400918F43 /* HCTypeDecoder.m in Sources */,
+				BF0DED681CA50B1F00B10C46 /* HCProfileService.m in Sources */,
 				BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

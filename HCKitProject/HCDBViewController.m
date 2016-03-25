@@ -10,6 +10,7 @@
 #import "HCTestDAO.h"
 #import "HCDBModel.h"
 #import "HCTestDBModel_depth2.h"
+#import "HCDiskCache.h"
 
 @interface HCDBViewController ()
 
@@ -33,6 +34,9 @@
     
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db autoPrimaryKey:YES];
     
+    [[HCDiskCache diskCache] addObject:db key:@"adb"];
+    
+    HCTestDBModel_depth2 *adb = [[HCDiskCache diskCache] objectForKey:@"adb"];
 //
     NSArray *models = [[HCTestDAO dao].testTable selectAll];
     NSLog(@"%@",models);

@@ -13,8 +13,6 @@
 +(NSArray *)hc_tableFieldList{
     return [HCDBTableField tableFieldListWithClass:[self class]];
 }
-
-
 @end
 
 

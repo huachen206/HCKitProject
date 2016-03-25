@@ -75,7 +75,29 @@
 +(NSArray <HCPropertyInfo *>*)hc_propertyInfosWithdepth:(NSInteger)depth{
     return [HCPropertyInfo propertiesForClass:[self class] depth:depth];
 }
+@end
 
 
+@interface NSObject ()
+@property (nonatomic,strong) NSMutableDictionary *hc_userInfo;
+@end
+@implementation NSObject (HCObject)
+static char const *const hc_observerKey = "hc_userInfo";
+
+-(NSMutableDictionary *)hc_userInfo{
+    if (!objc_getAssociatedObject(self, hc_observerKey)) {
+        objc_setAssociatedObject(self, hc_observerKey, [[NSMutableDictionary alloc] init], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return objc_getAssociatedObject(self, hc_observerKey);
+}
+-(void)hc_setObject:(id)aObject forKey:(NSString *)aKey{
+    [self.hc_userInfo setObject:aObject forKey:aKey];
+}
+-(id)hc_objectForKey:(NSString *)aKey{
+    return [self.hc_userInfo objectForKey:aKey];
+}
+-(void)hc_removeObjectForKey:(NSString *)aKey{
+    [self.hc_userInfo removeObjectForKey:aKey];
+}
 
 @end

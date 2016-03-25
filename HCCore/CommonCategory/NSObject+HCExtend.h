@@ -13,7 +13,7 @@
 #import "NSObject+HCExtend.h"
 #import "NSArray+HCExtend.h"
 
-@interface NSObject (HCExtend)
+@interface NSObject (HCExtend)<NSCoding>
 
 @end
 @interface NSObject (HCRuntime)
@@ -49,3 +49,10 @@
 
 
 @end
+
+@interface NSObject (HCObject)
+-(void)hc_setObject:(id)aObject forKey:(NSString *)aKey;
+-(id)hc_objectForKey:(NSString *)aKey;
+-(void)hc_removeObjectForKey:(NSString *)aKey;
+@end
+
