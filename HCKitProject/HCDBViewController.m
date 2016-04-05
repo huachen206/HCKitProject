@@ -36,7 +36,7 @@
     
     [[HCDiskCache diskCache] addObject:db key:@"adb"];
     
-    HCTestDBModel_depth2 *adb = [[HCDiskCache diskCache] objectForKey:@"adb"];
+//    HCTestDBModel_depth2 *adb = [[HCDiskCache diskCache] objectForKey:@"adb"];
 //
     NSArray *models = [[HCTestDAO dao].testTable selectAll];
     NSLog(@"%@",models);
