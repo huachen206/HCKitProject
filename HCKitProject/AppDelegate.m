@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HCHTTPRequest.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[HCHTTPRequest GET_requestWithUrl:@"http://v2.fm.duokanbox.com/category/mobile/list" parameters:@{@"pn":@(1),@"size":@(3)}] success:^(id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
     return YES;
 }
 

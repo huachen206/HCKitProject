@@ -40,7 +40,6 @@
 		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; };
 		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; };
 		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; };
-		BF4F0A7B1CB3A62A00273510 /* HCSessionManagerPool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4F0A7A1CB3A62A00273510 /* HCSessionManagerPool.m */; };
 		BF4F0A7E1CB3A66300273510 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4F0A7D1CB3A66300273510 /* HCHTTPRequest.m */; };
 		BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB513B61C97E28E005AAEDF /* HCEncoding.plist */; };
 		BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C21C9A8173005AAEDF /* HCDBTableField.m */; };
@@ -135,8 +134,6 @@
 		BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestTable.m; sourceTree = "<group>"; };
 		BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel.h; sourceTree = "<group>"; };
 		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
-		BF4F0A791CB3A62A00273510 /* HCSessionManagerPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSessionManagerPool.h; sourceTree = "<group>"; };
-		BF4F0A7A1CB3A62A00273510 /* HCSessionManagerPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSessionManagerPool.m; sourceTree = "<group>"; };
 		BF4F0A7C1CB3A66300273510 /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
 		BF4F0A7D1CB3A66300273510 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
 		BFB513B61C97E28E005AAEDF /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = HCEncoding.plist; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 		BF3F9D931CB39A2300390AF2 /* HCRequestApi */ = {
 			isa = PBXGroup;
 			children = (
-				BF4F0A791CB3A62A00273510 /* HCSessionManagerPool.h */,
-				BF4F0A7A1CB3A62A00273510 /* HCSessionManagerPool.m */,
 				BF4F0A7C1CB3A66300273510 /* HCHTTPRequest.h */,
 				BF4F0A7D1CB3A66300273510 /* HCHTTPRequest.m */,
 			);
@@ -282,6 +277,7 @@
 		BF49CB171C1A5A2900C3CF4E /* HCKitProject */ = {
 			isa = PBXGroup;
 			children = (
+				BF4F0A7F1CB4A3A800273510 /* HTTPTest */,
 				BF49CB641C1A699000C3CF4E /* DBTestField */,
 				BF49CB1B1C1A5A2900C3CF4E /* AppDelegate.h */,
 				BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */,
@@ -361,6 +357,13 @@
 				BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */,
 			);
 			name = DBTestField;
+			sourceTree = "<group>";
+		};
+		BF4F0A7F1CB4A3A800273510 /* HTTPTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HTTPTest;
 			sourceTree = "<group>";
 		};
 		BFB513B51C97E28E005AAEDF /* Resources */ = {
@@ -595,7 +598,6 @@
 				BF0DED681CA50B1F00B10C46 /* HCProfileService.m in Sources */,
 				BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */,
 				BF4F0A7E1CB3A66300273510 /* HCHTTPRequest.m in Sources */,
-				BF4F0A7B1CB3A62A00273510 /* HCSessionManagerPool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
