@@ -25,12 +25,16 @@ Pod::Spec.new do |s|
     	core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}'
   end
 
-  s.subspec 'HCDB' do |mk|
-    	mk.source_files = 'HCDB/*.{h,m}'
-      	mk.resource = 'HCDB/Resources/*'
-      	mk.dependency 'HCKitProject/Core'
-		mk.ios.dependency  'FMDB', '~> 2.3'
+  s.subspec 'HCDB' do |db|
+    	db.source_files = 'HCDB/*.{h,m}'
+      	db.resource = 'HCDB/Resources/*'
+      	db.dependency 'HCKitProject/Core'
+		db.ios.dependency  'FMDB', '~> 2.3'
   end
-
+  s.subspec 'HCHTTPRequest' do |ht|
+    	ht.source_files = 'HCRequestApi/*.{h,m}'
+      	ht.dependency 'HCKitProject/Core'
+		ht.ios.dependency  'AFNetworking', '~> 3.0.4'
+  end
 end
 
