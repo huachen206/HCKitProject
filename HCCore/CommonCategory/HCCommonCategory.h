@@ -11,4 +11,4 @@
 #import "UIColor+HCExtend.h"
 #import "UILabel+StringFrame.h"
 #import "NSString+HCExtend.h"
-#import "NSString+HCVlidation.h"
+#import "NSString+HCValidation.h"

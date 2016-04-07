@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HCCommonCategory.h"
 @interface HCMainTableViewTableViewController : UITableViewController
 
 @end
