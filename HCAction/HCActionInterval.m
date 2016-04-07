@@ -319,7 +319,7 @@
 #pragma mark -
 #pragma mark MoveTo
 
-@implementation HCMoveTo
+@implementation CCMoveTo
 +(id) actionWithDuration: (NSTimeInterval) t position: (CGPoint) p
 {
 	return [[self alloc] initWithDuration:t position:p ];
@@ -912,7 +912,7 @@ static inline CGFloat bezierat( float a, float b, float c, float d, NSTimeInterv
 
 @end
 
-@implementation HCAnchorPointTo
+@implementation CCAnchorPointTo
 +(id)actionWithDuration:(NSTimeInterval)duration anchorPoint:(CGPoint)p{
     return [[self alloc] initWithDuration:duration anchorPoint:p];
 }

@@ -34,7 +34,7 @@
 
 -(NSArray *)tableColumnNameList{
     if (!_tableColumnNameList) {
-        _tableColumnNameList = [self.fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(HCDBTableField *field, NSUInteger idx, BOOL * _Nonnull stop) {
+        _tableColumnNameList = [self.fieldList hc_map:^id _Nullable(HCDBTableField *field, NSUInteger idx, BOOL * _Nonnull stop) {
             return field.columnName;
         }];
     }
@@ -104,7 +104,7 @@
     
 }
 -(NSString *)sqlStrForCreatTable{
-    NSArray *tmps = [self.fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(HCDBTableField *field, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSArray *tmps = [self.fieldList hc_map:^id _Nullable(HCDBTableField *field, NSUInteger idx, BOOL * _Nonnull stop) {
         return [NSString stringWithFormat:@"%@ %@",field.columnName,field.fieldDataType];
     }];
     return [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@)",self.tableName,[tmps componentsJoinedByString:@","]];

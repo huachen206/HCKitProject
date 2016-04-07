@@ -20,7 +20,7 @@
     return filter;
 }
 
--(NSArray*)hc_enumerateObjectsForArrayUsingBlock:(id(^)(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop))usingBlock{
+-(NSArray*)hc_map:(id(^)(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop))usingBlock{
     NSMutableArray *results = [NSMutableArray array];
     BOOL *stop = (BOOL *)malloc(sizeof(BOOL));
     *stop = NO;

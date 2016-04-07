@@ -35,7 +35,7 @@
 
 +(NSArray *)filtTableFields:(NSArray*)fieldList{
     NSMutableArray *noMarkFields = [NSMutableArray array];
-    NSArray *beMarkedFields = [fieldList hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSArray *beMarkedFields = [fieldList hc_map:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         HCDBTableField *field = (HCDBTableField *)obj;
         if ([field isBeMarked]) {
             return field;
@@ -45,7 +45,7 @@
         }
     }];
     
-    NSArray *filtedList = [noMarkFields hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSArray *filtedList = [noMarkFields hc_map:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         HCDBTableField *field = (HCDBTableField *)obj;
         for (HCDBTableField *markedfield in beMarkedFields) {
             if ([markedfield.columnName isEqualToString:field.columnName]) {
@@ -58,7 +58,7 @@
         return field;
     }];
     
-    NSArray *results =[[beMarkedFields arrayByAddingObjectsFromArray:filtedList] hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSArray *results =[[beMarkedFields arrayByAddingObjectsFromArray:filtedList] hc_map:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         HCDBTableField *field = (HCDBTableField *)obj;
         if (field.dataType.length) {
             if ([field.dataType isEqualToString:@"IGNORE"]) {

@@ -62,7 +62,7 @@
 }
 + (NSArray *)hc_propertyNameListWithdepth:(NSInteger)depth
 {
-    return [[self hc_propertyInfosWithdepth:depth] hc_enumerateObjectsForArrayUsingBlock:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    return [[self hc_propertyInfosWithdepth:depth] hc_map:^id _Nullable(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         HCPropertyInfo *pi = (HCPropertyInfo *)obj;
         return pi.propertyName;
     }];

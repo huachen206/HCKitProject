@@ -65,7 +65,7 @@
 
 
 
-@interface HCMoveTo : HCActionInterval <NSCopying>
+@interface CCMoveTo : HCActionInterval <NSCopying>
 {
 	CGPoint endPosition_;
 	CGPoint startPosition_;
@@ -234,7 +234,7 @@ typedef struct _ccBezierConfig {
 -(id) initWithDuration:(NSTimeInterval)duration angle:(float)deltaAngle;
 @end
 
-@interface HCAnchorPointTo : HCActionInterval<NSCopying>{
+@interface CCAnchorPointTo : HCActionInterval<NSCopying>{
     CGPoint startP_;
     CGPoint p_;
 }

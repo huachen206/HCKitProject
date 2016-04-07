@@ -7,15 +7,9 @@
 //
 
 #import "HCScheduled.h"
+#import "HCUtilityMacro.h"
 #import <QuartzCore/CADisplayLink.h>
 
-#define SuppressPerformSelectorLeakWarning(Stuff) \
-do { \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
-Stuff; \
-_Pragma("clang diagnostic pop") \
-} while (0)
 @interface HCScheduled(){
     BOOL blockStop;
 }
@@ -54,6 +48,9 @@ _Pragma("clang diagnostic pop") \
                                        [self.atarget performSelector:self.aselect withObject:self];
                                        );
 }
+
+
+
 
 -(void)scheduled:(ScheduledBlock)block{
     if (blockStop||!_paused) {
