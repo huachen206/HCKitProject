@@ -7,7 +7,7 @@
 //
 
 #import "NSArray+HCExtend.h"
-#import "NSObjext+HCExtend.h"
+#import "NSObject+HCExtend.h"
 #import "UIColor+HCExtend.h"
 #import "UILabel+StringFrame.h"
 #import "NSString+HCExtend.h"
