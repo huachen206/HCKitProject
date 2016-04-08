@@ -78,8 +78,8 @@
     }
     return self;
 }
--(void)success:(void(^)(id responseObject))successBlock{
-    [self success:^(id responseObject) {
+-(id)success:(void(^)(id responseObject))successBlock{
+    return [self success:^(id responseObject) {
         if (successBlock) {
             successBlock(responseObject);
         }
@@ -87,7 +87,7 @@
         
     }];
 }
--(void)success:(void(^)(id responseObject))successBlock failure:(void(^)(NSError * _Nonnull error))failureBlock{
+-(id)success:(void(^)(id responseObject))successBlock failure:(void(^)(NSError * _Nonnull error))failureBlock{
     if ([self.method isEqualToString:@"POST"]) {
         self.dataTask =[[[self class] httpSessionManager] POST:self.urlString parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
             
@@ -105,6 +105,7 @@
             [[self class] handleWithResponsObject:error success:nil failure:failureBlock];
         }];
     }
+    return self;
 }
 
 -(void)cancel{

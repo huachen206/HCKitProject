@@ -61,31 +61,6 @@
             }
         }
     }];
-    /*
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (data) {
-            NSError *error=nil;
-            id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            wself.jsonData = json;
-            wself.downLoadState =  ProfileServiceDownLoadState_success;
-            if (wself.autoRefreshEnable) {
-                [wself autoRefresh];
-            }
-            if (wself.delegate) {
-                [wself.delegate  ProfileService:self jsonResult:json];
-            }
-        }
-        else{
-            self.downLoadState =  ProfileServiceDownLoadState_fail;
-            if (wself.downLoadFailRetry) {
-                [wself downLoadDataWithUrl:self.urlString];
-            }
-            if (wself.delegate) {
-                [wself.delegate  ProfileService:self downLoadError:connectionError];
-            }
-        }
-    }];
-     */
 }
 
 
