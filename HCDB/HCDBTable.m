@@ -21,6 +21,7 @@
     return table;
 }
 
+#pragma mark --可重载方法
 //重写此方法可重命名表名
 -(NSString*)tableName{
     return NSStringFromClass([self class]);

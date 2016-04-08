@@ -30,8 +30,7 @@
     if (self = [super init]) {
         BOOL flag =[self.baseDBHelper open];
         PADBQuickCheck(flag);
-        //首先初始化versiontable
-        
+        //versiontable单独初始化
         for (HCPropertyInfo *info in [[self class] hc_propertyInfosWithdepth:2]) {
             if ([info.typeClass isSubclassOfClass:[HCDBTable class]]&&![info.typeClass isSubclassOfClass:[HCVersionTable class]]) {
                 HCDBTable *table = [info.typeClass table];

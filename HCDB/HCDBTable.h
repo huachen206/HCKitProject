@@ -39,7 +39,7 @@
  */
 -(BOOL)creatTable;
 /**
- *  自动升级表，会自动增删字段，删掉的字段数据会被丢弃。若要保留，请在(tableMigrationWithCurrentTableVersion:)方法中手动迁移数据
+ *  自动升级表，会自动增删字段，删掉的字段数据会被丢弃。若要保留，请重载(tableMigrationWithCurrentTableVersion:)方法，并在其中手动迁移数据
  *
  */
 -(BOOL)autoUpgradeTable;
@@ -48,7 +48,10 @@
  *  取出表中所有数据
  */
 -(NSArray *)selectAll;
-
+/**
+ *  从数据库查询结果中实例化model
+ *
+ */
 -(NSArray *)modelListWithFMResultSet:(FMResultSet *)rs;
 
 /**

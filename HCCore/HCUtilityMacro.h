@@ -31,12 +31,14 @@
 
 #endif
 
+
 #ifdef DEBUG
 #define DebugAssert(cnd, prompt)  NSAssert((cnd), (prompt))
+#define DebugLog(format,...) NSLog(format,__VA_ARGS__)
 #else
 #define DebugAssert(cnd, prompt)
+#define DebugLog(format,...)
 #endif
-
 
 #define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \

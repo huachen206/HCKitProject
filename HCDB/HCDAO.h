@@ -11,6 +11,7 @@
 #import "FMDB.h"
 #import "HCDBManager.h"
 #import "HCDBTable.h"
+#import "HCUtilityMacro.h"
 
 @class HCDBTable;
 #define PADBQuickCheck(SomeBool)            \
@@ -20,13 +21,6 @@ DebugAssert(NO, @"Sql Failure");    \
 }                                       \
 }
 
-#ifdef DEBUG
-#define DebugAssert(cnd, prompt)  NSAssert((cnd), (prompt))
-#define DebugLog(format,...) NSLog(format,__VA_ARGS__)
-#else
-#define DebugAssert(cnd, prompt)
-#define DebugLog(format,...)
-#endif
 
 #define PADBQuickCheck(SomeBool)            \
 {                                           \
