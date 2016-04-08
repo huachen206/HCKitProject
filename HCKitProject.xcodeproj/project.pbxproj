@@ -41,6 +41,7 @@
 		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; };
 		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; };
 		BF4F0A7E1CB3A66300273510 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4F0A7D1CB3A66300273510 /* HCHTTPRequest.m */; };
+		BF6C37871CB7397100DBAA1B /* HCVersionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C37861CB7397100DBAA1B /* HCVersionTable.m */; };
 		BFAB46541CB5E789009E9C8B /* HCIdCardNoRulesChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46531CB5E789009E9C8B /* HCIdCardNoRulesChecker.m */; };
 		BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46561CB5E95F009E9C8B /* HCClock.m */; };
 		BFAB465A1CB5F182009E9C8B /* NSString+HCValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46591CB5F182009E9C8B /* NSString+HCValidation.m */; };
@@ -144,6 +145,8 @@
 		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
 		BF4F0A7C1CB3A66300273510 /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
 		BF4F0A7D1CB3A66300273510 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
+		BF6C37851CB7397100DBAA1B /* HCVersionTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCVersionTable.h; sourceTree = "<group>"; };
+		BF6C37861CB7397100DBAA1B /* HCVersionTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCVersionTable.m; sourceTree = "<group>"; };
 		BFAB46521CB5E789009E9C8B /* HCIdCardNoRulesChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIdCardNoRulesChecker.h; sourceTree = "<group>"; };
 		BFAB46531CB5E789009E9C8B /* HCIdCardNoRulesChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIdCardNoRulesChecker.m; sourceTree = "<group>"; };
 		BFAB46551CB5E95F009E9C8B /* HCClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCClock.h; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 				BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */,
 				BF49CB501C1A5A6A00C3CF4E /* HCDBTable.h */,
 				BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */,
+				BF6C37851CB7397100DBAA1B /* HCVersionTable.h */,
+				BF6C37861CB7397100DBAA1B /* HCVersionTable.m */,
 				BFB513C11C9A8173005AAEDF /* HCDBTableField.h */,
 				BFB513C21C9A8173005AAEDF /* HCDBTableField.m */,
 				BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */,
@@ -635,6 +640,7 @@
 				BF0DED651CA50B1F00B10C46 /* HCDiskCache.m in Sources */,
 				BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */,
 				BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */,
+				BF6C37871CB7397100DBAA1B /* HCVersionTable.m in Sources */,
 				BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */,
 				BF3F9D8D1CB3964F00390AF2 /* UIView+HCExtend.m in Sources */,
 				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,

@@ -45,9 +45,13 @@ return;                                                 \
 }                                                           \
 }
 
+@class HCVersionTable;
 @interface HCDAO : NSObject
 @property (nonatomic,strong) FMDatabaseQueue *fmDbQueue;
 @property (nonatomic,strong) HCDBHelper *baseDBHelper;
+
+@property (nonatomic,strong) HCVersionTable *versionTable;
+
 +(instancetype)dao;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "HCDAO.h"
-
+#import "HCVersionTable.h"
 @implementation HCDAO
 +(instancetype)dao{
     static id _sharedInstance = nil;
@@ -17,20 +17,48 @@
     });
     return _sharedInstance;
 }
+-(HCVersionTable *)versionTable{
+    if (!_versionTable) {
+        _versionTable = [HCVersionTable table];
+        _versionTable.DAO = self;
+        [_versionTable creatTable];
+    }
+    return _versionTable;
+}
 
 -(id)init{
     if (self = [super init]) {
         BOOL flag =[self.baseDBHelper open];
         PADBQuickCheck(flag);
-        for (HCPropertyInfo *info in [[self class] hc_propertyInfos]) {
-            if ([info.typeClass isSubclassOfClass:[HCDBTable class]]) {
+        //首先初始化versiontable
+        
+        for (HCPropertyInfo *info in [[self class] hc_propertyInfosWithdepth:2]) {
+            if ([info.typeClass isSubclassOfClass:[HCDBTable class]]&&![info.typeClass isSubclassOfClass:[HCVersionTable class]]) {
                 HCDBTable *table = [info.typeClass table];
                 table.DAO = self;
-                [table creatOrUpgradeTable];
+                [table creatTable];
+                HCVersionModel *versionModel = [self.versionTable versionModelWithTableName:[table tableName]];
+                if (!versionModel) {
+                    versionModel = [[HCVersionModel alloc] init];
+                    versionModel.tableName = [table tableName];
+                    versionModel.version = table.tableVersion;
+                    [self.versionTable insertOrReplaceWithModel:versionModel autoPrimaryKey:NO];
+                }else{
+                    //版本库记录的表版本低于当前表版本，需要调用数据库迁移方法
+                    while (versionModel.version<table.tableVersion) {
+                        if ([table tableMigrationWithCurrentTableVersion:versionModel.version]) {
+                            ++versionModel.version;
+                            [self.versionTable insertOrReplaceWithModel:versionModel autoPrimaryKey:NO];
+                        }
+                    }
+                    //到此处时，若检测到表结构变动，说明没有手动升级表，则会默认自动升级表。
+                    if ([table isColumnChanged]) {
+                        [table autoUpgradeTable];
+                    }
+                }
                 [self setValue:table forKey:info.propertyName];
             }
         }
-        
     }
     return self;
 }

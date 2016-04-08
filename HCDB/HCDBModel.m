@@ -13,7 +13,14 @@
 +(NSArray*)tableFieldList{
     return [HCDBTableField tableFieldListWithClass:[self class]];
 }
-
++(NSArray *)modelListWithFmResultSet:(FMResultSet *)rs tableFields:(NSArray*)tableField{
+    NSMutableArray *modelList = [NSMutableArray array];
+    while ([rs next]) {
+        [modelList addObject:[[self alloc] initWithFMResultSet:rs tableFields:tableField]];
+    }
+    [rs close];
+    return modelList;
+}
 -(id)initWithFMResultSet:(FMResultSet *)result tableFields:(NSArray*)tableFields{
     if (self == [super init]) {
         [tableFields enumerateObjectsUsingBlock:^(HCDBTableField *tableField, NSUInteger idx, BOOL * _Nonnull stop) {

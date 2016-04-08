@@ -31,6 +31,15 @@
     return nil;
 }
 
+-(NSInteger)tableVersion{
+    return 1;
+}
+
+-(BOOL)tableMigrationWithCurrentTableVersion:(NSInteger)currentVersion{
+    return YES;
+}
+
+
 
 -(NSArray *)tableColumnNameList{
     if (!_tableColumnNameList) {
@@ -64,41 +73,63 @@
 }
 
 #pragma mark creat upgrade
--(BOOL)creatOrUpgradeTable{
+-(BOOL)creatTable{
     __block BOOL flag = NO;
     NSString *creatTableSqlStr = [self sqlStrForCreatTable];
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
         flag = [db executeUpdate:creatTableSqlStr];
     }];
     PADBQuickCheck(flag);
-    if (flag) {
-        flag = [self upgradeTable];
-    }
     return flag;
 }
--(BOOL)upgradeTable{
+-(BOOL)isColumnChanged{
+    NSArray *adds = [[self tableColumnNameList] hc_objectWithOut:[self tableFieldsFromDB]];
+    NSArray *drops = [[self tableFieldsFromDB] hc_objectWithOut:[self tableColumnNameList]];
+    if (adds.count||drops.count) {
+        return YES;
+    }
+    return NO;
+}
+-(BOOL)autoUpgradeTable{
     __block BOOL flag = YES;
     
     NSArray *adds = [[self tableColumnNameList] hc_objectWithOut:[self tableFieldsFromDB]];
-    
     NSArray *drops = [[self tableFieldsFromDB] hc_objectWithOut:[self tableColumnNameList]];
-    if (!adds.count) {
+    
+    if (!adds.count&&!drops.count) {
         return YES;
     }
+    
+    NSArray *both = [self.tableColumnNameList hc_objectAlsoIn:[self tableFieldsFromDB]];
+    
+    
     [self.fmDbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        if (drops.count>0) {
+            //将表名改为临时表
+            NSString *tempTableName = [NSString stringWithFormat:@"_temp_%@",[self tableName]];
+            NSString *reNameSql = [NSString stringWithFormat:@"ALTER TABLE %@ RENAME TO %@",[self tableName],tempTableName];
+            flag = flag&&[db executeUpdate:reNameSql];
+            //创建新表
+            NSString *creatTableSqlStr = [self sqlStrForCreatTable];
+            flag = flag&&[db executeUpdate:creatTableSqlStr];
+            //导入数据
+            
+            NSString *insertDatasSqlStr = [NSString stringWithFormat:@"INSERT INTO %@ SELECT %@ FROM %@",[self tableName],[both componentsJoinedByString:@","],tempTableName];
+            flag = flag&&[db executeUpdate:insertDatasSqlStr];
+            //删除临时表
+            NSString *dropSql = [NSString stringWithFormat:@"DROP TABLE %@",tempTableName];
+            flag = flag&&[db executeUpdate:dropSql];
+        }
+        
         for (NSString *column in adds) {
             HCDBTableField *field = [self tableFieldForColumn:column];
             NSString *addSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ %@",[self tableName],field.columnName,field.dataType];
             flag = flag&&[db executeUpdate:addSql];
-        }
-        if (flag) {
-            DebugLog(@"add COLUMN SUCCESS:%@",adds);
-        }
-        if (drops.count>0) {
-            DebugAssert(NO, @"少定义字段");
+            if (flag) {
+                DebugLog(@"add COLUMN SUCCESS:%@",column);
+            }
         }
         PADBTransactionSQLCheck(flag,rollback);
-        
     }];
     return flag;
     
@@ -112,20 +143,19 @@
 
 #pragma mark read
 -(NSArray *)selectAll{
-    __block NSMutableArray *models = [NSMutableArray array];
+    __block NSArray *models = nil;
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@",self.tableName]];
-        while ([rs next]) {
-            if (self.tableModelClass) {
-                NSObject *model = nil;
-                if ([self.tableModelClass isSubclassOfClass:[HCDBModel class]]) {
-                    model = [[self.tableModelClass alloc] initWithFMResultSet:rs tableFields:self.fieldList];
-                    [models addObject:model];
-                }
-            }
-        }
-        [rs close];
+        models = [self modelListWithFMResultSet:rs];
     }];
+    return models;
+}
+
+-(NSArray *)modelListWithFMResultSet:(FMResultSet *)rs{
+    NSMutableArray *models = [NSMutableArray array];
+    if (self.tableModelClass && [self.tableModelClass isSubclassOfClass:[HCDBModel class]]) {
+        return [self.tableModelClass modelListWithFmResultSet:rs tableFields:self.fieldList];
+    }
     return models;
 }
 

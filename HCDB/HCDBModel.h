@@ -56,6 +56,7 @@ _CreatTableFlgPropertayWithProtocol(propertyName,<PRIMARY_KEY_AUTOINCREMENT>)
 @class FMResultSet;
 @interface HCDBModel : NSObject
 +(NSArray*)tableFieldList;
++(NSArray *)modelListWithFmResultSet:(FMResultSet *)rs tableFields:(NSArray*)tableField;
 -(id)initWithFMResultSet:(FMResultSet *)result tableFields:(NSArray*)tableFields;
 
 /**

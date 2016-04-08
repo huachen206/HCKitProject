@@ -19,6 +19,7 @@
 @property (nonatomic,weak) HCDAO *DAO;
 @property (nonatomic,strong) Class tableModelClass;
 
+@property (nonatomic,assign,readonly) NSInteger tableVersion;/**< 初始版本为1*/
 
 @property (nonatomic,strong) NSArray *fieldList;
 
@@ -31,14 +32,25 @@
  *
  */
 +(instancetype)table;
+
 /**
- *  如果没有表则建表。如果检测到数据模型中的字段名多于现有表，则更新表；若少于，则报错。
+ *  创建表
+ *
  */
--(BOOL)creatOrUpgradeTable;
+-(BOOL)creatTable;
+/**
+ *  自动升级表，会自动增删字段，删掉的字段数据会被丢弃。若要保留，请在(tableMigrationWithCurrentTableVersion:)方法中手动迁移数据
+ *
+ */
+-(BOOL)autoUpgradeTable;
+
 /**
  *  取出表中所有数据
  */
 -(NSArray *)selectAll;
+
+-(NSArray *)modelListWithFMResultSet:(FMResultSet *)rs;
+
 /**
  *  @return 返回表中记录的数据个数
  */
@@ -66,5 +78,18 @@
  *  @return 是否成功
  */
 -(BOOL)insertOrReplaceWithModelList:(NSArray *)modelList autoPrimaryKey:(BOOL)isAuto;
+/**
+ *  表结构更新，数据库迁移，重载此方法。此方法在调用成功后会被继续调用，直到更新到最新的制定版本。
+ *
+ *  @param currentVersion 数据库中的表版本，请根据这个版本号依次更新版本。
+ *
+ *  @return 是否更新成功。
+ */
+-(BOOL)tableMigrationWithCurrentTableVersion:(NSInteger)currentVersion;
+/**
+ *  检测表字段是否有变动
+ *
+ */
+-(BOOL)isColumnChanged;
 
 @end
