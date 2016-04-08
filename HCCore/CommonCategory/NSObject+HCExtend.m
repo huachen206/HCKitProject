@@ -32,16 +32,29 @@
 @end
 @implementation NSObject (HCRuntime)
 +(NSArray *)hc_modelListWithDicArray:(NSArray *)array{
+    return [self hc_modelListWithDicArray:array withKeyMap:nil];
+}
++(NSArray *)hc_modelListWithDicArray:(NSArray *)array withKeyMap:(NSDictionary *)keyMay{
     NSMutableArray *modelList = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in array) {
-        [modelList addObject:[[self alloc] hc_initWithDictionary:dic]];
+        [modelList addObject:[[self alloc] hc_initWithDictionary:dic withKeyMap:keyMay]];
     }
     return modelList;
 }
+
 -(id)hc_initWithDictionary:(NSDictionary *)dic{
+    return [self hc_initWithDictionary:dic withKeyMap:nil];
+}
+
+-(id)hc_initWithDictionary:(NSDictionary *)dic withKeyMap:(NSDictionary *)keyMay{
     if (self == [self init]) {
         [[HCPropertyInfo propertiesForClass:[self class]] enumerateObjectsUsingBlock:^(HCPropertyInfo *info, NSUInteger idx, BOOL * _Nonnull stop) {
-            id value = [dic objectForKey:info.propertyName];
+            NSString *mapKey = nil;
+            if (keyMay&&keyMay.count) {
+                mapKey = [keyMay objectForKey:info.propertyName];
+            }
+            mapKey = mapKey?mapKey:info.propertyName;
+            id value = [dic objectForKey:mapKey];
             if (value) {
                 [self setValue:value forKey:info.propertyName];
             }
@@ -75,6 +88,37 @@
 +(NSArray <HCPropertyInfo *>*)hc_propertyInfosWithdepth:(NSInteger)depth{
     return [HCPropertyInfo propertiesForClass:[self class] depth:depth];
 }
+
+-(NSArray *)hc_ivasInfos {
+    return [HCIvarInfo ivarsOfClass:[self class]];
+}
+
+-(NSString *)hc_description{
+    NSMutableString *description = @"\n".mutableCopy;
+    [[self hc_ivasInfos] enumerateObjectsUsingBlock:^(HCIvarInfo *ivarInfo, NSUInteger idx, BOOL * _Nonnull stop) {
+        [description appendString:[NSString stringWithFormat:@"%@,%@",[self polishingSpaceWithString:ivarInfo.name],[self polishingSpaceWithString:ivarInfo.typeName]]];
+        id value = [self valueForKey:ivarInfo.name];
+        if (value) {
+            [description appendString:@","];
+            [description appendString:value];
+        }
+        [description appendString:@"\n"];
+    }];
+    return description;
+}
+-(NSString *)polishingSpaceWithString:(NSString *)string{
+    NSString *space20 = @"                    ";
+    if (string.length<space20.length) {
+        return [string stringByAppendingString:[space20 substringFromIndex:string.length]];
+    }else{
+        return string;
+    }
+}
+
+-(void)hc_debugLog{
+    DebugLog(@"%@",[self hc_description]);
+}
+
 @end
 
 

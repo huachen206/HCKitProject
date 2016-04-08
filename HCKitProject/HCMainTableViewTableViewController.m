@@ -8,7 +8,7 @@
 
 #import "HCMainTableViewTableViewController.h"
 #import "HCDBViewController.h"
-
+#import "JSONModel.h"
 @interface HCMainTableViewTableViewController ()
 
 @end
@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"main";
+    
+    NSDictionary *dic = @{@"className":@"高二",@"studentName":@"张三",@"score":@"99"};
+    JSONModel *model = [[JSONModel alloc] hc_initWithDictionary:dic withKeyMap:@{@"grade":@"score"}];
+    
+    [model hc_debugLog];
     
 }
 
