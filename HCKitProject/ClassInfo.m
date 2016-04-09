@@ -6,8 +6,9 @@
 //  Copyright © 2016年 花晨. All rights reserved.
 //
 
-#import "JSONModel.h"
-
-@implementation JSONModel
+#import "ClassInfo.h"
+@implementation StudentInfo
+@end
+@implementation ClassInfo
 
 @end

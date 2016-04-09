@@ -32,7 +32,11 @@
 @end
 @implementation NSObject (HCRuntime)
 +(NSArray *)hc_modelListWithDicArray:(NSArray *)array{
-    return [self hc_modelListWithDicArray:array withKeyMap:nil];
+    NSMutableArray *modelList = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in array) {
+        [modelList addObject:[[self alloc] hc_initWithDictionary:dic]];
+    }
+    return modelList;
 }
 +(NSArray *)hc_modelListWithDicArray:(NSArray *)array withKeyMap:(NSDictionary *)keyMay{
     NSMutableArray *modelList = [[NSMutableArray alloc] init];
@@ -55,6 +59,18 @@
             }
             mapKey = mapKey?mapKey:info.propertyName;
             id value = [dic objectForKey:mapKey];
+            
+            if ([info.typeClass isSubclassOfClass:[NSArray class]]) {
+                NSString *protocolName = info.protocolName;
+                if (protocolName.length) {
+                    Class inclass = NSClassFromString(protocolName);
+                    if (inclass) {
+                        value = [inclass hc_modelListWithDicArray:value];
+                    }
+                }
+            }else if ([info.typeClass hc_isCustomClass]) {
+                value = [[info.typeClass alloc] hc_initWithDictionary:value];
+            }
             if (value) {
                 [self setValue:value forKey:info.propertyName];
             }
@@ -93,6 +109,12 @@
     return [HCIvarInfo ivarsOfClass:[self class]];
 }
 
++(BOOL)hc_isCustomClass{
+    NSBundle *mainB = [NSBundle bundleForClass:self];
+    return (mainB == [NSBundle mainBundle]);
+}
+
+
 -(NSString *)hc_description{
     NSMutableString *description = @"\n".mutableCopy;
     [[self hc_ivasInfos] enumerateObjectsUsingBlock:^(HCIvarInfo *ivarInfo, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -100,7 +122,7 @@
         id value = [self valueForKey:ivarInfo.name];
         if (value) {
             [description appendString:@","];
-            [description appendString:value];
+            [description appendString:[NSString stringWithFormat:@"%@",value]];
         }
         [description appendString:@"\n"];
     }];

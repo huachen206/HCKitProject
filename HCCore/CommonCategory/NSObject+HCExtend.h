@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 #import "HCPropertyInfo.h"
 #import "HCIvarInfo.h"
-//#import "HCDBTableField.h"
 #import "NSObject+HCExtend.h"
 #import "NSArray+HCExtend.h"
 #import "HCUtilityMacro.h"
@@ -41,7 +40,7 @@
 -(NSArray *)hc_ivasInfos;
 
 /**
- *  配对数据源字典中的键与model中的属性名，进行赋值
+ *  配对数据源字典中的键与model中的属性名，进行赋值.通过在自定义类里面重载此方法来植入keymap。
  *
  *  @param dic 键与值，与属性对应
  *
@@ -64,6 +63,13 @@
  */
 -(id)hc_initWithDictionary:(NSDictionary *)dic withKeyMap:(NSDictionary *)keyMay;
 +(NSArray *)hc_modelListWithDicArray:(NSArray *)array withKeyMap:(NSDictionary *)keyMay;
+
+/**
+ *  判断是否为自定义类
+ *
+ *  @return YES：是自定义类 NO：是系统类
+ */
++(BOOL)hc_isCustomClass;
 
 /**
  * 返回属性名，属性类别，值

@@ -45,7 +45,7 @@
 		BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46561CB5E95F009E9C8B /* HCClock.m */; };
 		BFAB465A1CB5F182009E9C8B /* NSString+HCValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46591CB5F182009E9C8B /* NSString+HCValidation.m */; };
 		BFAECB511CB79268001C9819 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAECB501CB79268001C9819 /* HCHTTPRequest.m */; };
-		BFAECB551CB79C5D001C9819 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAECB541CB79C5D001C9819 /* JSONModel.m */; };
+		BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAECB541CB79C5D001C9819 /* ClassInfo.m */; };
 		BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB513B61C97E28E005AAEDF /* HCEncoding.plist */; };
 		BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C21C9A8173005AAEDF /* HCDBTableField.m */; };
 		BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C51C9A88AD005AAEDF /* HCDBModel.m */; };
@@ -155,8 +155,8 @@
 		BFAECB4D1CB79171001C9819 /* HCKitProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCKitProject.h; sourceTree = "<group>"; };
 		BFAECB4F1CB79268001C9819 /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
 		BFAECB501CB79268001C9819 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
-		BFAECB531CB79C5D001C9819 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
-		BFAECB541CB79C5D001C9819 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		BFAECB531CB79C5D001C9819 /* ClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
+		BFAECB541CB79C5D001C9819 /* ClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
 		BFB513B61C97E28E005AAEDF /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = HCEncoding.plist; sourceTree = "<group>"; };
 		BFB513C11C9A8173005AAEDF /* HCDBTableField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBTableField.h; sourceTree = "<group>"; };
 		BFB513C21C9A8173005AAEDF /* HCDBTableField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTableField.m; sourceTree = "<group>"; };
@@ -420,8 +420,8 @@
 		BFAECB521CB79C31001C9819 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				BFAECB531CB79C5D001C9819 /* JSONModel.h */,
-				BFAECB541CB79C5D001C9819 /* JSONModel.m */,
+				BFAECB531CB79C5D001C9819 /* ClassInfo.h */,
+				BFAECB541CB79C5D001C9819 /* ClassInfo.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -633,7 +633,7 @@
 				BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */,
 				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
 				BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */,
-				BFAECB551CB79C5D001C9819 /* JSONModel.m in Sources */,
+				BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */,
 				BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
 				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,

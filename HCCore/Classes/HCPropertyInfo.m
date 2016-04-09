@@ -85,6 +85,7 @@
     return [result filteredArrayUsingPredicate:aPredicate];
 }
 + (NSString *)propertyAttributeNameForField:(const char *)fieldName property:(const objc_property_t)property {
+//    NSLog(@"%s",property_getAttributes(property));
     NSString *result;
     char *name = property_copyAttributeValue(property, fieldName);
     
@@ -267,6 +268,7 @@ static const char * kPropertyInfoCopiedSpecifier = "C";
     
     _isAttributeNameFilled = YES;
 }
+
 - (NSString *)description {
     return [[NSString alloc] initWithFormat:@"------------------------\n%@: hostClass = %@,\nis primitive       = %@\nproperty name      = %@,\ntype class         = %@,\ntype Protocol name = %@,\ntype name          = %@\n---------------------------", NSStringFromClass([self class]),NSStringFromClass([self hostClass]),self.isPrimitive?@"YES":@"NO", self.propertyName,NSStringFromClass([self typeClass]),self.protocolName,self.typeName];
 }
