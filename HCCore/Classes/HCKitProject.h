@@ -19,6 +19,8 @@
 #import "HCProfileService.h"
 #import "HCPropertyInfo.h"
 #import "HCTypeDecoder.h"
+#import "HCLocalizable.h"
+#import "HCHTTPRequest.h"
 
 
 #endif /* HCKitProject_h */

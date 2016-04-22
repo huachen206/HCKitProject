@@ -9,7 +9,7 @@
 #import "UIDevice+HCExtend.h"
 
 @implementation UIDevice (HCExtend)
-+ (UIDeviceResolution)hc_currentResolution {
++ (HCDeviceResolution)hc_currentResolution {
     CGSize result = [[UIScreen mainScreen] bounds].size;
     float scale =[UIScreen mainScreen].scale;
     result = CGSizeMake(result.width * scale, result.height * scale);

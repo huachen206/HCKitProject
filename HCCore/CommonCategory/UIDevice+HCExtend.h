@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSUInteger, UIDeviceResolution) {
+typedef NS_ENUM(NSUInteger, HCDeviceResolution) {
     UIDevice_320x480,// iPhone 1,3,3GS
     UIDevice_640x960,// iPhone 4,4S
     UIDevice_640x1136,// iPhone 5,5s,5SE
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, UIDeviceResolution) {
 
 @interface UIDevice (HCExtend)
 
-+ (UIDeviceResolution)hc_currentResolution;
++ (HCDeviceResolution)hc_currentResolution;
 /**
  *  判断系统版本是否高于version
  *
