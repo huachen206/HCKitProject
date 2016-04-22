@@ -11,6 +11,7 @@
 #import "HCDBModel.h"
 #import "HCTestDBModel_depth2.h"
 #import "HCDiskCache.h"
+#import "UIDevice+HCExtend.h"
 
 @interface HCDBViewController ()
 
@@ -50,7 +51,8 @@
 //        NSLog(@"name:%@ -- nickName:%@",td.name,td.nickName);
 //        
 //    }
-    
+    [UIDevice hc_currentResolution];
+
 }
 
 - (void)didReceiveMemoryWarning {

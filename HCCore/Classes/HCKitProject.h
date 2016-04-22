@@ -21,5 +21,4 @@
 #import "HCTypeDecoder.h"
 
 
-
 #endif /* HCKitProject_h */

@@ -12,3 +12,7 @@
 #import "UILabel+StringFrame.h"
 #import "NSString+HCExtend.h"
 #import "NSString+HCValidation.h"
+#import "UIImage+HCExtend.h"
+#import "UIView+HCExtend.h"
+#import "UIButton+HCCheckMenu.h"
+#import "UIDevice+HCExtend.h"

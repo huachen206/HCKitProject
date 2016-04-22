@@ -24,6 +24,7 @@
     
     [classInfo hc_debugLog];
     
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -299,6 +299,6 @@
     return self.DAO.fmDbQueue;
 }
 -(NSString *)description{
-    return [NSString stringWithFormat:@"-------------------\nTable Name:%@\nfield list:%@\nrecord count:%ld\n-------------------",self.tableName,[[self tableColumnNameList] componentsJoinedByString:@","],[self countOfRecord]];
+    return [NSString stringWithFormat:@"-------------------\nTable Name:%@\nfield list:%@\nrecord count:%ld\n-------------------",self.tableName,[[self tableColumnNameList] componentsJoinedByString:@","],(long)[self countOfRecord]];
 }
 @end

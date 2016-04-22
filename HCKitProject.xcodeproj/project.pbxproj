@@ -50,6 +50,8 @@
 		BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C21C9A8173005AAEDF /* HCDBTableField.m */; };
 		BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C51C9A88AD005AAEDF /* HCDBModel.m */; };
 		BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */; };
+		BFC573411CC9F5A2007015CE /* HCLocalizable.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC573401CC9F5A2007015CE /* HCLocalizable.m */; };
+		BFC573441CC9F79A007015CE /* UIDevice+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC573431CC9F79A007015CE /* UIDevice+HCExtend.m */; };
 		BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8E851CB4D7A100910331 /* HCScheduled.m */; };
 		BFDA8E8F1CB4D7AB00910331 /* HCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8E881CB4D7AB00910331 /* HCAction.m */; };
 		BFDA8E901CB4D7AB00910331 /* HCActionInstant.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8E8A1CB4D7AB00910331 /* HCActionInstant.m */; };
@@ -164,6 +166,10 @@
 		BFB513C51C9A88AD005AAEDF /* HCDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBModel.m; sourceTree = "<group>"; };
 		BFBDBFA01CA11AA700918F43 /* HCTestDBModel_depth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel_depth2.h; sourceTree = "<group>"; };
 		BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel_depth2.m; sourceTree = "<group>"; };
+		BFC5733F1CC9F5A2007015CE /* HCLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCLocalizable.h; sourceTree = "<group>"; };
+		BFC573401CC9F5A2007015CE /* HCLocalizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCLocalizable.m; sourceTree = "<group>"; };
+		BFC573421CC9F79A007015CE /* UIDevice+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HCExtend.h"; sourceTree = "<group>"; };
+		BFC573431CC9F79A007015CE /* UIDevice+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HCExtend.m"; sourceTree = "<group>"; };
 		BFDA8E841CB4D7A100910331 /* HCScheduled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCScheduled.h; sourceTree = "<group>"; };
 		BFDA8E851CB4D7A100910331 /* HCScheduled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCScheduled.m; sourceTree = "<group>"; };
 		BFDA8E871CB4D7AB00910331 /* HCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAction.h; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 				BFAECB4D1CB79171001C9819 /* HCKitProject.h */,
 				BFAB46551CB5E95F009E9C8B /* HCClock.h */,
 				BFAB46561CB5E95F009E9C8B /* HCClock.m */,
+				BFC5733F1CC9F5A2007015CE /* HCLocalizable.h */,
+				BFC573401CC9F5A2007015CE /* HCLocalizable.m */,
 				BFAB46521CB5E789009E9C8B /* HCIdCardNoRulesChecker.h */,
 				BFAB46531CB5E789009E9C8B /* HCIdCardNoRulesChecker.m */,
 				BFDA8E841CB4D7A100910331 /* HCScheduled.h */,
@@ -268,6 +276,8 @@
 				BF3F9D8C1CB3964F00390AF2 /* UIView+HCExtend.m */,
 				BF3F9D8F1CB399EF00390AF2 /* UIButton+HCCheckMenu.h */,
 				BF3F9D901CB399EF00390AF2 /* UIButton+HCCheckMenu.m */,
+				BFC573421CC9F79A007015CE /* UIDevice+HCExtend.h */,
+				BFC573431CC9F79A007015CE /* UIDevice+HCExtend.m */,
 			);
 			path = CommonCategory;
 			sourceTree = "<group>";
@@ -637,6 +647,7 @@
 				BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
 				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,
+				BFC573441CC9F79A007015CE /* UIDevice+HCExtend.m in Sources */,
 				BFDA8E921CB4D7AB00910331 /* UIView+Action.m in Sources */,
 				BFDA8E901CB4D7AB00910331 /* HCActionInstant.m in Sources */,
 				BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */,
@@ -649,6 +660,7 @@
 				BF0DED661CA50B1F00B10C46 /* HCIvarInfo.m in Sources */,
 				BF0DED6E1CA50B1F00B10C46 /* UILabel+StringFrame.m in Sources */,
 				BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */,
+				BFC573411CC9F5A2007015CE /* HCLocalizable.m in Sources */,
 				BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */,
 				BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */,
 				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
@@ -813,7 +825,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -826,7 +838,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
