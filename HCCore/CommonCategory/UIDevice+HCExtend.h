@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, HCDeviceResolution) {
 
 + (HCDeviceResolution)hc_currentResolution;
 /**
- *  判断系统版本是否大于等于version
+ *  判断系统版本是否高于version
  *
  *  @param version 判断基线
  *

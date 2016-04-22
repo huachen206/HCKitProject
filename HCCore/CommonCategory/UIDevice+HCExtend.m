@@ -43,8 +43,9 @@
 +(BOOL)hc_isIOSBeyondThan:(float)version {
     return [[[UIDevice currentDevice] systemVersion] doubleValue]>=version;
 }
-+(BOOL)hc_isIOSWith:(float)version{
++(BOOL)hc_isIOSEqualTo:(float)version {
     return [[[UIDevice currentDevice] systemVersion] doubleValue]==version;
 }
+
 
 @end

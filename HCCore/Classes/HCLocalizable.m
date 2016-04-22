@@ -46,7 +46,7 @@ static NSBundle *bundle = nil;
     NSArray* languages = [def objectForKey:@"AppleLanguages"];
     NSString *current = [languages objectAtIndex:0];
     
-    if ([UIDevice hc_isIOSGreaterThan:9.0]) {
+    if ([UIDevice hc_isIOSBeyondThan:9.0]) {
         NSMutableArray *tmp = [current componentsSeparatedByString:@"-"].mutableCopy;
         if (tmp.count>1) {
             [tmp removeObjectAtIndex:tmp.count-1];
