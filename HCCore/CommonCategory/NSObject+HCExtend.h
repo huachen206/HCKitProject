@@ -14,10 +14,25 @@
 #import "NSArray+HCExtend.h"
 #import "HCUtilityMacro.h"
 
-@interface NSObject (HCExtend)<NSCoding>
+@interface NSObject (HCExtend)<NSSecureCoding>
+/**
+ *  若自定义类需要支持NSSecureCoding，重载此方法并返回YES
+ *
+ *  @return 默认为NO；
+ */
+
++(BOOL)supportsSecureCoding;
 
 @end
 @interface NSObject (HCRuntime)
+
+/**
+ *  计算自定义类的继承层数，例如，NSObject 为0，父类为NSObject的为1.
+ *
+ *  @return 深度
+ */
++(NSUInteger)hc_depthToBoot;
+
 /**
  *  runtime取类的属性
  *

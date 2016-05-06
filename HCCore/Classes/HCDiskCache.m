@@ -8,6 +8,7 @@
 
 #import "HCDiskCache.h"
 #import "HCUtilityMacro.h"
+#import "HCFileHelper.h"
 #define DiskCachePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"DiskCache"]
 
 @interface HCDiskCache()
@@ -45,6 +46,9 @@
     return cache;
 }
 
++(BOOL)supportsSecureCoding{
+    return YES;
+}
 -(id)init
 {
     self = [super init];
@@ -57,7 +61,8 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
     if (self) {
-        self.sourceList = [aDecoder decodeObjectForKey:@"sourceList"];
+//        self.sourceList = [aDecoder decodeObjectForKey:@"sourceList"];
+        self.sourceList = [aDecoder decodeObjectOfClass:[NSArray class] forKey:@"sourceList"];
     }
     return self;
 }
@@ -65,32 +70,10 @@
     [aCoder encodeObject:self.sourceList forKey:@"sourceList"];
 }
 
-- (BOOL)isExistAtPath:(NSString *)filePath {
-    BOOL success;
-    
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-	//检查目录文件
-	success = [fileManager fileExistsAtPath:filePath];
-    
-    return success;
-}
-- (BOOL)createFileAtPath:(NSString *)filePath {
-    BOOL success;
-    
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-	//检查目录文件
-	success = [fileManager fileExistsAtPath:filePath];
-    
-    if (!success) {
-        success = [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    }
-    return success;
-}
-
 -(NSMutableDictionary*)sourceList{
     if (!_sourceList) {
-        if (![self isExistAtPath:self.filePath]) {
-            [self createFileAtPath:self.filePath];
+        if (![HCFileHelper isExistAtPath:self.filePath]) {
+            [HCFileHelper createFileAtPath:self.filePath];
             _sourceList = [[NSMutableDictionary alloc] init];
         }else{
             NSData *data = [NSData dataWithContentsOfFile:self.filePath];

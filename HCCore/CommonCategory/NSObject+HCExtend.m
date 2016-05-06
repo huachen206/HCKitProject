@@ -10,14 +10,30 @@
 
 @implementation NSObject (HCExtend)
 
++(BOOL)supportsSecureCoding{
+    return NO;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [self init];
     if (self)
     {
-        for (NSString *property in [[self class] hc_propertyNameList]) {
-            [self setValue:[aDecoder decodeObjectForKey:property] forKey:property];
+        for (HCPropertyInfo *propertyInfo in [[self class] hc_propertyInfosWithdepth:[[self class] hc_depthToBoot]]) {
+            if ([[self class] supportsSecureCoding]) {
+                Class typeClass =propertyInfo.typeClass;
+                if (!typeClass) {
+                    typeClass = [NSNumber class];
+                }
+                [self setValue:[aDecoder decodeObjectOfClass:typeClass forKey:propertyInfo.propertyName] forKey:propertyInfo.propertyName];
+            }else{
+                [self setValue:[aDecoder decodeObjectForKey:propertyInfo.propertyName] forKey:propertyInfo.propertyName];
+            }
+            
         }
+//        for (NSString *property in [[self class] hc_propertyNameList]) {
+//            [self setValue:[aDecoder decodeObjectForKey:property] forKey:property];
+//        }
     }
     return self;
 }
@@ -31,6 +47,14 @@
 
 @end
 @implementation NSObject (HCRuntime)
++(NSUInteger)hc_depthToBoot{
+    NSUInteger depth = 0;
+    if ([[self class] hc_isCustomClass]) {
+        depth = 1+ [[self superclass] hc_isCustomClass];
+    }
+    return depth;
+}
+
 +(NSArray *)hc_modelListWithDicArray:(NSArray *)array{
     NSMutableArray *modelList = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in array) {

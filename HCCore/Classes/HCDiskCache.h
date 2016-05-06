@@ -9,7 +9,7 @@
 /**
  *  可以将对象存入本地磁盘，功能类似于NSUserDefault
  */
-@interface HCDiskCache : NSObject<NSCoding>
+@interface HCDiskCache : NSObject<NSSecureCoding>
 -(void)addObject:(id)obj key:(NSString *)keyName;
 -(id)objectForKey:(NSString *)keyName;
 -(void)removeObjectForKey:(NSString *)keyName;
