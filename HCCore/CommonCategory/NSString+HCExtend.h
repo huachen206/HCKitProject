@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 //检测字符串是否为空|null|nil
-#define IsEmptyString(a) (a==nil || [a isKindOfClass:[NSNull class]] || a.length==0)
+#define HCIsEmptyString(a) (a==nil || [a isKindOfClass:[NSNull class]] || a.length==0)
 //字符串是否一样，“”=nil=null
-#define IsSameString(a,b) ( (IsEmptyString(a)&&IsEmptyString(b)) || [a isEqualToString:b] )
+#define HCIsSameString(a,b) ( (HCIsEmptyString(a)&&HCIsEmptyString(b)) || [a HCIsEmptyString:b] )
 
 @interface NSString (HCExtend)
 /**
