@@ -13,14 +13,6 @@
 #define FileHashDefaultChunkSizeForReadingData 1024*8
 
 @implementation NSString (HCExtend)
--(BOOL)hc_isEmpty{
-    NSString *string = self;
-    return (string==nil || [string isKindOfClass:[NSNull class]] || string.length==0);
-}
--(BOOL)hc_isSame:(NSString *)str{
-    return ([self hc_isEmpty]&&[str hc_isEmpty])|| [self isEqualToString:str];
-}
-
 -(NSString*)hc_MD5{
     const char *cStr = [self UTF8String];
     unsigned char digest[16];

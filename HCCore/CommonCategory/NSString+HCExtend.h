@@ -8,17 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+//检测字符串是否为空|null|nil
+#define IsEmptyString(a) (a==nil || [a isKindOfClass:[NSNull class]] || a.length==0)
+//字符串是否一样，“”=nil=null
+#define IsSameString(a,b) ( (IsEmptyString(a)&&IsEmptyString(b)) || [a isEqualToString:b] )
+
 @interface NSString (HCExtend)
-/**
- *  检测是否为nil，null，或长度为0
- *
- */
--(BOOL)hc_isEmpty;
-/**
- *  检测两个字符串是否相同
- *
- */
--(BOOL)hc_isSame:(NSString *)str;
 /**
  *  取文件的md5
  *
