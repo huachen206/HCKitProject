@@ -10,5 +10,8 @@
 @implementation StudentInfo
 @end
 @implementation ClassInfo
++(BOOL)supportsSecureCoding{
+    return YES;
+}
 
 @end

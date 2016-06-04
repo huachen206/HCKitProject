@@ -9,8 +9,9 @@
 #import "HCMainTableViewTableViewController.h"
 #import "HCDBViewController.h"
 #import "ClassInfo.h"
-@interface HCMainTableViewTableViewController ()
 
+@interface HCMainTableViewTableViewController ()
+@property (nonatomic,strong) NSArray *cellInfos;
 @end
 
 @implementation HCMainTableViewTableViewController
@@ -22,8 +23,16 @@
     NSDictionary *dic = @{@"className":@"高二",@"grade":@"99",@"astudentInfo":@{@"studentName":@"王五",@"fatherName":@"王父",@"motherName":@"王母"},@"studentInfo":@[@{@"studentName":@"张三",@"fatherName":@"张父",@"motherName":@"张母"},@{@"studentName":@"李四",@"fatherName":@"李父",@"motherName":@"李母"},@{@"studentName":@"王五",@"fatherName":@"王父",@"motherName":@"王母"}],@"teacherList":@[@"赵老师",@"吴老师"]};
     ClassInfo *classInfo = [[ClassInfo alloc] hc_initWithDictionary:dic];
     
-    [classInfo hc_debugLog];
+//    [[HCDiskCache diskCache] addObject:classInfo key:@"classInfo"];
     
+    
+    ClassInfo *diskInfo = [[HCDiskCache diskCache] objectForKey:@"classInfo"];
+    
+//    [classInfo hc_debugLog];
+    
+    self.cellInfos = @[
+  @[@"HCDBViewController",@"DBVCID",@"sql数据库"],
+  @[@"RWTItemsViewController",@"RWTItems",@"ibeacon"]];
     
 }
 
@@ -39,20 +48,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.cellInfos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"DBPackage";
+//    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell" forIndexPath:indexPath];
+    NSArray *info = self.cellInfos[indexPath.row];
+    cell.textLabel.text = info[2];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HCDBViewController *dbv = [self.storyboard instantiateViewControllerWithIdentifier:@"DBVCID"];
-    [self.navigationController pushViewController:dbv animated:YES];
+    NSArray *info = self.cellInfos[indexPath.row];
+    UIViewController *vc =[self.storyboard instantiateViewControllerWithIdentifier:info[1]];
+    
+//    HCDBViewController *dbv = [self.storyboard instantiateViewControllerWithIdentifier:@"DBVCID"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

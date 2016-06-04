@@ -9,6 +9,9 @@
 
 #ifndef HCKitProject_h
 #define HCKitProject_h
+#import "HCCommonCategory.h"
+#import "HCUtilityFuc.h"
+#import "HCUtilityMacro.h"
 
 #import "HCClock.h"
 #import "HCIdCardNoRulesChecker.h"
@@ -21,6 +24,7 @@
 #import "HCTypeDecoder.h"
 #import "HCLocalizable.h"
 #import "HCHTTPRequest.h"
+#import "HCUnit.h"
 
 
 #endif /* HCKitProject_h */

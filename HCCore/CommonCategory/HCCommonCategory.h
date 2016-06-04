@@ -16,3 +16,4 @@
 #import "UIView+HCExtend.h"
 #import "UIButton+HCCheckMenu.h"
 #import "UIDevice+HCExtend.h"
+#import "NSDate+HCExtend.h"
