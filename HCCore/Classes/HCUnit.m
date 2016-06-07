@@ -67,7 +67,7 @@
     if (![self.unitValue isEqualUnit:kUnitKey_kPa]) {
         self.unitValue = [self.unitValue toUnit:kUnitKey_kPa formula:^double(NSString *unit, double value) {
             if ([unit isEqualToString:kUnitKey_psi]) {
-                return value/6.895;
+                return value*6.895;
             }else if([unit isEqualToString:kUnitKey_Bar]){
                 return value*100;
             }else{
