@@ -98,7 +98,7 @@
 }
 -(HCUValue*)psi {
     return [[self baseUnitValue] toUnit:kUnitKey_psi formula:^double(NSString *unit, double value) {
-        return value*6.895;
+        return value/6.895;
     }];
 }
 @end
