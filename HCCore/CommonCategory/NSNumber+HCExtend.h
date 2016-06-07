@@ -10,6 +10,7 @@
 
 @interface NSNumber (HCExtend)
 -(NSString *)valueStringForRoundUp:(int)afterPoint;
+-(NSString *)valueStringForRoundZero;
 -(NSString *)valueStringForRoundOne;
 -(NSString *)valueStringForRoundTwo;
 -(NSString *)valueStringForRoundThree;

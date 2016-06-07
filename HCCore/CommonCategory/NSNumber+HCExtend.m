@@ -15,6 +15,9 @@
     NSDecimalNumber *dv = [NSDecimalNumber decimalNumberWithMantissa:intValue exponent:-afterPoint isNegative:NO];
     return dv.stringValue;
 }
+-(NSString *)valueStringForRoundZero{
+    return [self valueStringForRoundUp:0];
+}
 -(NSString *)valueStringForRoundOne{
     return [self valueStringForRoundUp:1];
 }

@@ -17,3 +17,4 @@
 #import "UIButton+HCCheckMenu.h"
 #import "UIDevice+HCExtend.h"
 #import "NSDate+HCExtend.h"
+#import "NSNumber+HCExtend.h"
