@@ -27,7 +27,11 @@
             if ([tableField.dataType isEqualToString:@"INTEGER"]) {
                 [self setValue:@([result longLongIntForColumn:tableField.columnName]) forKey:tableField.columnName];
             }else if ([tableField.dataType isEqualToString:@"TEXT"]) {
-                [self setValue:[result stringForColumn:tableField.columnName] forKey:tableField.columnName];
+                if ([tableField.typeClass isSubclassOfClass:[NSNumber class]]) {
+                    [self setValue:[NSNumber numberWithDouble:[[result stringForColumn:tableField.columnName] doubleValue]] forKey:tableField.columnName];
+                }else{
+                    [self setValue:[result stringForColumn:tableField.columnName] forKey:tableField.columnName];
+                }
             }else if ([tableField.dataType isEqualToString:@"BOOLEAN"]) {
                 [self setValue:@([result boolForColumn:tableField.columnName]) forKey:tableField.columnName];
             }else if ([tableField.dataType isEqualToString:@"REAL"]) {

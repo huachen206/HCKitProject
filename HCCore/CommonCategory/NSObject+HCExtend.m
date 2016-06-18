@@ -20,20 +20,21 @@
     if (self)
     {
         for (HCPropertyInfo *propertyInfo in [[self class] hc_propertyInfosWithdepth:[[self class] hc_depthToBoot]]) {
+            id value = nil;
             if ([[self class] supportsSecureCoding]) {
                 Class typeClass =propertyInfo.typeClass;
                 if (!typeClass) {
                     typeClass = [NSNumber class];
                 }
-                [self setValue:[aDecoder decodeObjectOfClass:typeClass forKey:propertyInfo.propertyName] forKey:propertyInfo.propertyName];
+                value =[aDecoder decodeObjectOfClass:typeClass forKey:propertyInfo.propertyName];
             }else{
-                [self setValue:[aDecoder decodeObjectForKey:propertyInfo.propertyName] forKey:propertyInfo.propertyName];
+                value =[aDecoder decodeObjectForKey:propertyInfo.propertyName];
+            }
+            if (value) {
+                [self setValue:value forKey:propertyInfo.propertyName];
             }
             
         }
-//        for (NSString *property in [[self class] hc_propertyNameList]) {
-//            [self setValue:[aDecoder decodeObjectForKey:property] forKey:property];
-//        }
     }
     return self;
 }

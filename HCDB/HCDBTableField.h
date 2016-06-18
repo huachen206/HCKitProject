@@ -20,4 +20,9 @@
 +(NSArray *)tableFieldListWithClass:(Class)aclass;
 
 -(void)changeDataType:(NSString *)dataType;
+/**
+ *  对应的Model属性类型
+ *
+ */
+-(Class)typeClass;
 @end

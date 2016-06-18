@@ -13,7 +13,6 @@
 @interface HCTestDBModel : HCDBModel
 
 @property(nonatomic,assign) NSInteger HC_PRIMARY_KEY_AUTOINCREMENT(aindex);
-@property(nonatomic,strong) NSString* astring;
 @property(nonatomic,assign) BOOL abool;
 @property(nonatomic,assign) char achar;
 @property(nonatomic,assign) int aint;
@@ -22,7 +21,9 @@
 @property(nonatomic,assign) float afloat;
 @property(nonatomic,assign) double adouble;
 @property(nonatomic,strong) NSData *adata;
+@property(nonatomic,strong) NSString* astring;
 @property(nonatomic,strong) HCDBTableField *HC_IGNORE(field);
+@property(nonatomic,strong) NSNumber *nsnumber;
 -(void)creatTestData;
 
 @end

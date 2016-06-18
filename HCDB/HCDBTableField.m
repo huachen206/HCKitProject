@@ -122,8 +122,8 @@ static NSDictionary * dataTypeEncodingDic;
                     _dataType = @"TEXT";
                 }else if ([pi.typeClass isSubclassOfClass:[NSData class]]){
                     _dataType = @"BLOB";
-                }
-                else{
+                }else if ([pi.typeClass isSubclassOfClass:[NSNumber class]]){
+                    _dataType = @"TEXT";
                 }
             }else{
                 _dataType = dataTypeEncodingDic[pi.typeEncoding];
@@ -155,6 +155,9 @@ static NSDictionary * dataTypeEncodingDic;
 }
 -(BOOL)isAutoIncrement{
     return _autoIncrement;
+}
+-(Class)typeClass{
+    return _propertyInfo.typeClass;
 }
 
 +(NSString *)hc_sqlDataTypeWithProtocolName:(NSString *)protocolName{

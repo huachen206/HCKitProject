@@ -25,6 +25,9 @@
     self.afloat = 10.5;
     self.adouble = 9.7;
     self.adata = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HCEncoding" ofType:@"plist"]];
+    self.nsnumber = @(1022.0034);
+    
+    
 }
 
 @end

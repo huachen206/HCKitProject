@@ -26,16 +26,17 @@
     HCTestDBModel_depth2 *db = [[HCTestDBModel_depth2 alloc] init];
     [db creatTestData];
     
-    for (HCPropertyInfo *pi in [[db class] hc_propertyInfosWithdepth:2]) {
-        NSLog(@"%@",pi);
-    }
+//    for (HCPropertyInfo *pi in [[db class] hc_propertyInfosWithdepth:2]) {
+//        NSLog(@"%@",pi);
+//    }
 //    NSArray *plist = [HCTestDBModel hc_propertyNameList];
 //    NSArray *fList = [HCTestDBModel tableFieldList];
     
-    
+//    NSArray *models = [[HCTestDAO dao].testTable selectAll];
+
     [[HCTestDAO dao].testTable insertOrReplaceWithModel:db autoPrimaryKey:YES];
     
-    [[HCDiskCache diskCache] addObject:db key:@"adb"];
+//    [[HCDiskCache diskCache] addObject:db key:@"adb"];
     
 //    HCTestDBModel_depth2 *adb = [[HCDiskCache diskCache] objectForKey:@"adb"];
 //

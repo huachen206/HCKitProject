@@ -13,6 +13,4 @@
 @property (nonatomic,strong) NSString *addColumn1;
 @property (nonatomic,strong) NSString *addColumn2;
 @property (nonatomic,strong) NSString *addColumn3;
-//@property (nonatomic,strong) NSString *addColumn4;
-//@property (nonatomic,strong) NSString *addColumn5;
 @end
