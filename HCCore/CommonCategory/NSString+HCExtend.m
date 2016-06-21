@@ -267,4 +267,8 @@ static inline NSRegularExpression *NumberRegularExpression() {
     return nil;
 }
 
+-(NSString *)hc_base64EncodedString {
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+}
+
 @end

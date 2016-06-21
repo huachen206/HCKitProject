@@ -25,6 +25,7 @@
 #import "HCLocalizable.h"
 #import "HCHTTPRequest.h"
 #import "HCUnit.h"
+#import "HCQRScanner.h"
 
 
 #endif /* HCKitProject_h */

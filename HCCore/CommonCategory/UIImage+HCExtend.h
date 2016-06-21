@@ -90,4 +90,22 @@
  *
  */
 +(UIImage*)hc_imageFromContext:(CGContextRef) context orientation:(UIImageOrientation) orientation;
+/**
+ *  生成一个二维码图片
+ *
+ *  @param qrs  内容
+ *  @param size 图片边长
+ *  @param level 纠错等级，L级可纠正约7%错误、M级别可纠正约15%错误、Q级别可纠正约25%错误、H级别可纠正约30%错误
+ *
+ */
++(UIImage *)hc_imageWithQRString:(NSString *)qrs size:(float)size level:(NSString*)level;
+/**
+ *  将图片的白色部分变为透明，黑色部分填充颜色
+ *
+ *  @param red   0~255
+ *  @param green 0~255
+ *  @param blue  0~255
+ *
+ */
++(UIImage*)hc_imageBlackToTransparent:(UIImage*)image withRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue;
 @end

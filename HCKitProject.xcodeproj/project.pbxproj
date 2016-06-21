@@ -43,6 +43,9 @@
 		BF6C37871CB7397100DBAA1B /* HCVersionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C37861CB7397100DBAA1B /* HCVersionTable.m */; };
 		BF8C3ECF1D029F1100D34E22 /* NSNumber+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3ECE1D029F1100D34E22 /* NSNumber+HCExtend.m */; };
 		BF8C3ED21D029F3000D34E22 /* HCUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3ED11D029F3000D34E22 /* HCUnit.m */; };
+		BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F051D177C5800D34E22 /* LocalNotificationViewController.m */; };
+		BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F0E1D18FF9A00D34E22 /* QRCoderViewController.m */; };
+		BF8C3F161D19094200D34E22 /* HCQRScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F151D19094200D34E22 /* HCQRScanner.m */; };
 		BFA36ACA1CF931F800DDD03E /* NSDate+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA36AC91CF931F800DDD03E /* NSDate+HCExtend.m */; };
 		BFAB46541CB5E789009E9C8B /* HCIdCardNoRulesChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46531CB5E789009E9C8B /* HCIdCardNoRulesChecker.m */; };
 		BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46561CB5E95F009E9C8B /* HCClock.m */; };
@@ -156,6 +159,13 @@
 		BF8C3ECE1D029F1100D34E22 /* NSNumber+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+HCExtend.m"; sourceTree = "<group>"; };
 		BF8C3ED01D029F3000D34E22 /* HCUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUnit.h; sourceTree = "<group>"; };
 		BF8C3ED11D029F3000D34E22 /* HCUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCUnit.m; sourceTree = "<group>"; };
+		BF8C3F041D177C5800D34E22 /* LocalNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationViewController.h; sourceTree = "<group>"; };
+		BF8C3F051D177C5800D34E22 /* LocalNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationViewController.m; sourceTree = "<group>"; };
+		BF8C3F0D1D18FF9A00D34E22 /* QRCoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCoderViewController.h; sourceTree = "<group>"; };
+		BF8C3F0E1D18FF9A00D34E22 /* QRCoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCoderViewController.m; sourceTree = "<group>"; };
+		BF8C3F101D1903F400D34E22 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		BF8C3F141D19094200D34E22 /* HCQRScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCQRScanner.h; sourceTree = "<group>"; };
+		BF8C3F151D19094200D34E22 /* HCQRScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCQRScanner.m; sourceTree = "<group>"; };
 		BFA36AC81CF931F800DDD03E /* NSDate+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HCExtend.h"; sourceTree = "<group>"; };
 		BFA36AC91CF931F800DDD03E /* NSDate+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HCExtend.m"; sourceTree = "<group>"; };
 		BFAB46521CB5E789009E9C8B /* HCIdCardNoRulesChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIdCardNoRulesChecker.h; sourceTree = "<group>"; };
@@ -266,6 +276,8 @@
 				BFD546581CDC82E100AA3B02 /* HCFileHelper.m */,
 				BF8C3ED01D029F3000D34E22 /* HCUnit.h */,
 				BF8C3ED11D029F3000D34E22 /* HCUnit.m */,
+				BF8C3F141D19094200D34E22 /* HCQRScanner.h */,
+				BF8C3F151D19094200D34E22 /* HCQRScanner.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -346,6 +358,8 @@
 		BF49CB171C1A5A2900C3CF4E /* HCKitProject */ = {
 			isa = PBXGroup;
 			children = (
+				BF8C3F0C1D18FF7300D34E22 /* QRCoder */,
+				BF8C3F031D177BC400D34E22 /* LocalNotification */,
 				BFAECB521CB79C31001C9819 /* common */,
 				BF4F0A7F1CB4A3A800273510 /* HTTPTest */,
 				BF49CB641C1A699000C3CF4E /* DBTestField */,
@@ -359,6 +373,7 @@
 				BF49CB241C1A5A2900C3CF4E /* Assets.xcassets */,
 				BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */,
 				BF49CB291C1A5A2900C3CF4E /* Info.plist */,
+				BF8C3F101D1903F400D34E22 /* PrefixHeader.pch */,
 				BF49CB181C1A5A2900C3CF4E /* Supporting Files */,
 			);
 			path = HCKitProject;
@@ -436,6 +451,24 @@
 			children = (
 			);
 			name = HTTPTest;
+			sourceTree = "<group>";
+		};
+		BF8C3F031D177BC400D34E22 /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				BF8C3F041D177C5800D34E22 /* LocalNotificationViewController.h */,
+				BF8C3F051D177C5800D34E22 /* LocalNotificationViewController.m */,
+			);
+			name = LocalNotification;
+			sourceTree = "<group>";
+		};
+		BF8C3F0C1D18FF7300D34E22 /* QRCoder */ = {
+			isa = PBXGroup;
+			children = (
+				BF8C3F0D1D18FF9A00D34E22 /* QRCoderViewController.h */,
+				BF8C3F0E1D18FF9A00D34E22 /* QRCoderViewController.m */,
+			);
+			name = QRCoder;
 			sourceTree = "<group>";
 		};
 		BFAECB4E1CB79268001C9819 /* HCRequestApi */ = {
@@ -665,6 +698,7 @@
 				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
 				BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */,
 				BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */,
+				BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */,
 				BF8C3ECF1D029F1100D34E22 /* NSNumber+HCExtend.m in Sources */,
 				BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
@@ -680,6 +714,7 @@
 				BF0DED6B1CA50B1F00B10C46 /* NSArray+HCExtend.m in Sources */,
 				BF0DED6C1CA50B1F00B10C46 /* NSObject+HCExtend.m in Sources */,
 				BF0DED661CA50B1F00B10C46 /* HCIvarInfo.m in Sources */,
+				BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */,
 				BF0DED6E1CA50B1F00B10C46 /* UILabel+StringFrame.m in Sources */,
 				BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */,
 				BFC573411CC9F5A2007015CE /* HCLocalizable.m in Sources */,
@@ -704,6 +739,7 @@
 				BFAECB511CB79268001C9819 /* HCHTTPRequest.m in Sources */,
 				BF0DED681CA50B1F00B10C46 /* HCProfileService.m in Sources */,
 				BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */,
+				BF8C3F161D19094200D34E22 /* HCQRScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +881,7 @@
 			baseConfigurationReference = EBA124A3FD3C432E7342B88F /* Pods-HCKitProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/huachen/GitRepository/HCKitProject/HCKitProject/PrefixHeader.pch;
 				INFOPLIST_FILE = HCKitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProject;
@@ -858,6 +895,7 @@
 			baseConfigurationReference = 52386ACEE0B0CFADFE384476 /* Pods-HCKitProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/huachen/GitRepository/HCKitProject/HCKitProject/PrefixHeader.pch;
 				INFOPLIST_FILE = HCKitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huachen.HCKitProject;

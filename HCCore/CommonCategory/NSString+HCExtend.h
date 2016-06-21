@@ -43,5 +43,10 @@
 - (NSString *)hc_urldecodedValue;
 - (NSString *)hc_urlencodedValue;
 
+/**
+ *  base64编码转换
+ *
+ */
+-(NSString *)hc_base64EncodedString;
 
 @end

@@ -32,7 +32,9 @@
     
     self.cellInfos = @[
   @[@"HCDBViewController",@"DBVCID",@"sql数据库"],
-  @[@"RWTItemsViewController",@"RWTItems",@"ibeacon"]];
+  @[@"RWTItemsViewController",@"RWTItems",@"ibeacon"],
+  @[@"LocalNotificationViewController",@"LocalNotification",@"本地推送"],
+  @[@"QRCoderViewController",@"QRCoderViewController",@"二维码"]];
     
 }
 
