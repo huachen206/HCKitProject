@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class UIView;
 @class HCQRScanner;
 /**
  *  二维码扫描回调

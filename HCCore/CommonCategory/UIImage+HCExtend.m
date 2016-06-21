@@ -9,6 +9,7 @@
 #import "UIImage+HCExtend.h"
 #import <Accelerate/Accelerate.h>
 #import "HCUtilityMacro.h"
+#import "NSString+HCExtend.h"
 
 #define kPAMaxImageSizeMB 5.0f // The resulting image will be (x)MB of uncompressed image data.
 #define kSourceImageTileSizeMB 5.0f // The tile size will be (x)MB of uncompressed image data.

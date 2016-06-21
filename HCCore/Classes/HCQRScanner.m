@@ -8,6 +8,7 @@
 
 #import "HCQRScanner.h"
 #import <AVFoundation/AVFoundation.h>
+#import <UIKit/UIKit.h>
 @interface HCQRScanner()<AVCaptureMetadataOutputObjectsDelegate>
 {
     AVCaptureSession * session;//输入输出的中间桥梁

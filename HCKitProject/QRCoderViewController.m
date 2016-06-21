@@ -8,8 +8,8 @@
 
 #import "QRCoderViewController.h"
 #import "UIImage+HCExtend.h"
+#import "HCQRScanner.h"
 @interface QRCoderViewController(){
-    HCQRScanner *_scanner;
 }
 @end
 @implementation QRCoderViewController
