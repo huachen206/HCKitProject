@@ -7,8 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-@class UIView;
+
+#import <UIKit/UIKit.h>
 @class HCQRScanner;
+typedef void(^ScannerResultBlock)(HCQRScanner *scanner,NSString *result,BOOL *dontStop);
+
+@interface HCQRScannerView : UIView
+-(void)inView:(UIView *)inview scanner:(HCQRScanner *)scanner previewLayer:(CALayer *)prelayer;
+
+@end
+
+@class UIView;
+@class HCQRScannerView;
 /**
  *  二维码扫描回调
  *
@@ -16,10 +26,9 @@
  *  @param result   结果字符串
  *  @param dontStop 扫描到结果后是否不停止。
  */
-typedef void(^ScannerResultBlock)(HCQRScanner *scanner,NSString *result,BOOL *dontStop);
 
 @interface HCQRScanner : NSObject
-+(instancetype)scanner;
+
 /**
  *  扫描二维码
  *
@@ -28,6 +37,7 @@ typedef void(^ScannerResultBlock)(HCQRScanner *scanner,NSString *result,BOOL *do
  *  @param isStartNow  是否立即开始扫描
  */
 -(void)inView:(UIView*)inview scannerResult:(ScannerResultBlock)resultBlock isStartNow:(BOOL)isStartNow;
++(instancetype)inView:(UIView*)inview scannerResult:(ScannerResultBlock)resultBlock isStartNow:(BOOL)isStartNow;
 
 -(void)start;
 -(void)stop;

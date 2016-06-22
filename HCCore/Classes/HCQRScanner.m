@@ -8,27 +8,59 @@
 
 #import "HCQRScanner.h"
 #import <AVFoundation/AVFoundation.h>
-#import <UIKit/UIKit.h>
+@interface HCQRScannerView()
+@property (nonatomic,strong) HCQRScanner *scanner;
+@property (nonatomic,weak) CALayer *previewLayer;
+@end
+@implementation HCQRScannerView
+
+-(void)inView:(UIView *)inview scanner:(HCQRScanner *)scanner previewLayer:(CALayer *)prelayer{
+    self.scanner = scanner;
+    self.previewLayer = prelayer;
+    [self.layer addSublayer:prelayer];
+    
+    [inview addSubview:self];
+
+    // 禁止将 AutoresizingMask 转换为 Constraints
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    // 添加 left 约束
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:inview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    [inview addConstraint:leftConstraint];
+    // 添加 right 约束
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:inview attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+    [inview addConstraint:rightConstraint];
+    // 添加 top 约束
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:inview attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    [inview addConstraint:topConstraint];
+    // 添加 bottom 约束
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:inview attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+    [inview addConstraint:bottomConstraint];
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    if (self.previewLayer) {
+        self.previewLayer.frame=self.layer.bounds;
+    }
+}
+
+@end
+
 @interface HCQRScanner()<AVCaptureMetadataOutputObjectsDelegate>
 {
     AVCaptureSession * session;//输入输出的中间桥梁
     ScannerResultBlock _resultBlock;
-    AVCaptureVideoPreviewLayer *_layer;
     
 }
+@property (nonatomic,weak) HCQRScannerView *scannerView;
 @end
 
 @implementation HCQRScanner
-
-+(instancetype)scanner{
-    static id _sharedInstance = nil;
-    static dispatch_once_t onceToke;
-    dispatch_once(&onceToke, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    return _sharedInstance;
++(instancetype)inView:(UIView*)inview scannerResult:(ScannerResultBlock)resultBlock isStartNow:(BOOL)isStartNow{
+    HCQRScanner *scanner = [[HCQRScanner alloc] init];
+    [scanner inView:inview scannerResult:resultBlock isStartNow:isStartNow];
+    return scanner;
 }
-
 -(void)inView:(UIView*)inview scannerResult:(ScannerResultBlock)resultBlock isStartNow:(BOOL)isStartNow{
     _resultBlock = resultBlock;
     //获取摄像设备
@@ -52,12 +84,15 @@
     
     AVCaptureVideoPreviewLayer * layer = [AVCaptureVideoPreviewLayer layerWithSession:session];
     layer.videoGravity=AVLayerVideoGravityResizeAspectFill;
-    layer.frame=inview.layer.bounds;
-    [inview.layer addSublayer:layer];
-    _layer = layer;
+    
+    HCQRScannerView *scannerView = [[HCQRScannerView alloc] init];
+    [scannerView inView:inview scanner:self previewLayer:layer];
+    self.scannerView = scannerView;
+    
     if (isStartNow) {
         [self start];
     }
+
 }
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     if (metadataObjects.count>0) {
@@ -82,6 +117,10 @@
 }
 -(void)clear{
     [self stop];
-    [_layer removeFromSuperlayer];
+    session = nil;
+    _resultBlock = nil;
+    if (self.scannerView) {
+        [self.scannerView removeFromSuperview];
+    }
 }
 @end

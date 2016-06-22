@@ -10,6 +10,7 @@
 #import "UIImage+HCExtend.h"
 #import "HCQRScanner.h"
 @interface QRCoderViewController(){
+    HCQRScanner *_scanner;
 }
 @end
 @implementation QRCoderViewController
@@ -19,7 +20,9 @@
 }
 - (IBAction)sureAction:(id)sender {
     [self.textField resignFirstResponder];
-    [[HCQRScanner scanner] clear];
+    if (_scanner) {
+        [_scanner clear];
+    }
     if (self.textField.text.length) {
         self.qrCoderImageView.image = [UIImage hc_imageBlackToTransparent:[UIImage hc_imageWithQRString:self.textField.text size:self.qrCoderImageView.bounds.size.width level:@"M"] withRed:100 andGreen:40 andBlue:200];
     }
@@ -27,7 +30,7 @@
 
 - (IBAction)scannerAction:(id)sender {
     self.qrCoderImageView.image = nil;
-    [[HCQRScanner scanner] inView:self.qrCoderImageView scannerResult:^(HCQRScanner *scanner, NSString *result, BOOL *dontStop) {
+    _scanner =[HCQRScanner inView:self.qrCoderImageView scannerResult:^(HCQRScanner *scanner, NSString *result, BOOL *dontStop) {
         self.textField.text = result;
 //        *dontStop = YES;
         NSLog(@"%@",result);
