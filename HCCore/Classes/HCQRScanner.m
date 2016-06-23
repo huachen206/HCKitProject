@@ -97,13 +97,8 @@
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     if (metadataObjects.count>0) {
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex : 0 ];
-        BOOL *dontStop = (BOOL *)malloc(sizeof(BOOL));
-        *dontStop = NO;
         if (_resultBlock) {
-            _resultBlock(self,metadataObject.stringValue,dontStop);
-        }
-        if (!*dontStop) {
-            [self stop];
+            _resultBlock(self,metadataObject.stringValue);
         }
     }
 }

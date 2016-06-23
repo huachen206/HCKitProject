@@ -30,9 +30,8 @@
 
 - (IBAction)scannerAction:(id)sender {
     self.qrCoderImageView.image = nil;
-    _scanner =[HCQRScanner inView:self.qrCoderImageView scannerResult:^(HCQRScanner *scanner, NSString *result, BOOL *dontStop) {
+    _scanner =[HCQRScanner inView:self.qrCoderImageView scannerResult:^(HCQRScanner *scanner, NSString *result) {
         self.textField.text = result;
-//        *dontStop = YES;
         NSLog(@"%@",result);
         [scanner clear];
     } isStartNow:YES];

@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 @class HCQRScanner;
-typedef void(^ScannerResultBlock)(HCQRScanner *scanner,NSString *result,BOOL *dontStop);
+typedef void(^ScannerResultBlock)(HCQRScanner *scanner,NSString *result);
 
 @interface HCQRScannerView : UIView
 -(void)inView:(UIView *)inview scanner:(HCQRScanner *)scanner previewLayer:(CALayer *)prelayer;
