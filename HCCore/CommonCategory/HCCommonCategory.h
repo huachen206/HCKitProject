@@ -18,4 +18,5 @@
 #import "UIDevice+HCExtend.h"
 #import "NSDate+HCExtend.h"
 #import "NSNumber+HCExtend.h"
-#import "NSData+HCExtend.m"
+#import "NSData+HCExtend.h"
+#import "NSDictionary+HCExtend.h"
