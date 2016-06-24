@@ -272,3 +272,13 @@ static inline NSRegularExpression *NumberRegularExpression() {
 }
 
 @end
+
+#import "NSData+HCExtend.h"
+@implementation NSString (HCJSON)
+- (id )hc_jsonValue {
+    NSData* data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    return data.hc_jsonValue;
+}
+
+@end
+

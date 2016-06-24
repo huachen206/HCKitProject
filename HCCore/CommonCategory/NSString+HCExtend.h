@@ -49,4 +49,13 @@
  */
 -(NSString *)hc_base64EncodedString;
 
+
+@end
+
+@interface NSString (HCJSON)
+/**
+ *  转换出JOSN对象
+ *
+ */
+- (id )hc_jsonValue;
 @end

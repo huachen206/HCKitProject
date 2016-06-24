@@ -46,6 +46,8 @@
 		BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F051D177C5800D34E22 /* LocalNotificationViewController.m */; };
 		BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F0E1D18FF9A00D34E22 /* QRCoderViewController.m */; };
 		BF8C3F161D19094200D34E22 /* HCQRScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F151D19094200D34E22 /* HCQRScanner.m */; };
+		BF8C3F221D1D045E00D34E22 /* NSData+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F211D1D045E00D34E22 /* NSData+HCExtend.m */; };
+		BF8C3F251D1D06D600D34E22 /* NSDictionary+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F241D1D06D600D34E22 /* NSDictionary+HCExtend.m */; };
 		BFA36ACA1CF931F800DDD03E /* NSDate+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA36AC91CF931F800DDD03E /* NSDate+HCExtend.m */; };
 		BFAB46541CB5E789009E9C8B /* HCIdCardNoRulesChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46531CB5E789009E9C8B /* HCIdCardNoRulesChecker.m */; };
 		BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46561CB5E95F009E9C8B /* HCClock.m */; };
@@ -166,6 +168,10 @@
 		BF8C3F101D1903F400D34E22 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BF8C3F141D19094200D34E22 /* HCQRScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCQRScanner.h; sourceTree = "<group>"; };
 		BF8C3F151D19094200D34E22 /* HCQRScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCQRScanner.m; sourceTree = "<group>"; };
+		BF8C3F201D1D045E00D34E22 /* NSData+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HCExtend.h"; sourceTree = "<group>"; };
+		BF8C3F211D1D045E00D34E22 /* NSData+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HCExtend.m"; sourceTree = "<group>"; };
+		BF8C3F231D1D06D600D34E22 /* NSDictionary+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HCExtend.h"; sourceTree = "<group>"; };
+		BF8C3F241D1D06D600D34E22 /* NSDictionary+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HCExtend.m"; sourceTree = "<group>"; };
 		BFA36AC81CF931F800DDD03E /* NSDate+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HCExtend.h"; sourceTree = "<group>"; };
 		BFA36AC91CF931F800DDD03E /* NSDate+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HCExtend.m"; sourceTree = "<group>"; };
 		BFAB46521CB5E789009E9C8B /* HCIdCardNoRulesChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIdCardNoRulesChecker.h; sourceTree = "<group>"; };
@@ -310,6 +316,10 @@
 				BFA36AC91CF931F800DDD03E /* NSDate+HCExtend.m */,
 				BF8C3ECD1D029F1100D34E22 /* NSNumber+HCExtend.h */,
 				BF8C3ECE1D029F1100D34E22 /* NSNumber+HCExtend.m */,
+				BF8C3F201D1D045E00D34E22 /* NSData+HCExtend.h */,
+				BF8C3F211D1D045E00D34E22 /* NSData+HCExtend.m */,
+				BF8C3F231D1D06D600D34E22 /* NSDictionary+HCExtend.h */,
+				BF8C3F241D1D06D600D34E22 /* NSDictionary+HCExtend.m */,
 			);
 			path = CommonCategory;
 			sourceTree = "<group>";
@@ -701,6 +711,7 @@
 				BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */,
 				BF8C3ECF1D029F1100D34E22 /* NSNumber+HCExtend.m in Sources */,
 				BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */,
+				BF8C3F251D1D06D600D34E22 /* NSDictionary+HCExtend.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
 				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,
 				BFC573441CC9F79A007015CE /* UIDevice+HCExtend.m in Sources */,
@@ -721,6 +732,7 @@
 				BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */,
 				BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */,
 				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
+				BF8C3F221D1D045E00D34E22 /* NSData+HCExtend.m in Sources */,
 				BFD546591CDC82E100AA3B02 /* HCFileHelper.m in Sources */,
 				BFDA8E911CB4D7AB00910331 /* HCActionInterval.m in Sources */,
 				BF0DED651CA50B1F00B10C46 /* HCDiskCache.m in Sources */,

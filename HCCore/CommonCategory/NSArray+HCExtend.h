@@ -1,3 +1,4 @@
+
 //
 //  NSArray+HCExtend.h
 //  HCKitProject
@@ -23,4 +24,16 @@
  */
 -(nullable NSArray*)hc_map:(_Nullable id(^_Nullable)(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop))usingBlock;
 
+@end
+@interface NSArray (HCJSON)
+/**
+ *  转换成JSON字符串
+ *
+ */
+- (nullable NSString *)hc_jsonString;
+/**
+ *  转换成JSONData
+ *
+ */
+- (nullable NSData *)hc_jsonData;
 @end
