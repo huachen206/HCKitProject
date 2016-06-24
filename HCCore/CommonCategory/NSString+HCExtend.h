@@ -48,7 +48,16 @@
  *
  */
 -(NSString *)hc_base64EncodedString;
-
+/**
+ *  将一个十六进制整数字符，转换成无符号长整型
+ *
+ */
+-(unsigned long)hc_hexValue;
+/**
+ *  将一个无符号长整型，转换成字符串
+ *
+ */
+extern NSString *NSStringOfHexFromValue(unsigned long value);
 
 @end
 

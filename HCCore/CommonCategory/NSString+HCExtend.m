@@ -271,6 +271,20 @@ static inline NSRegularExpression *NumberRegularExpression() {
 	return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
 }
 
+-(unsigned long)hc_hexValue{
+    NSString *hexStr = nil;
+    if (![self hasPrefix:@"0x"]) {
+        hexStr = [NSString stringWithFormat:@"0x%@",self];
+    }else{
+        hexStr = self;
+    }
+    NSUInteger value = strtoul([hexStr UTF8String],0,16);
+    return value;
+}
+extern NSString *NSStringOfHexFromValue(unsigned long value){
+    return [NSString stringWithFormat:@"%lx",value];
+}
+
 @end
 
 #import "NSData+HCExtend.h"
