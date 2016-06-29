@@ -36,6 +36,11 @@
   @[@"LocalNotificationViewController",@"LocalNotification",@"本地推送"],
   @[@"QRCoderViewController",@"QRCoderViewController",@"二维码"]];
     
+    float kpa = 180;
+    float bar = 180/100.0;
+    
+    NSLog(@"%@",@(bar).valueStringForRoundTwo);
+    
 }
 
 - (void)didReceiveMemoryWarning {
