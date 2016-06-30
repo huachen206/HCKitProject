@@ -12,6 +12,7 @@
 
 @interface HCMainTableViewTableViewController ()
 @property (nonatomic,strong) NSArray *cellInfos;
+@property (nonatomic,strong) NSArray *classInfoList;
 @end
 
 @implementation HCMainTableViewTableViewController
@@ -22,9 +23,11 @@
     
     NSDictionary *dic = @{@"className":@"高二",@"grade":@"99",@"astudentInfo":@{@"studentName":@"王五",@"fatherName":@"王父",@"motherName":@"王母"},@"studentInfo":@[@{@"studentName":@"张三",@"fatherName":@"张父",@"motherName":@"张母"},@{@"studentName":@"李四",@"fatherName":@"李父",@"motherName":@"李母"},@{@"studentName":@"王五",@"fatherName":@"王父",@"motherName":@"王母"}],@"teacherList":@[@"赵老师",@"吴老师"]};
     ClassInfo *classInfo = [[ClassInfo alloc] hc_initWithDictionary:dic];
-    
+    ClassInfo *classInfo2 = [[ClassInfo alloc] hc_initWithDictionary:dic];
 //    [[HCDiskCache diskCache] addObject:classInfo key:@"classInfo"];
-    
+    self.classInfoList = @[classInfo,classInfo2];
+    [[HCDiskCache diskCache] addObject:self.classInfoList key:@"classInfolist"];
+
     
     ClassInfo *diskInfo = [[HCDiskCache diskCache] objectForKey:@"classInfo"];
     

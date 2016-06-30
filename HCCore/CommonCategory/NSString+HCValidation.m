@@ -102,8 +102,8 @@
     }else if ([predicate isKindOfClass:[NSArray class]]){
         for (NSString *prestr in predicate) {
             NSPredicate * regextest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",prestr];
-            if (![regextest evaluateWithObject:self]){
-                return NO;
+            if ([regextest evaluateWithObject:self]){
+                return YES;
             }
         }
     }else{
