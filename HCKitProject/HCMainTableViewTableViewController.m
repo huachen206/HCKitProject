@@ -10,6 +10,8 @@
 #import "HCDBViewController.h"
 #import "ClassInfo.h"
 
+#import "HCKitHTTPRequest.h"
+
 @interface HCMainTableViewTableViewController ()
 @property (nonatomic,strong) NSArray *cellInfos;
 @property (nonatomic,strong) NSArray *classInfoList;
@@ -43,6 +45,12 @@
     float bar = 180/100.0;
     
     NSLog(@"%@",@(bar).valueStringForRoundTwo);
+    
+    
+    
+    [[HCKitHTTPRequest requestForCarList] success:^(id  _Nullable responseObject) {
+    }];
+    
     
 }
 

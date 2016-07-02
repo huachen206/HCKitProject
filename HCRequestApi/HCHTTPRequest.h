@@ -29,10 +29,12 @@
  *  重载这个方法以统一处理返回数据
  *
  */
-+(void)handleWithResponsObject:(id _Nullable)responsObject success:(void(^_Nullable)(id _Nullable responseObject))successBlock failure:(void(^_Nullable)(NSError * _Nonnull error))failureBlock;
+-(void)handleWithResponsObject:(id _Nullable)responsObject success:(void(^_Nullable)(id _Nullable responseObject))successBlock failure:(void(^_Nullable)(NSError * _Nonnull error))failureBlock;
 
 -(id _Nonnull)success:(void(^_Nullable)(id _Nullable responseObject))successBlock;
 -(id _Nonnull)success:(void(^_Nullable)(id _Nullable responseObject))successBlock failure:(void(^_Nullable)(NSError * _Nonnull error))failureBlock;
 -(void)cancel;
+-(NSString*_Nullable)urlString;
+-(NSDictionary*_Nullable)parameters;
 
 @end
