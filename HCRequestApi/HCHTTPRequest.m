@@ -66,9 +66,9 @@
     return [[self alloc] initWithUrl:urlString parameters:parameters withMethod:@"GET"];
 }
 
--(id)handleResponsObject:(id)responsObject{
-    DebugLog(@"\n--------------------------------------------------------------\nReceivedData HCHTTPRequest:\n%@\n%@\n--------------------------------------------------------------",self.urlString,responsObject);
-    return responsObject;
+-(id)handleResponsObject:(id)responseObject{
+    DebugLog(@"\n--------------------------------------------------------------\nReceivedData HCHTTPRequest:\n%@\n%@\n--------------------------------------------------------------",self.urlString,responseObject);
+    return responseObject;
 }
 
 -(id)initWithUrl:(NSString *)urlString parameters:(NSDictionary *)parameters withMethod:(NSString *)method{

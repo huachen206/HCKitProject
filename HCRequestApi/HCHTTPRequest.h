@@ -29,7 +29,7 @@
  *  重载这个方法以统一处理返回数据
  *
  */
--(id _Nonnull)handleResponsObject:(id _Nullable)responsObject;
+-(id _Nonnull)handleResponsObject:(id _Nullable)responseObject;
 
 -(id _Nonnull)success:(void(^_Nullable)(id _Nullable responseObject))successBlock;
 -(id _Nonnull)success:(void(^_Nullable)(id _Nullable responseObject))successBlock failure:(void(^_Nullable)(NSError * _Nonnull error))failureBlock;
