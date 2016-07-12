@@ -77,10 +77,14 @@
             _sourceList = [[NSMutableDictionary alloc] init];
         }else{
             NSData *data = [NSData dataWithContentsOfFile:self.filePath];
-            NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-            NSDictionary *myDictionary = [unarchiver decodeObjectForKey:@"diskCach"];
-            [unarchiver finishDecoding];
-            _sourceList = [[NSMutableDictionary alloc] initWithDictionary:myDictionary];
+            if (data.length) {
+                NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+                NSDictionary *myDictionary = [unarchiver decodeObjectForKey:@"diskCach"];
+                [unarchiver finishDecoding];
+                _sourceList = [[NSMutableDictionary alloc] initWithDictionary:myDictionary];
+            }else{
+                _sourceList = [[NSMutableDictionary alloc] init];
+            }
         }
     }
     return _sourceList;
