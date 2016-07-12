@@ -54,3 +54,10 @@ static inline CGRect getScreenFrame() {
     return [UIScreen mainScreen].bounds;
 }
 
+//
+CG_INLINE CGRect
+CGRectAdd(CGRect rect,CGFloat x, CGFloat y, CGFloat width, CGFloat height)
+{
+    return CGRectMake(rect.origin.x+x, rect.origin.y+y, rect.size.width+width, rect.size.height+height);
+}
+
