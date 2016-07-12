@@ -68,3 +68,27 @@ extern NSString *NSStringOfHexFromValue(unsigned long value);
  */
 - (id )hc_jsonValue;
 @end
+
+
+@interface NSString(HCDES)
+/**
+ *  DES解密
+ *
+ *  @param str 密文
+ *  @param key 密钥
+ *
+ *  @return 明文
+ */
++ (NSString *) hc_decryptStr:(NSString *)str key:(NSString *)key;
+/**
+ *  DES加密
+ *
+ *  @param str 明文
+ *  @param key 密钥
+ *
+ *  @return 密文
+ */
++ (NSString *) hc_encryptStr:(NSString *)str key:(NSString *)key;
+
+@end
+
