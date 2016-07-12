@@ -20,5 +20,9 @@
     NSDictionary *para = @{@"data":@""};
     return [self requestWithParameters:para];
 }
++(id _Nonnull)requestForCarBrand{
+    //TODO: 正式的时候换成 http://appch.roidmi.com
+    return [self POST_requestWithUrl:[@"http://fmtest.mi-ae.cn/" stringByAppendingString:@"info/brand"] parameters:@{}];
+}
 
 @end

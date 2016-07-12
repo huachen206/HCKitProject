@@ -10,7 +10,13 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "HCUtilityMacro.h"
 #import "NSData+HCExtend.h"
-@interface HCHTTPRequest()
+//typedef void(^SUCCESSBLOCK)(id responseObject);
+//typedef void(^FAILBLOCK)(NSError * _Nonnull error);
+
+@interface HCHTTPRequest(){
+//    SUCCESSBLOCK _successBlock;
+//    FAILBLOCK _failBlock;
+}
 @property (nonatomic,copy) NSString *urlString;
 @property (nonatomic,strong) NSDictionary *parameters;
 
@@ -59,18 +65,10 @@
 +(id)GET_requestWithUrl:(NSString *)urlString parameters:(NSDictionary *)parameters{
     return [[self alloc] initWithUrl:urlString parameters:parameters withMethod:@"GET"];
 }
--(void)handleWithResponsObject:(id )responsObject success:(void(^)(id responseObject))successBlock failure:(void(^)(NSError * _Nonnull error))failureBlock{
-    DebugLog(@"\n--------------------------------------------------------------\nReceivedData HCHTTPRequest:\n%@\n%@\n--------------------------------------------------------------",self.urlString,[responsObject isKindOfClass:[NSData class]]?[((NSData *)responsObject) hc_jsonValue]:responsObject);
 
-    if ([responsObject isKindOfClass:[NSError class]]) {
-        if (failureBlock) {
-            failureBlock(responsObject);
-        }
-    }else{
-        if (successBlock) {
-            successBlock(responsObject);
-        }
-    }
+-(id)handleResponsObject:(id)responsObject{
+    DebugLog(@"\n--------------------------------------------------------------\nReceivedData HCHTTPRequest:\n%@\n%@\n--------------------------------------------------------------",self.urlString,responsObject);
+    return responsObject;
 }
 
 -(id)initWithUrl:(NSString *)urlString parameters:(NSDictionary *)parameters withMethod:(NSString *)method{
@@ -93,21 +91,31 @@
 
 -(id)success:(void(^)(id responseObject))successBlock failure:(void(^)(NSError * _Nonnull error))failureBlock{
     DebugLog(@"\n--------------------------------------------------------------\nSend HCHTTPRequest:\n%@\n%@\n--------------------------------------------------------------",self.urlString,self.parameters);
+
+    
     if ([self.method isEqualToString:@"POST"]) {
         self.dataTask =[[[self class] httpSessionManager] POST:self.urlString parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [self handleWithResponsObject:responseObject success:successBlock failure:failureBlock];
+            if (successBlock) {
+                successBlock([self handleResponsObject:responseObject]);
+            }
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [self handleWithResponsObject:error success:nil failure:failureBlock];
+            if (failureBlock) {
+                failureBlock([self handleResponsObject:error]);
+            }
         }];
     }else if([self.method isEqualToString:@"GET"]){
         self.dataTask = [[[self class] httpSessionManager] GET:self.urlString parameters:self.parameters progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [self handleWithResponsObject:responseObject success:successBlock failure:failureBlock];
+            if (successBlock) {
+                successBlock([self handleResponsObject:responseObject]);
+            }
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [self handleWithResponsObject:error success:nil failure:failureBlock];
+            if (failureBlock) {
+                failureBlock([self handleResponsObject:error]);
+            }
         }];
     }
     return self;
