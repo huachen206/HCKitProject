@@ -202,6 +202,40 @@
             </objects>
             <point key="canvasLocation" x="259" y="1899"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="5of-GX-9Ir">
+            <objects>
+                <viewController storyboardIdentifier="HUDViewController" id="Ess-zG-BzM" customClass="HUDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UtC-19-YVq"/>
+                        <viewControllerLayoutGuide type="bottom" id="533-sV-MaO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rlo-HZ-Ojz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKp-eh-PVb">
+                                <rect key="frame" x="46" y="91" width="33" height="30"/>
+                                <state key="normal" title="HUD"/>
+                                <connections>
+                                    <action selector="hudAction:" destination="Ess-zG-BzM" eventType="touchUpInside" id="mEV-Ij-e4y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6c-ch-I9Z">
+                                <rect key="frame" x="179" y="91" width="33" height="30"/>
+                                <state key="normal" title="Alert"/>
+                                <connections>
+                                    <action selector="alertAction:" destination="Ess-zG-BzM" eventType="touchUpInside" id="aak-Sj-aNS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7f-qm-AKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="2597"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="USd-c5-Gmi">
             <objects>

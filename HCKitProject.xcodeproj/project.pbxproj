@@ -59,6 +59,12 @@
 		BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C51C9A88AD005AAEDF /* HCDBModel.m */; };
 		BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */; };
 		BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */; };
+		BFC49D541D30E19A0076A90C /* HCHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D531D30E19A0076A90C /* HCHUD.m */; };
+		BFC49D571D30E1A70076A90C /* UIViewController+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D561D30E1A70076A90C /* UIViewController+HCExtend.m */; };
+		BFC49D5B1D30E3C30076A90C /* HUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D5A1D30E3C30076A90C /* HUDViewController.m */; };
+		BFC49D5E1D30E5C90076A90C /* HCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D5D1D30E5C90076A90C /* HCAlert.m */; };
+		BFC49D611D30E9830076A90C /* HCHUDPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D601D30E9830076A90C /* HCHUDPresentationController.m */; };
+		BFC49DC81D40C34E0076A90C /* HCHUDPresentationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49DC71D40C34E0076A90C /* HCHUDPresentationAnimationController.m */; };
 		BFC573411CC9F5A2007015CE /* HCLocalizable.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC573401CC9F5A2007015CE /* HCLocalizable.m */; };
 		BFC573441CC9F79A007015CE /* UIDevice+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC573431CC9F79A007015CE /* UIDevice+HCExtend.m */; };
 		BFD546591CDC82E100AA3B02 /* HCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD546581CDC82E100AA3B02 /* HCFileHelper.m */; };
@@ -195,6 +201,18 @@
 		BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel_depth2.m; sourceTree = "<group>"; };
 		BFC49D1C1D2754290076A90C /* HCKitHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKitHTTPRequest.h; sourceTree = "<group>"; };
 		BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKitHTTPRequest.m; sourceTree = "<group>"; };
+		BFC49D521D30E19A0076A90C /* HCHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUD.h; sourceTree = "<group>"; };
+		BFC49D531D30E19A0076A90C /* HCHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHUD.m; sourceTree = "<group>"; };
+		BFC49D551D30E1A70076A90C /* UIViewController+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HCExtend.h"; sourceTree = "<group>"; };
+		BFC49D561D30E1A70076A90C /* UIViewController+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HCExtend.m"; sourceTree = "<group>"; };
+		BFC49D591D30E3C30076A90C /* HUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDViewController.h; sourceTree = "<group>"; };
+		BFC49D5A1D30E3C30076A90C /* HUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDViewController.m; sourceTree = "<group>"; };
+		BFC49D5C1D30E5C90076A90C /* HCAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAlert.h; sourceTree = "<group>"; };
+		BFC49D5D1D30E5C90076A90C /* HCAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAlert.m; sourceTree = "<group>"; };
+		BFC49D5F1D30E9830076A90C /* HCHUDPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUDPresentationController.h; sourceTree = "<group>"; };
+		BFC49D601D30E9830076A90C /* HCHUDPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHUDPresentationController.m; sourceTree = "<group>"; };
+		BFC49DC61D40C34E0076A90C /* HCHUDPresentationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUDPresentationAnimationController.h; sourceTree = "<group>"; };
+		BFC49DC71D40C34E0076A90C /* HCHUDPresentationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHUDPresentationAnimationController.m; sourceTree = "<group>"; };
 		BFC5733F1CC9F5A2007015CE /* HCLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCLocalizable.h; sourceTree = "<group>"; };
 		BFC573401CC9F5A2007015CE /* HCLocalizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCLocalizable.m; sourceTree = "<group>"; };
 		BFC573421CC9F79A007015CE /* UIDevice+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HCExtend.h"; sourceTree = "<group>"; };
@@ -261,6 +279,14 @@
 			isa = PBXGroup;
 			children = (
 				BFAECB4D1CB79171001C9819 /* HCKitProject.h */,
+				BFC49D521D30E19A0076A90C /* HCHUD.h */,
+				BFC49D531D30E19A0076A90C /* HCHUD.m */,
+				BFC49D5F1D30E9830076A90C /* HCHUDPresentationController.h */,
+				BFC49D601D30E9830076A90C /* HCHUDPresentationController.m */,
+				BFC49DC61D40C34E0076A90C /* HCHUDPresentationAnimationController.h */,
+				BFC49DC71D40C34E0076A90C /* HCHUDPresentationAnimationController.m */,
+				BFC49D5C1D30E5C90076A90C /* HCAlert.h */,
+				BFC49D5D1D30E5C90076A90C /* HCAlert.m */,
 				BFAB46551CB5E95F009E9C8B /* HCClock.h */,
 				BFAB46561CB5E95F009E9C8B /* HCClock.m */,
 				BFC5733F1CC9F5A2007015CE /* HCLocalizable.h */,
@@ -295,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				BF3F9D861CB38E3A00390AF2 /* HCCommonCategory.h */,
+				BFC49D551D30E1A70076A90C /* UIViewController+HCExtend.h */,
+				BFC49D561D30E1A70076A90C /* UIViewController+HCExtend.m */,
 				BF0DED5D1CA50B1F00B10C46 /* NSArray+HCExtend.h */,
 				BF0DED5E1CA50B1F00B10C46 /* NSArray+HCExtend.m */,
 				BF0DED5F1CA50B1F00B10C46 /* NSObject+HCExtend.h */,
@@ -371,6 +399,7 @@
 		BF49CB171C1A5A2900C3CF4E /* HCKitProject */ = {
 			isa = PBXGroup;
 			children = (
+				BFC49D581D30E3A70076A90C /* HUD */,
 				BF8C3F0C1D18FF7300D34E22 /* QRCoder */,
 				BF8C3F031D177BC400D34E22 /* LocalNotification */,
 				BFAECB521CB79C31001C9819 /* common */,
@@ -521,6 +550,15 @@
 				BF0DED481CA504AB00B10C46 /* HCUtilityMacro.h */,
 			);
 			path = HCCore;
+			sourceTree = "<group>";
+		};
+		BFC49D581D30E3A70076A90C /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				BFC49D591D30E3C30076A90C /* HUDViewController.h */,
+				BFC49D5A1D30E3C30076A90C /* HUDViewController.m */,
+			);
+			name = HUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,16 +743,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC49D541D30E19A0076A90C /* HCHUD.m in Sources */,
+				BFC49D5E1D30E5C90076A90C /* HCAlert.m in Sources */,
 				BFAB46541CB5E789009E9C8B /* HCIdCardNoRulesChecker.m in Sources */,
 				BFDA8E8F1CB4D7AB00910331 /* HCAction.m in Sources */,
 				BF8C3ED21D029F3000D34E22 /* HCUnit.m in Sources */,
 				BF49CB581C1A5A6A00C3CF4E /* HCDAO.m in Sources */,
+				BFC49D571D30E1A70076A90C /* UIViewController+HCExtend.m in Sources */,
 				BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */,
 				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
 				BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */,
 				BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */,
 				BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */,
 				BF8C3ECF1D029F1100D34E22 /* NSNumber+HCExtend.m in Sources */,
+				BFC49DC81D40C34E0076A90C /* HCHUDPresentationAnimationController.m in Sources */,
 				BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */,
 				BF8C3F251D1D06D600D34E22 /* NSDictionary+HCExtend.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
@@ -722,6 +764,7 @@
 				BFC573441CC9F79A007015CE /* UIDevice+HCExtend.m in Sources */,
 				BFDA8E921CB4D7AB00910331 /* UIView+Action.m in Sources */,
 				BFDA8E901CB4D7AB00910331 /* HCActionInstant.m in Sources */,
+				BFC49D611D30E9830076A90C /* HCHUDPresentationController.m in Sources */,
 				BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */,
 				BF0DED671CA50B1F00B10C46 /* HCMethodInfo.m in Sources */,
 				BF3F9D911CB399EF00390AF2 /* UIButton+HCCheckMenu.m in Sources */,
@@ -749,6 +792,7 @@
 				BFA36ACA1CF931F800DDD03E /* NSDate+HCExtend.m in Sources */,
 				BF3F9D8D1CB3964F00390AF2 /* UIView+HCExtend.m in Sources */,
 				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
+				BFC49D5B1D30E3C30076A90C /* HUDViewController.m in Sources */,
 				BF0DED691CA50B1F00B10C46 /* HCPropertyInfo.m in Sources */,
 				BF0DED711CA5113600B10C46 /* NSString+HCExtend.m in Sources */,
 				BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */,

@@ -26,9 +26,10 @@
     NSDictionary *dic = @{@"className":@"高二",@"grade":@"99",@"astudentInfo":@{@"studentName":@"王五",@"fatherName":@"王父",@"motherName":@"王母"},@"studentInfo":@[@{@"studentName":@"张三",@"fatherName":@"张父",@"motherName":@"张母"},@{@"studentName":@"李四",@"fatherName":@"李父",@"motherName":@"李母"},@{@"studentName":@"王五",@"fatherName":@"王父",@"motherName":@"王母"}],@"teacherList":@[@"赵老师",@"吴老师"]};
     ClassInfo *classInfo = [[ClassInfo alloc] hc_initWithDictionary:dic];
     ClassInfo *classInfo2 = [[ClassInfo alloc] hc_initWithDictionary:dic];
-//    [[HCDiskCache diskCache] addObject:classInfo key:@"classInfo"];
+    [[HCDiskCache diskCache] addObject:classInfo key:@"classInfo"];
     self.classInfoList = @[classInfo,classInfo2];
-    [[HCDiskCache diskCache] addObject:self.classInfoList key:@"classInfolist"];
+    
+//    [[HCDiskCache diskCache] addObject:self.classInfoList key:@"classInfolist"];
 
     
     ClassInfo *diskInfo = [[HCDiskCache diskCache] objectForKey:@"classInfo"];
@@ -39,17 +40,13 @@
   @[@"HCDBViewController",@"DBVCID",@"sql数据库"],
   @[@"RWTItemsViewController",@"RWTItems",@"ibeacon"],
   @[@"LocalNotificationViewController",@"LocalNotification",@"本地推送"],
-  @[@"QRCoderViewController",@"QRCoderViewController",@"二维码"]];
+  @[@"QRCoderViewController",@"QRCoderViewController",@"二维码"],
+  @[@"HUDViewController",@"HUDViewController",@"HUD"]];
     
-    float kpa = 180;
-    float bar = 180/100.0;
-    
-    NSLog(@"%@",@(bar).valueStringForRoundTwo);
-    
-    
-    
-    [[HCKitHTTPRequest requestForCarList] success:^(id  _Nullable responseObject) {
-    }];
+//    float kpa = 180;
+//    float bar = 180/100.0;
+//    
+//    NSLog(@"%@",@(bar).valueStringForRoundTwo);
     
     
 }
