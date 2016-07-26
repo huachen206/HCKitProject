@@ -11,7 +11,7 @@
 
 @interface HCAlert : UIAlertController
 +(instancetype _Nonnull)alertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message;
--(id _Nonnull)addAction:(UIAlertAction * _Nullable(^_Nonnull)(UIAlertController *_Nonnull alertController))actionBlock;
+-(id _Nonnull)addActionWithBlock:(UIAlertAction * _Nullable(^_Nonnull)(UIAlertController *_Nonnull alertController))actionBlock;
 -(void)show;
--(id _Nonnull)addTextField:(void(^_Nonnull)(UITextField *_Nonnull textField,UIAlertController *_Nonnull alertController))textFieldBlock;
+-(id _Nonnull)addTextFieldWithBlock:(void(^_Nonnull)(UITextField *_Nonnull textField,UIAlertController *_Nonnull alertController))textFieldBlock;
 @end

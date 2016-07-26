@@ -9,29 +9,41 @@
 #import "HCAlert.h"
 #import "UIViewController+HCExtend.h"
 #import "HCUtilityMacro.h"
+
 @interface HCAlert()
+
 @property (nonatomic,strong) UIAlertController *alertController;
 
 @end
 
 @implementation HCAlert
-+(instancetype)alertWithTitle:(NSString *)title message:(NSString *)message{
-    HCAlert *alert = [[HCAlert alloc] init];
-    alert.alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    return alert;
++(NSMutableArray *)alertCaches{
+    static id _alertCaches = nil;
+    static dispatch_once_t onceToke;
+    dispatch_once(&onceToke, ^{
+        _alertCaches = [[NSMutableArray alloc] init];
+    });
+    return _alertCaches;
 }
--(id)addAction:(UIAlertAction *(^)(UIAlertController *alertController))actionBlock{
+
++(instancetype)alertWithTitle:(NSString *)title message:(NSString *)message{
+    return [HCAlert alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+}
+
+
+-(id)addActionWithBlock:(UIAlertAction *(^)(UIAlertController *alertController))actionBlock{
     if (actionBlock) {
-        UIAlertAction *action = actionBlock(self.alertController);
-        [self.alertController addAction:action];
+        __weak UIAlertController *__weakAc = self;
+        UIAlertAction *action = actionBlock(__weakAc);
+        [super addAction:action];
     }
     return self;
 }
 
--(id)addTextField:(void(^)(UITextField *textField,UIAlertController *alertController))textFieldBlock{
-    __weak UIAlertController *__weakAc = self.alertController;
+-(id)addTextFieldWithBlock:(void(^)(UITextField *textField,UIAlertController *alertController))textFieldBlock{
+    __weak UIAlertController *__weakAc = self;
     if (textFieldBlock) {
-        [self.alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        [self addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textFieldBlock(textField,__weakAc);
         }];
     }
@@ -39,13 +51,26 @@
 }
 
 -(void)show{
+    [[[self class] alertCaches]addObject:self];
+    NSInteger index = [[[self class] alertCaches] indexOfObject:self];
+    if (index!=0) {
+        return;
+    }
     UIViewController *topVc =[UIViewController hc_topestViewController];
     if (!topVc) {
         DebugLog(@"HCAlert show fail");
     }else{
-        [topVc presentViewController:self.alertController animated:YES completion:nil];
+        [topVc presentViewController:self animated:YES completion:nil];
     }
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[[self class] alertCaches] removeObject:self];
+    if ([[self class] alertCaches].count) {
+        HCAlert *alert = [[self class] alertCaches].firstObject;
+        [alert show];
+    }
+}
 
 @end

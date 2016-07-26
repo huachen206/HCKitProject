@@ -12,7 +12,7 @@
 -(id)initWithisPresenting:(BOOL)isPresenting{
     if (self == [super init]) {
         self.isPresenting = isPresenting;
-        self.duration = 0.5;
+        self.duration = 0.3;
     }
     return self;
 }
@@ -40,14 +40,18 @@
         return;
     }
     
-    // 设定被呈现的 view 一开始的位置，在屏幕下方
     presentedControllerView.frame = [transitionContext finalFrameForViewController:presentedController];
         presentedControllerView.center =containerView.center;
 //    [containerView addSubview:presentedControllerView];
-    presentedControllerView.alpha = 0;
+    presentedControllerView.transform = CGAffineTransformScale(presentedControllerView.transform, 1.3, 1.3);
+    
+    presentedControllerView.alpha = 0.0f;
+
     // 添加一个动画，让被呈现的 view 移动到最终位置，我们使用0.6的damping值让动画有一种duang-duang的感觉……
     [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-        presentedControllerView.alpha = 1;
+        presentedControllerView.transform = CGAffineTransformScale(presentedControllerView.transform, 1/1.3f, 1/1.3f);
+        presentedControllerView.alpha = 1.0f;
+
         
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:finished];
@@ -61,11 +65,12 @@
     if (!presentedControllerView ||!containerView) {
         return;
     }
-    // 添加一个动画，让要消失的 view 向下移动，离开屏幕
     
     [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        presentedControllerView.transform = CGAffineTransformScale(presentedControllerView.transform, 0.8, 0.8);
         presentedControllerView.alpha = 0;
     } completion:^(BOOL finished) {
+        presentedControllerView.transform = CGAffineTransformScale(presentedControllerView.transform, 1/0.8, 1/0.8);
         [transitionContext completeTransition:finished];
     }];
 }

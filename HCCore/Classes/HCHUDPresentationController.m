@@ -16,12 +16,15 @@
 -(UIView *)dimingView{
     if (!_dimingView) {
         _dimingView = [[UIView alloc] initWithFrame:self.containerView.bounds];
-        _dimingView.backgroundColor = [UIColor colorWithRed:0.0 green:1.0 blue:0 alpha:0.5];
+        _dimingView.backgroundColor = [UIColor clearColor];
         _dimingView.alpha = 0;
     }
     return _dimingView;
 }
 
+-(void)setDimingColor:(UIColor *)dimingColor{
+    self.dimingView.backgroundColor = dimingColor;
+}
 
 - (void)presentationTransitionWillBegin{
     UIView *containerView = self.containerView;

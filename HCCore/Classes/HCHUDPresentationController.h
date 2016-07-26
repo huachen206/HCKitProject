@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HCHUDPresentationController : UIPresentationController
-
+@property (nonatomic,strong) UIColor *dimingColor;
 @end
