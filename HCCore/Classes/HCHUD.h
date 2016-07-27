@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, HCHUDStyle) {
     HCHUDStyleCustom
 };
 
-@interface HCHUD : UIViewController
+@interface HCHUDOptions : NSObject
 @property (assign, nonatomic) HCHUDStyle defaultStyle UI_APPEARANCE_SELECTOR;                   // default is HCHUDStyleLight
 
 @property (nonatomic,strong) UIColor *dimingColor; //背景颜色
@@ -24,6 +24,15 @@ typedef NS_ENUM(NSInteger, HCHUDStyle) {
 @property (nonatomic,assign) float cornerRadius;
 
 @property (strong, nonatomic) UIFont *font UI_APPEARANCE_SELECTOR;                  // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]
+- (UIColor*)hudViewBackgroudColorForStyle;
+- (UIColor*)foregroundColorForStyle;
+
+@end
+
+
+@interface HCHUD : UIViewController
+
+@property (nonatomic,strong) HCHUDOptions *options;
 
 +(HCHUD*)HUD;
 +(void)dismiss;

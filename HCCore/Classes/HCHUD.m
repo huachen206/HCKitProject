@@ -14,68 +14,18 @@
 #import <Masonry/Masonry.h>
 #import "UILabel+StringFrame.h"
 
-@interface HCHUD()<UIViewControllerTransitioningDelegate>
-@property (nonatomic,strong) UIView *hudView;
-@property (nonatomic,strong) UILabel *statusLabel;
-@property (nonatomic,strong) UIImageView *imageView;
-@end
-@implementation HCHUD
-+(HCHUD*)HUD{
-    static HCHUD *_sharedInstance = nil;
-    static dispatch_once_t onceToke;
-    dispatch_once(&onceToke, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    return _sharedInstance;
+@implementation HCHUDOptions
+-(id)init{
+    if (self == [super init]) {
+        _cornerRadius = 14.0f;
+        if ([UIFont respondsToSelector:@selector(preferredFontForTextStyle:)]) {
+            _font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+        } else {
+            _font = [UIFont systemFontOfSize:17.0f];
+        }
+    }
+    return self;
 }
-
-- (UIView*)hudView {
-    if(!_hudView) {
-        _hudView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        _hudView.center = self.view.center;
-        _hudView.layer.masksToBounds = YES;
-//        _hudView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-    }
-    
-    // Update styling
-    _hudView.layer.cornerRadius = self.cornerRadius;
-    _hudView.backgroundColor = self.hudViewBackgroudColorForStyle;
-    
-    return _hudView;
-}
-- (UILabel*)statusLabel {
-    if(!_statusLabel) {
-        _statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-        _statusLabel.backgroundColor = [UIColor clearColor];
-        _statusLabel.adjustsFontSizeToFitWidth = YES;
-        _statusLabel.textAlignment = NSTextAlignmentCenter;
-        _statusLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-        _statusLabel.numberOfLines = 0;
-    }
-    if(!_statusLabel.superview) {
-        [self.hudView addSubview:_statusLabel];
-    }
-    
-    // Update styling
-    _statusLabel.textColor = self.foregroundColorForStyle;
-    _statusLabel.font = self.font;
-//    _statusLabel.backgroundColor = [UIColor redColor];
-    
-    return _statusLabel;
-}
-- (UIImageView*)imageView {
-    if(!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _imageView.contentMode = UIViewContentModeCenter;
-//        _imageView.backgroundColor = [UIColor greenColor];
-    }
-    if(!_imageView.superview) {
-        [self.hudView addSubview:_imageView];
-    }
-    return _imageView;
-}
-
-
 - (UIColor*)hudViewBackgroudColorForStyle {
     if(self.defaultStyle == HCHUDStyleLight) {
         return [UIColor whiteColor];
@@ -95,27 +45,109 @@
     }
 }
 
+
+@end
+
+
+@interface HCHUD()<UIViewControllerTransitioningDelegate>
+@property (nonatomic,strong) UIView *hudView;
+@property (nonatomic,strong) UILabel *statusLabel;
+@property (nonatomic,strong) UIImageView *imageView;
+@end
+@implementation HCHUD
+
++(HCHUD*)HUD{
+    static HCHUD *_sharedInstance = nil;
+    static dispatch_once_t onceToke;
+    dispatch_once(&onceToke, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    return _sharedInstance;
+}
++(void)showWithText:(NSString *)text{
+    [[self HUD] setText:text];
+    [[self HUD] show];
+}
+
++(void)showWithImage:(UIImage *)image withText:(NSString *)text{
+    if (image) {
+        [[self HUD] setImage:image];
+    }
+    if (text) {
+        [[self HUD] setText:text];
+    }
+    [[self HUD] show];
+}
+
+-(HCHUDOptions *)options{
+    if (!_options) {
+        _options = [[HCHUDOptions alloc] init];
+    }
+    return _options;
+}
+- (UIView*)hudView {
+    if(!_hudView) {
+        _hudView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        _hudView.center = self.view.center;
+        _hudView.layer.masksToBounds = YES;
+//        _hudView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
+    }
+    
+    // Update styling
+    _hudView.layer.cornerRadius = self.options.cornerRadius;
+    _hudView.backgroundColor = self.options.hudViewBackgroudColorForStyle;
+    
+    return _hudView;
+}
+- (UILabel*)statusLabel {
+    if(!_statusLabel) {
+        _statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+        _statusLabel.backgroundColor = [UIColor clearColor];
+        _statusLabel.adjustsFontSizeToFitWidth = YES;
+        _statusLabel.textAlignment = NSTextAlignmentCenter;
+        _statusLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+        _statusLabel.numberOfLines = 0;
+    }
+    if(!_statusLabel.superview) {
+        [self.hudView addSubview:_statusLabel];
+    }
+    
+    // Update styling
+    _statusLabel.textColor = self.options.foregroundColorForStyle;
+    _statusLabel.font = self.options.font;
+//    _statusLabel.backgroundColor = [UIColor redColor];
+    
+    return _statusLabel;
+}
+- (UIImageView*)imageView {
+    if(!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _imageView.contentMode = UIViewContentModeCenter;
+//        _imageView.backgroundColor = [UIColor greenColor];
+    }
+    if(!_imageView.superview) {
+        [self.hudView addSubview:_imageView];
+    }
+    return _imageView;
+}
+
+
+
 -(id)init{
     if (self == [super init]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
         self.view.backgroundColor = [UIColor clearColor];
         
-        _cornerRadius = 14.0f;
 
         [self.view addSubview:self.hudView];
         
-        if ([UIFont respondsToSelector:@selector(preferredFontForTextStyle:)]) {
-            _font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-        } else {
-            _font = [UIFont systemFontOfSize:17.0f];
-        }
     }
     return self;
 }
 
 -(void)setImage:(UIImage *)image{
-    UIColor *tintColor = self.foregroundColorForStyle;
+    UIColor *tintColor = self.options.foregroundColorForStyle;
     UIImage *tintedImage = image;
     if([self.imageView respondsToSelector:@selector(setTintColor:)]) {
         if (tintedImage.renderingMode != UIImageRenderingModeAlwaysTemplate) {
@@ -145,25 +177,9 @@
     [self.statusLabel setText:text];
 }
 
-+(void)showWithText:(NSString *)text{
-    [[self HUD] setText:text];
-    [[self HUD] show];
-}
-
-+(void)showWithImage:(UIImage *)image withText:(NSString *)text{
-    if (image) {
-        [[self HUD] setImage:image];
-    }
-    if (text) {
-        [[self HUD] setText:text];
-    }
-    [[self HUD] show];
-}
 
 -(void)updateConstraints{
-    __weak HCHUD *wself = self;
-    
-    CGFloat margin = self.cornerRadius;
+    CGFloat margin = self.options.cornerRadius;
 
     CGFloat hudWidth = 0.f;
     CGFloat hudHeight =0;
@@ -196,7 +212,6 @@
 
     self.hudView.frame = CGRectMake(0, 0, hudWidth, hudHeight);
     self.hudView.center = self.view.center;
-
     
     if (self.imageView.image) {
         imageRect = CGRectMake(hudWidth/2 - imageSize.width/2, margin, imageSize.width, imageSize.height);
@@ -213,47 +228,12 @@
         self.imageView.center = CGPointMake(hudWidth/2, hudHeight/2);
 
     }
-    
-    return;
-    
-    
-    
-    
-    [self.hudView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(wself.view.mas_centerX);
-        make.centerY.equalTo(wself.view.mas_centerY);
-        make.width.equalTo(wself.view.mas_width).multipliedBy(0.3);
-        make.height.greaterThanOrEqualTo(wself.hudView.mas_width).multipliedBy(0.7);
-    }];
-    
-    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (!wself.imageView.image) {
-            make.width.equalTo(@(0));
-            make.height.equalTo(@(0));
-        }else{
-            make.left.equalTo(wself.hudView.mas_left);
-            make.right.equalTo(wself.hudView.mas_right);
-        }
-        make.top.equalTo(wself.hudView.mas_top);
-    }];
-    
-    [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (!wself.statusLabel.text.length) {
-            make.height.equalTo(@(0));
-        }else{
-            make.height.equalTo(@(35));
-        }
-        make.top.equalTo(wself.imageView.mas_bottom);
-        make.bottom.equalTo(wself.hudView.mas_bottom);
-        make.left.equalTo(wself.hudView.mas_left);
-        make.right.equalTo(wself.hudView.mas_right);
-    }];
     [self updateBlurBounds];
 
 }
 - (void)updateBlurBounds {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-    if(NSClassFromString(@"UIBlurEffect") && self.defaultStyle != HCHUDStyleCustom) {
+    if(NSClassFromString(@"UIBlurEffect") && self.options.defaultStyle != HCHUDStyleCustom) {
         // Remove background color, else the effect would not work
         self.hudView.backgroundColor = [UIColor clearColor];
         
@@ -264,9 +244,9 @@
             }
         }
         
-        if(self.hudBackgroundColor != [UIColor clearColor]) {
+        if(self.options.hudBackgroundColor != [UIColor clearColor]) {
             // Create blur effect
-            UIBlurEffectStyle blurEffectStyle = self.defaultStyle == HCHUDStyleDark ? UIBlurEffectStyleDark : UIBlurEffectStyleLight;
+            UIBlurEffectStyle blurEffectStyle = self.options.defaultStyle == HCHUDStyleDark ? UIBlurEffectStyleDark : UIBlurEffectStyleLight;
             UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:blurEffectStyle];
             UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
 //            blurEffectView.autoresizingMask = self.hudView.autoresizingMask;
@@ -311,7 +291,7 @@
 - (nullable UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0){
     if(presented == self){
         HCHUDPresentationController *pc =[[HCHUDPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-        pc.dimingColor = self.dimingColor;
+        pc.dimingColor = self.options.dimingColor;
         return pc;
     }else{
         return nil;

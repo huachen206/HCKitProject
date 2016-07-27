@@ -22,7 +22,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"HUD";
-    [HCHUD HUD].defaultStyle = HCHUDStyleDark;
+    [HCHUD HUD].options.defaultStyle = HCHUDStyleDark;
 //    [HCHUD HUD].dimingColor = [UIColor hc_colorForBlackWithAlpha:0.5];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     
