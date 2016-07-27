@@ -31,7 +31,7 @@ static bool flag;
 - (IBAction)hudAction:(id)sender {
     
     if (flag) {
-        [SVProgressHUD showSuccessWithStatus:@"success"];
+        [SVProgressHUD show];
     }else{
         [HCHUD showWithImage:[UIImage imageNamed:@"success"] withText:@"success"];
 //        [HCHUD showWithText:@"success"];

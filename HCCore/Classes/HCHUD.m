@@ -11,7 +11,6 @@
 #import "HCHUDPresentationController.h"
 #import "HCHUDPresentationAnimationController.h"
 #import "HCUtilityMacro.h"
-#import <Masonry/Masonry.h>
 #import "UILabel+StringFrame.h"
 
 @implementation HCHUDOptions
@@ -44,7 +43,6 @@
         return self.foregroundColor;
     }
 }
-
 
 @end
 
@@ -249,23 +247,17 @@
             UIBlurEffectStyle blurEffectStyle = self.options.defaultStyle == HCHUDStyleDark ? UIBlurEffectStyleDark : UIBlurEffectStyleLight;
             UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:blurEffectStyle];
             UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//            blurEffectView.autoresizingMask = self.hudView.autoresizingMask;
-//            blurEffectView.frame = self.hudView.bounds;
+            blurEffectView.autoresizingMask = self.hudView.autoresizingMask;
+            blurEffectView.frame = self.hudView.bounds;
             
             // Add vibrancy to the blur effect to make it more vivid
             UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
             UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
-//            vibrancyEffectView.autoresizingMask = blurEffectView.autoresizingMask;
-//            vibrancyEffectView.bounds = blurEffectView.bounds;
+            vibrancyEffectView.autoresizingMask = blurEffectView.autoresizingMask;
+            vibrancyEffectView.bounds = blurEffectView.bounds;
             [blurEffectView.contentView addSubview:vibrancyEffectView];
             
             [self.hudView insertSubview:blurEffectView atIndex:0];
-            [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(self.hudView);
-            }];
-            [vibrancyEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(blurEffectView);
-            }];
 
         }
     }
