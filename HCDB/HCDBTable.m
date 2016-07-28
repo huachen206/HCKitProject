@@ -207,6 +207,19 @@
     return [NSString stringWithFormat:@"%@ %@ (%@) values (:%@)",actionStr,self.tableName,[self.tableColumnNameList componentsJoinedByString:@","],[self.tableColumnNameList componentsJoinedByString:@",:"]];
 }
 
+-(BOOL)insertWithModel:(HCDBModel*)DBModel{
+    return [self insertOrReplaceWithModel:DBModel autoPrimaryKey:YES];
+}
+-(BOOL)replaceWithModel:(HCDBModel*)DBModel {
+    return [self insertOrReplaceWithModel:DBModel autoPrimaryKey:NO];
+}
+-(BOOL)insertWithModelList:(NSArray *)modelList {
+    return [self insertOrReplaceWithModelList:modelList autoPrimaryKey:YES];
+}
+-(BOOL)replaceWithModelList:(NSArray *)modelList {
+    return [self insertOrReplaceWithModelList:modelList autoPrimaryKey:NO];
+}
+
 -(BOOL)insertWithModel:(HCDBModel*)DBModel autoPrimaryKey:(BOOL)isAuto{
     __block BOOL flag;
     NSDictionary *mdic = [self valueAndColumnListWithModel:DBModel containPrimary:!isAuto];

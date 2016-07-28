@@ -64,11 +64,31 @@
 -(BOOL)deleteWithModel:(id)model;
 
 /**
+ *  插入数据
+ */
+-(BOOL)insertWithModel:(HCDBModel*)DBModel;
+/**
+ *  替换数据
+ */
+-(BOOL)replaceWithModel:(HCDBModel*)DBModel;
+/**
+ *  插入数据
+ */
+-(BOOL)insertWithModelList:(NSArray *)modelList;
+/**
+ *  替换数据
+ */
+
+-(BOOL)replaceWithModelList:(NSArray *)modelList;
+
+/**
  *  插入或替换数据
  *  @param isAuto  YES：主键自增，主键值不会插入；NO：主键有值，会根据逐渐插入或替换
  *  @return 是否成功
  */
 -(BOOL)insertOrReplaceWithModel:(HCDBModel *)DBModel autoPrimaryKey:(BOOL)isAuto;
+
+
 /**
  *  插入或替换数据
  *  @param isAuto  YES：主键自增，主键值不会插入；NO：主键有值，会根据逐渐插入或替换

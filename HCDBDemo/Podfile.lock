@@ -1,0 +1,24 @@
+PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - HCKitProject/Core (0.3.15)
+
+DEPENDENCIES:
+  - FMDB (~> 2.5)
+  - HCKitProject/Core (from `https://github.com/huachen206/HCKitProject.git`)
+
+EXTERNAL SOURCES:
+  HCKitProject:
+    :git: https://github.com/huachen206/HCKitProject.git
+
+CHECKOUT OPTIONS:
+  HCKitProject:
+    :commit: 8ed1540cba360b3827a441124d919c9af16fb89e
+    :git: https://github.com/huachen206/HCKitProject.git
+
+SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HCKitProject: 532fed6576e031489266bce6f1d7fbc510a133d9
+
+COCOAPODS: 0.39.0

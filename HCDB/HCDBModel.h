@@ -60,7 +60,7 @@ _CreatTableFlgPropertayWithProtocol(propertyName,<PRIMARY_KEY_AUTOINCREMENT>)
 -(id)initWithFMResultSet:(FMResultSet *)result tableFields:(NSArray*)tableFields;
 
 /**
- *  默认为1，无关父类。重载此方法，设depth为>1的整数，则会追溯depth-1个父类，将其关联到数据库。
+ *  默认为1，此时Model存入数据库不会存父类的属性。重载此方法，设depth为>1的整数，则会追溯depth-1个父类，将其关联到数据库。
  *
  */
 +(NSInteger)depth;

@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '7.0'
+
+#use_frameworks!
+
+target 'HCDBDemo' do
+
+pod 'HCKitProject/Core', :git => 'https://github.com/huachen206/HCKitProject.git'
+pod 'FMDB', '~> 2.5'
+
+end
