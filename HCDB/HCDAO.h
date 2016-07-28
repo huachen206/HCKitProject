@@ -14,7 +14,7 @@
 #import "HCUtilityMacro.h"
 
 @class HCDBTable;
-#define PADBQuickCheck(SomeBool)            \
+#define HCDBQuickCheck(SomeBool)            \
 {                                           \
 if (!(SomeBool)) {                      \
 DebugAssert(NO, @"Sql Failure");    \
@@ -22,14 +22,14 @@ DebugAssert(NO, @"Sql Failure");    \
 }
 
 
-#define PADBQuickCheck(SomeBool)            \
+#define HCDBQuickCheck(SomeBool)            \
 {                                           \
 if (!(SomeBool)) {                      \
 DebugAssert(NO, @"Sql Failure");    \
 }                                       \
 }
 
-#define PADBTransactionSQLCheck(SomeBool, rollBack)             \
+#define HCDBTransactionSQLCheck(SomeBool, rollBack)             \
 {                                                               \
 if (!(SomeBool)) {                                          \
 DebugAssert(NO, @"Sql Failuer in Transaction");         \

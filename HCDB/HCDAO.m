@@ -29,7 +29,7 @@
 -(id)init{
     if (self = [super init]) {
         BOOL flag =[self.baseDBHelper open];
-        PADBQuickCheck(flag);
+        HCDBQuickCheck(flag);
         //versiontable单独初始化
         for (HCPropertyInfo *info in [[self class] hc_propertyInfosWithdepth:2]) {
             if ([info.typeClass isSubclassOfClass:[HCDBTable class]]&&![info.typeClass isSubclassOfClass:[HCVersionTable class]]) {

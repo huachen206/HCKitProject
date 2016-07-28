@@ -80,7 +80,7 @@
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
         flag = [db executeUpdate:creatTableSqlStr];
     }];
-    PADBQuickCheck(flag);
+    HCDBQuickCheck(flag);
     return flag;
 }
 -(BOOL)isColumnChanged{
@@ -130,7 +130,7 @@
                 DebugLog(@"add COLUMN SUCCESS:%@",column);
             }
         }
-        PADBTransactionSQLCheck(flag,rollback);
+        HCDBTransactionSQLCheck(flag,rollback);
     }];
     return flag;
     
@@ -257,7 +257,7 @@
     [self.fmDbQueue inDatabase:^(FMDatabase *db) {
         NSString *sqlstr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = %@",[self tableName],primaryKey,value];
         flag = [db executeUpdate:sqlstr];
-        PADBQuickCheck(flag);
+        HCDBQuickCheck(flag);
     }];
     return flag;
 }
