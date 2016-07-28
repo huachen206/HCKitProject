@@ -28,6 +28,7 @@
 
 @interface CarModel : VehicleModel
 @property (nonatomic,assign) int wheelNumber;
++(instancetype)defaultCar;
 @end
 
 @interface PlaneModel : VehicleModel

@@ -17,24 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     CarModel *car;
     NSArray *carList = [[DAO dao].carTable selectAll];
     if (carList.count) {
         car = carList.firstObject;
+        car.wheelNumber ++;
+        [[DAO dao].carTable replaceWithModel:car];
     }else{
-        car = [[CarModel alloc] init];
-        car.scientificName = @"卡车";
-        car.manufacturer = @"福特";
-        car.attachData = [@"this a test cat data" dataUsingEncoding:NSUTF8StringEncoding];
-        car.fantasy = NO;
-        car.weight = 500;
-        car.maxSpeed = 160;
-        car.displacement = 3.8;
-        car.driver = @"hh";
-        car.forIgnoreExample = [[NSObject alloc] init];
-        car.wheelNumber = 8;
+        car = [CarModel defaultCar];
         [[DAO dao].carTable insertWithModel:car];
     }
+    
+    
+    [[DAO dao].carTable deleteWithModel:car];
+
 }
 
 - (void)didReceiveMemoryWarning {
