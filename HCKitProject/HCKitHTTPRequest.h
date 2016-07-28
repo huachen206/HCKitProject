@@ -12,6 +12,6 @@
 +(id _Nonnull)requestWithParameters:(NSDictionary *_Nullable)parameters;
 
 +(id _Nonnull)requestForCarList;
-+(id _Nonnull)requestForCarBrand;
+//+(id _Nonnull)requestForCarBrand;
 
 @end

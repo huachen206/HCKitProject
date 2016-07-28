@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "HCKitProject"
   s.version      = "0.3.15"
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '7.0'
   s.license = 'MIT'
   s.summary      = "a Encapsulation of FMDB."
   s.homepage     = "https://github.com/huachen206/HCKitProject.git"
@@ -31,10 +31,13 @@ Pod::Spec.new do |s|
       	db.dependency 'HCKitProject/Core'
 		db.ios.dependency  'FMDB', '~> 2.3'
   end
+
   s.subspec 'HCHTTPRequest' do |ht|
     	ht.source_files = 'HCRequestApi/*.{h,m}'
       	ht.dependency 'HCKitProject/Core'
 		ht.ios.dependency  'AFNetworking', '~> 3.0.4'
   end
+
+
 end
 

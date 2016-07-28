@@ -22,9 +22,7 @@
     return [self requestWithParameters:para];
 }
 
--(id)handleResponsObject:(id)responsObject{
-    NSString *responsString = [[NSString alloc]initWithData:(NSData*)responsObject encoding:4];
-    
+-(id)handleResponsObject:(id)responsObject{    
     return [super handleResponsObject:responsObject];
     
     

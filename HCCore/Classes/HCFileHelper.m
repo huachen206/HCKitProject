@@ -20,7 +20,7 @@
 }
 
 + (BOOL)createFolderAtPath:(NSString *)folderPath {
-    BOOL success;
+    BOOL success = NO;
     if (![self isExistAtPath:folderPath]) {
         NSError *error;
         success = [DefaultManager createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:&error];
@@ -32,12 +32,13 @@
 }
 
 +(BOOL)copyItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath {
-    BOOL success;
-    NSError *error;
-    [self createFileAtPath:dstPath];
-    success = [DefaultManager copyItemAtPath:srcPath toPath:dstPath error:&error];
-    if (error) {
-        DebugLog(@"%@",error);
+    BOOL success = NO;
+    if ([self createFileAtPath:dstPath]) {
+        NSError *error;
+        success = [DefaultManager copyItemAtPath:srcPath toPath:dstPath error:&error];
+        if (error) {
+            DebugLog(@"%@",error);
+        }
     }
     return success;
 }

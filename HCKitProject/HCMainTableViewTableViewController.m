@@ -32,7 +32,7 @@
 //    [[HCDiskCache diskCache] addObject:self.classInfoList key:@"classInfolist"];
 
     
-    ClassInfo *diskInfo = [[HCDiskCache diskCache] objectForKey:@"classInfo"];
+//    ClassInfo *diskInfo = [[HCDiskCache diskCache] objectForKey:@"classInfo"];
     
 //    [classInfo hc_debugLog];
     
