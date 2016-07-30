@@ -57,6 +57,7 @@
 		BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB513B61C97E28E005AAEDF /* HCEncoding.plist */; };
 		BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C21C9A8173005AAEDF /* HCDBTableField.m */; };
 		BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C51C9A88AD005AAEDF /* HCDBModel.m */; };
+		BFBD436A1D4C546A00B3D7B5 /* HCIBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD43691D4C546A00B3D7B5 /* HCIBeaconService.m */; };
 		BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */; };
 		BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */; };
 		BFC49D541D30E19A0076A90C /* HCHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D531D30E19A0076A90C /* HCHUD.m */; };
@@ -209,6 +210,8 @@
 		BFB513C21C9A8173005AAEDF /* HCDBTableField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTableField.m; sourceTree = "<group>"; };
 		BFB513C41C9A88AD005AAEDF /* HCDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBModel.h; sourceTree = "<group>"; };
 		BFB513C51C9A88AD005AAEDF /* HCDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBModel.m; sourceTree = "<group>"; };
+		BFBD43681D4C546A00B3D7B5 /* HCIBeaconService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIBeaconService.h; sourceTree = "<group>"; };
+		BFBD43691D4C546A00B3D7B5 /* HCIBeaconService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIBeaconService.m; sourceTree = "<group>"; };
 		BFBDBFA01CA11AA700918F43 /* HCTestDBModel_depth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel_depth2.h; sourceTree = "<group>"; };
 		BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel_depth2.m; sourceTree = "<group>"; };
 		BFC49D1C1D2754290076A90C /* HCKitHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKitHTTPRequest.h; sourceTree = "<group>"; };
@@ -337,6 +340,7 @@
 				BF8C3ED11D029F3000D34E22 /* HCUnit.m */,
 				BF8C3F141D19094200D34E22 /* HCQRScanner.h */,
 				BF8C3F151D19094200D34E22 /* HCQRScanner.m */,
+				BFBD43671D4C546A00B3D7B5 /* HCIBeacon */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -564,6 +568,15 @@
 			);
 			path = Resources;
 			sourceTree = "<group>";
+		};
+		BFBD43671D4C546A00B3D7B5 /* HCIBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				BFBD43681D4C546A00B3D7B5 /* HCIBeaconService.h */,
+				BFBD43691D4C546A00B3D7B5 /* HCIBeaconService.m */,
+			);
+			path = HCIBeacon;
+			sourceTree = SOURCE_ROOT;
 		};
 		BFBDBF8D1CA0DA6B00918F43 /* HCCore */ = {
 			isa = PBXGroup;
@@ -841,6 +854,7 @@
 				BF3F9D8D1CB3964F00390AF2 /* UIView+HCExtend.m in Sources */,
 				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
 				BFC49D5B1D30E3C30076A90C /* HUDViewController.m in Sources */,
+				BFBD436A1D4C546A00B3D7B5 /* HCIBeaconService.m in Sources */,
 				BF0DED691CA50B1F00B10C46 /* HCPropertyInfo.m in Sources */,
 				BF0DED711CA5113600B10C46 /* NSString+HCExtend.m in Sources */,
 				BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */,
