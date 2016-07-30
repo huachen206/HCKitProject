@@ -19,10 +19,17 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   
-  s.default_subspec = 'Core'
+  s.default_subspec = 'Whole'
+
+  s.subspec 'Whole' do |wh|
+      wh.dependency 'HCKitProject/Core'
+      wh.dependency 'HCKitProject/HCDB'
+      wh.dependency 'HCKitProject/HCHTTPRequest'
+
+  end
 
   s.subspec 'Core' do |core|
-    	core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}'
+    	core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
   end
 
   s.subspec 'HCDB' do |db|

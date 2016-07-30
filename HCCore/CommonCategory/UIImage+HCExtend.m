@@ -76,7 +76,7 @@
     float width = self.size.width;
     float height = self.size.height;
     
-    float pt=0;
+    float pt=0.f;
     va_list args;
     va_start(args, p1);
     if (p1) {

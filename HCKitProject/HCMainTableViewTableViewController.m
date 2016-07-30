@@ -7,7 +7,6 @@
 //
 
 #import "HCMainTableViewTableViewController.h"
-#import "HCDBViewController.h"
 #import "ClassInfo.h"
 
 #import "HCKitHTTPRequest.h"
@@ -37,7 +36,6 @@
 //    [classInfo hc_debugLog];
     
     self.cellInfos = @[
-  @[@"HCDBViewController",@"DBVCID",@"sql数据库"],
   @[@"RWTItemsViewController",@"RWTItems",@"ibeacon"],
   @[@"LocalNotificationViewController",@"LocalNotification",@"本地推送"],
   @[@"QRCoderViewController",@"QRCoderViewController",@"二维码"],

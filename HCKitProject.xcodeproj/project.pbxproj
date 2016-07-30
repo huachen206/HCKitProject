@@ -9,17 +9,12 @@
 /* Begin PBXBuildFile section */
 		20D0168EEC68B4CEB4F45E99 /* libPods-HCKitProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C14FC4EF3EC062BE5A81F9F /* libPods-HCKitProject.a */; };
 		BF0DED651CA50B1F00B10C46 /* HCDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED511CA50B1F00B10C46 /* HCDiskCache.m */; };
-		BF0DED661CA50B1F00B10C46 /* HCIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED531CA50B1F00B10C46 /* HCIvarInfo.m */; };
-		BF0DED671CA50B1F00B10C46 /* HCMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED551CA50B1F00B10C46 /* HCMethodInfo.m */; };
 		BF0DED681CA50B1F00B10C46 /* HCProfileService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED571CA50B1F00B10C46 /* HCProfileService.m */; };
-		BF0DED691CA50B1F00B10C46 /* HCPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED591CA50B1F00B10C46 /* HCPropertyInfo.m */; };
-		BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED5B1CA50B1F00B10C46 /* HCTypeDecoder.m */; };
 		BF0DED6B1CA50B1F00B10C46 /* NSArray+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED5E1CA50B1F00B10C46 /* NSArray+HCExtend.m */; };
 		BF0DED6C1CA50B1F00B10C46 /* NSObject+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED601CA50B1F00B10C46 /* NSObject+HCExtend.m */; };
 		BF0DED6D1CA50B1F00B10C46 /* UIColor+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED621CA50B1F00B10C46 /* UIColor+HCExtend.m */; };
 		BF0DED6E1CA50B1F00B10C46 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED641CA50B1F00B10C46 /* UILabel+StringFrame.m */; };
 		BF0DED711CA5113600B10C46 /* NSString+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DED701CA5113600B10C46 /* NSString+HCExtend.m */; };
-		BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */; };
 		BF3F9D891CB38F0400390AF2 /* UIImage+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3F9D881CB38F0400390AF2 /* UIImage+HCExtend.m */; };
 		BF3F9D8D1CB3964F00390AF2 /* UIView+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3F9D8C1CB3964F00390AF2 /* UIView+HCExtend.m */; };
 		BF3F9D911CB399EF00390AF2 /* UIButton+HCCheckMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3F9D901CB399EF00390AF2 /* UIButton+HCCheckMenu.m */; };
@@ -31,16 +26,7 @@
 		BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF49CB261C1A5A2900C3CF4E /* LaunchScreen.storyboard */; };
 		BF49CB331C1A5A2900C3CF4E /* HCKitProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB321C1A5A2900C3CF4E /* HCKitProjectTests.m */; };
 		BF49CB3E1C1A5A2900C3CF4E /* HCKitProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */; };
-		BF49CB581C1A5A6A00C3CF4E /* HCDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */; };
-		BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */; };
-		BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */; };
-		BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */; };
 		BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */; };
-		BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */; };
-		BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */; };
-		BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */; };
-		BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */; };
-		BF6C37871CB7397100DBAA1B /* HCVersionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C37861CB7397100DBAA1B /* HCVersionTable.m */; };
 		BF8C3ECF1D029F1100D34E22 /* NSNumber+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3ECE1D029F1100D34E22 /* NSNumber+HCExtend.m */; };
 		BF8C3ED21D029F3000D34E22 /* HCUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3ED11D029F3000D34E22 /* HCUnit.m */; };
 		BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F051D177C5800D34E22 /* LocalNotificationViewController.m */; };
@@ -54,11 +40,11 @@
 		BFAB465A1CB5F182009E9C8B /* NSString+HCValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAB46591CB5F182009E9C8B /* NSString+HCValidation.m */; };
 		BFAECB511CB79268001C9819 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAECB501CB79268001C9819 /* HCHTTPRequest.m */; };
 		BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAECB541CB79C5D001C9819 /* ClassInfo.m */; };
-		BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFB513B61C97E28E005AAEDF /* HCEncoding.plist */; };
-		BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C21C9A8173005AAEDF /* HCDBTableField.m */; };
-		BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB513C51C9A88AD005AAEDF /* HCDBModel.m */; };
 		BFBD436A1D4C546A00B3D7B5 /* HCIBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD43691D4C546A00B3D7B5 /* HCIBeaconService.m */; };
-		BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */; };
+		BFBD43741D4C704500B3D7B5 /* HCIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD436D1D4C704500B3D7B5 /* HCIvarInfo.m */; };
+		BFBD43751D4C704500B3D7B5 /* HCMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD436F1D4C704500B3D7B5 /* HCMethodInfo.m */; };
+		BFBD43761D4C704500B3D7B5 /* HCPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD43711D4C704500B3D7B5 /* HCPropertyInfo.m */; };
+		BFBD43771D4C704500B3D7B5 /* HCTypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD43731D4C704500B3D7B5 /* HCTypeDecoder.m */; };
 		BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */; };
 		BFC49D541D30E19A0076A90C /* HCHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D531D30E19A0076A90C /* HCHUD.m */; };
 		BFC49D571D30E1A70076A90C /* UIViewController+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D561D30E1A70076A90C /* UIViewController+HCExtend.m */; };
@@ -112,16 +98,8 @@
 		BF0DED481CA504AB00B10C46 /* HCUtilityMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUtilityMacro.h; sourceTree = "<group>"; };
 		BF0DED501CA50B1F00B10C46 /* HCDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDiskCache.h; sourceTree = "<group>"; };
 		BF0DED511CA50B1F00B10C46 /* HCDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDiskCache.m; sourceTree = "<group>"; };
-		BF0DED521CA50B1F00B10C46 /* HCIvarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIvarInfo.h; sourceTree = "<group>"; };
-		BF0DED531CA50B1F00B10C46 /* HCIvarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIvarInfo.m; sourceTree = "<group>"; };
-		BF0DED541CA50B1F00B10C46 /* HCMethodInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMethodInfo.h; sourceTree = "<group>"; };
-		BF0DED551CA50B1F00B10C46 /* HCMethodInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMethodInfo.m; sourceTree = "<group>"; };
 		BF0DED561CA50B1F00B10C46 /* HCProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCProfileService.h; sourceTree = "<group>"; };
 		BF0DED571CA50B1F00B10C46 /* HCProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCProfileService.m; sourceTree = "<group>"; };
-		BF0DED581CA50B1F00B10C46 /* HCPropertyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPropertyInfo.h; sourceTree = "<group>"; };
-		BF0DED591CA50B1F00B10C46 /* HCPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPropertyInfo.m; sourceTree = "<group>"; };
-		BF0DED5A1CA50B1F00B10C46 /* HCTypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTypeDecoder.h; sourceTree = "<group>"; };
-		BF0DED5B1CA50B1F00B10C46 /* HCTypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTypeDecoder.m; sourceTree = "<group>"; };
 		BF0DED5D1CA50B1F00B10C46 /* NSArray+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HCExtend.h"; sourceTree = "<group>"; };
 		BF0DED5E1CA50B1F00B10C46 /* NSArray+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HCExtend.m"; sourceTree = "<group>"; };
 		BF0DED5F1CA50B1F00B10C46 /* NSObject+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCExtend.h"; sourceTree = "<group>"; };
@@ -132,8 +110,6 @@
 		BF0DED641CA50B1F00B10C46 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
 		BF0DED6F1CA5113600B10C46 /* NSString+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HCExtend.h"; sourceTree = "<group>"; };
 		BF0DED701CA5113600B10C46 /* NSString+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HCExtend.m"; sourceTree = "<group>"; };
-		BF28FB681C87CD2C0014CBBC /* NSObject+HCDBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCDBExtend.h"; sourceTree = "<group>"; };
-		BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCDBExtend.m"; sourceTree = "<group>"; };
 		BF3F9D861CB38E3A00390AF2 /* HCCommonCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCCommonCategory.h; sourceTree = "<group>"; };
 		BF3F9D871CB38F0400390AF2 /* UIImage+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HCExtend.h"; sourceTree = "<group>"; };
 		BF3F9D881CB38F0400390AF2 /* UIImage+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HCExtend.m"; sourceTree = "<group>"; };
@@ -157,26 +133,8 @@
 		BF49CB391C1A5A2900C3CF4E /* HCKitProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCKitProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF49CB3D1C1A5A2900C3CF4E /* HCKitProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCKitProjectUITests.m; sourceTree = "<group>"; };
 		BF49CB3F1C1A5A2900C3CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF49CB4C1C1A5A6A00C3CF4E /* HCDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDAO.h; sourceTree = "<group>"; };
-		BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDAO.m; sourceTree = "<group>"; };
-		BF49CB4E1C1A5A6A00C3CF4E /* HCDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBHelper.h; sourceTree = "<group>"; };
-		BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBHelper.m; sourceTree = "<group>"; };
-		BF49CB501C1A5A6A00C3CF4E /* HCDBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBTable.h; sourceTree = "<group>"; };
-		BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTable.m; sourceTree = "<group>"; };
-		BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBManager.h; sourceTree = "<group>"; };
-		BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBManager.m; sourceTree = "<group>"; };
 		BF49CB5E1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMainTableViewTableViewController.h; sourceTree = "<group>"; };
 		BF49CB5F1C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMainTableViewTableViewController.m; sourceTree = "<group>"; };
-		BF49CB611C1A5D5D00C3CF4E /* HCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBViewController.h; sourceTree = "<group>"; };
-		BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBViewController.m; sourceTree = "<group>"; };
-		BF49CB651C1A69C000C3CF4E /* HCTestDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDAO.h; sourceTree = "<group>"; };
-		BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDAO.m; sourceTree = "<group>"; };
-		BF49CB681C1A6AFC00C3CF4E /* HCTestTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestTable.h; sourceTree = "<group>"; };
-		BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestTable.m; sourceTree = "<group>"; };
-		BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel.h; sourceTree = "<group>"; };
-		BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel.m; sourceTree = "<group>"; };
-		BF6C37851CB7397100DBAA1B /* HCVersionTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCVersionTable.h; sourceTree = "<group>"; };
-		BF6C37861CB7397100DBAA1B /* HCVersionTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCVersionTable.m; sourceTree = "<group>"; };
 		BF8C3ECD1D029F1100D34E22 /* NSNumber+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+HCExtend.h"; sourceTree = "<group>"; };
 		BF8C3ECE1D029F1100D34E22 /* NSNumber+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+HCExtend.m"; sourceTree = "<group>"; };
 		BF8C3ED01D029F3000D34E22 /* HCUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUnit.h; sourceTree = "<group>"; };
@@ -205,15 +163,16 @@
 		BFAECB501CB79268001C9819 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
 		BFAECB531CB79C5D001C9819 /* ClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
 		BFAECB541CB79C5D001C9819 /* ClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
-		BFB513B61C97E28E005AAEDF /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = HCEncoding.plist; sourceTree = "<group>"; };
-		BFB513C11C9A8173005AAEDF /* HCDBTableField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBTableField.h; sourceTree = "<group>"; };
-		BFB513C21C9A8173005AAEDF /* HCDBTableField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTableField.m; sourceTree = "<group>"; };
-		BFB513C41C9A88AD005AAEDF /* HCDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBModel.h; sourceTree = "<group>"; };
-		BFB513C51C9A88AD005AAEDF /* HCDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBModel.m; sourceTree = "<group>"; };
 		BFBD43681D4C546A00B3D7B5 /* HCIBeaconService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIBeaconService.h; sourceTree = "<group>"; };
 		BFBD43691D4C546A00B3D7B5 /* HCIBeaconService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIBeaconService.m; sourceTree = "<group>"; };
-		BFBDBFA01CA11AA700918F43 /* HCTestDBModel_depth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTestDBModel_depth2.h; sourceTree = "<group>"; };
-		BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTestDBModel_depth2.m; sourceTree = "<group>"; };
+		BFBD436C1D4C704500B3D7B5 /* HCIvarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIvarInfo.h; sourceTree = "<group>"; };
+		BFBD436D1D4C704500B3D7B5 /* HCIvarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIvarInfo.m; sourceTree = "<group>"; };
+		BFBD436E1D4C704500B3D7B5 /* HCMethodInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMethodInfo.h; sourceTree = "<group>"; };
+		BFBD436F1D4C704500B3D7B5 /* HCMethodInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMethodInfo.m; sourceTree = "<group>"; };
+		BFBD43701D4C704500B3D7B5 /* HCPropertyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPropertyInfo.h; sourceTree = "<group>"; };
+		BFBD43711D4C704500B3D7B5 /* HCPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPropertyInfo.m; sourceTree = "<group>"; };
+		BFBD43721D4C704500B3D7B5 /* HCTypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTypeDecoder.h; sourceTree = "<group>"; };
+		BFBD43731D4C704500B3D7B5 /* HCTypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTypeDecoder.m; sourceTree = "<group>"; };
 		BFC49D1C1D2754290076A90C /* HCKitHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKitHTTPRequest.h; sourceTree = "<group>"; };
 		BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKitHTTPRequest.m; sourceTree = "<group>"; };
 		BFC49D521D30E19A0076A90C /* HCHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUD.h; sourceTree = "<group>"; };
@@ -326,21 +285,12 @@
 				BF0DED511CA50B1F00B10C46 /* HCDiskCache.m */,
 				BF0DED561CA50B1F00B10C46 /* HCProfileService.h */,
 				BF0DED571CA50B1F00B10C46 /* HCProfileService.m */,
-				BF0DED521CA50B1F00B10C46 /* HCIvarInfo.h */,
-				BF0DED531CA50B1F00B10C46 /* HCIvarInfo.m */,
-				BF0DED541CA50B1F00B10C46 /* HCMethodInfo.h */,
-				BF0DED551CA50B1F00B10C46 /* HCMethodInfo.m */,
-				BF0DED581CA50B1F00B10C46 /* HCPropertyInfo.h */,
-				BF0DED591CA50B1F00B10C46 /* HCPropertyInfo.m */,
-				BF0DED5A1CA50B1F00B10C46 /* HCTypeDecoder.h */,
-				BF0DED5B1CA50B1F00B10C46 /* HCTypeDecoder.m */,
 				BFD546571CDC82E100AA3B02 /* HCFileHelper.h */,
 				BFD546581CDC82E100AA3B02 /* HCFileHelper.m */,
 				BF8C3ED01D029F3000D34E22 /* HCUnit.h */,
 				BF8C3ED11D029F3000D34E22 /* HCUnit.m */,
 				BF8C3F141D19094200D34E22 /* HCQRScanner.h */,
 				BF8C3F151D19094200D34E22 /* HCQRScanner.m */,
-				BFBD43671D4C546A00B3D7B5 /* HCIBeacon */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -403,8 +353,8 @@
 			children = (
 				BFAECB4E1CB79268001C9819 /* HCRequestApi */,
 				BF3F9D921CB39A2300390AF2 /* HCAction */,
+				BFBD43671D4C546A00B3D7B5 /* HCIBeacon */,
 				BFBDBF8D1CA0DA6B00918F43 /* HCCore */,
-				BF49CB4B1C1A5A6A00C3CF4E /* HCDB */,
 				BF49CB171C1A5A2900C3CF4E /* HCKitProject */,
 				BF49CB311C1A5A2900C3CF4E /* HCKitProjectTests */,
 				BF49CB3C1C1A5A2900C3CF4E /* HCKitProjectUITests */,
@@ -432,7 +382,6 @@
 				BF8C3F031D177BC400D34E22 /* LocalNotification */,
 				BFAECB521CB79C31001C9819 /* common */,
 				BF4F0A7F1CB4A3A800273510 /* HTTPTest */,
-				BF49CB641C1A699000C3CF4E /* DBTestField */,
 				BF49CB1B1C1A5A2900C3CF4E /* AppDelegate.h */,
 				BF49CB1C1C1A5A2900C3CF4E /* AppDelegate.m */,
 				BF49CB1E1C1A5A2900C3CF4E /* ViewController.h */,
@@ -473,47 +422,6 @@
 				BF49CB3F1C1A5A2900C3CF4E /* Info.plist */,
 			);
 			path = HCKitProjectUITests;
-			sourceTree = "<group>";
-		};
-		BF49CB4B1C1A5A6A00C3CF4E /* HCDB */ = {
-			isa = PBXGroup;
-			children = (
-				BFB513B51C97E28E005AAEDF /* Resources */,
-				BF49CB4C1C1A5A6A00C3CF4E /* HCDAO.h */,
-				BF49CB4D1C1A5A6A00C3CF4E /* HCDAO.m */,
-				BF49CB4E1C1A5A6A00C3CF4E /* HCDBHelper.h */,
-				BF49CB4F1C1A5A6A00C3CF4E /* HCDBHelper.m */,
-				BF49CB501C1A5A6A00C3CF4E /* HCDBTable.h */,
-				BF49CB511C1A5A6A00C3CF4E /* HCDBTable.m */,
-				BF6C37851CB7397100DBAA1B /* HCVersionTable.h */,
-				BF6C37861CB7397100DBAA1B /* HCVersionTable.m */,
-				BFB513C11C9A8173005AAEDF /* HCDBTableField.h */,
-				BFB513C21C9A8173005AAEDF /* HCDBTableField.m */,
-				BF49CB521C1A5A6A00C3CF4E /* HCDBManager.h */,
-				BF49CB531C1A5A6A00C3CF4E /* HCDBManager.m */,
-				BF28FB681C87CD2C0014CBBC /* NSObject+HCDBExtend.h */,
-				BF28FB691C87CD2C0014CBBC /* NSObject+HCDBExtend.m */,
-				BFB513C41C9A88AD005AAEDF /* HCDBModel.h */,
-				BFB513C51C9A88AD005AAEDF /* HCDBModel.m */,
-			);
-			path = HCDB;
-			sourceTree = "<group>";
-		};
-		BF49CB641C1A699000C3CF4E /* DBTestField */ = {
-			isa = PBXGroup;
-			children = (
-				BF49CB611C1A5D5D00C3CF4E /* HCDBViewController.h */,
-				BF49CB621C1A5D5D00C3CF4E /* HCDBViewController.m */,
-				BF49CB651C1A69C000C3CF4E /* HCTestDAO.h */,
-				BF49CB661C1A69C000C3CF4E /* HCTestDAO.m */,
-				BF49CB681C1A6AFC00C3CF4E /* HCTestTable.h */,
-				BF49CB691C1A6AFC00C3CF4E /* HCTestTable.m */,
-				BF49CB6B1C1A6BD300C3CF4E /* HCTestDBModel.h */,
-				BF49CB6C1C1A6BD300C3CF4E /* HCTestDBModel.m */,
-				BFBDBFA01CA11AA700918F43 /* HCTestDBModel_depth2.h */,
-				BFBDBFA11CA11AA700918F43 /* HCTestDBModel_depth2.m */,
-			);
-			name = DBTestField;
 			sourceTree = "<group>";
 		};
 		BF4F0A7F1CB4A3A800273510 /* HTTPTest */ = {
@@ -561,14 +469,6 @@
 			name = common;
 			sourceTree = "<group>";
 		};
-		BFB513B51C97E28E005AAEDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BFB513B61C97E28E005AAEDF /* HCEncoding.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		BFBD43671D4C546A00B3D7B5 /* HCIBeacon */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,9 +478,25 @@
 			path = HCIBeacon;
 			sourceTree = SOURCE_ROOT;
 		};
+		BFBD436B1D4C704500B3D7B5 /* RuntimeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BFBD436C1D4C704500B3D7B5 /* HCIvarInfo.h */,
+				BFBD436D1D4C704500B3D7B5 /* HCIvarInfo.m */,
+				BFBD436E1D4C704500B3D7B5 /* HCMethodInfo.h */,
+				BFBD436F1D4C704500B3D7B5 /* HCMethodInfo.m */,
+				BFBD43701D4C704500B3D7B5 /* HCPropertyInfo.h */,
+				BFBD43711D4C704500B3D7B5 /* HCPropertyInfo.m */,
+				BFBD43721D4C704500B3D7B5 /* HCTypeDecoder.h */,
+				BFBD43731D4C704500B3D7B5 /* HCTypeDecoder.m */,
+			);
+			path = RuntimeInfo;
+			sourceTree = "<group>";
+		};
 		BFBDBF8D1CA0DA6B00918F43 /* HCCore */ = {
 			isa = PBXGroup;
 			children = (
+				BFBD436B1D4C704500B3D7B5 /* RuntimeInfo */,
 				BF0DED4F1CA50B1F00B10C46 /* Classes */,
 				BF0DED5C1CA50B1F00B10C46 /* CommonCategory */,
 				BF0DED471CA504AB00B10C46 /* HCUtilityFuc.h */,
@@ -725,7 +641,6 @@
 				BFFF93431D473C7D00E13833 /* angle-mask@2x.png in Resources */,
 				BFFF93481D473C7D00E13833 /* info.png in Resources */,
 				BFFF93461D473C7D00E13833 /* error@2x.png in Resources */,
-				BFB513B71C97E28E005AAEDF /* HCEncoding.plist in Resources */,
 				BF49CB251C1A5A2900C3CF4E /* Assets.xcassets in Resources */,
 				BFFF93471D473C7D00E13833 /* error@3x.png in Resources */,
 				BFFF93441D473C7D00E13833 /* angle-mask@3x.png in Resources */,
@@ -809,60 +724,47 @@
 				BFAB46541CB5E789009E9C8B /* HCIdCardNoRulesChecker.m in Sources */,
 				BFDA8E8F1CB4D7AB00910331 /* HCAction.m in Sources */,
 				BF8C3ED21D029F3000D34E22 /* HCUnit.m in Sources */,
-				BF49CB581C1A5A6A00C3CF4E /* HCDAO.m in Sources */,
 				BFC49D571D30E1A70076A90C /* UIViewController+HCExtend.m in Sources */,
-				BF49CB6A1C1A6AFC00C3CF4E /* HCTestTable.m in Sources */,
 				BF49CB201C1A5A2900C3CF4E /* ViewController.m in Sources */,
-				BF0DED6A1CA50B1F00B10C46 /* HCTypeDecoder.m in Sources */,
+				BFBD43751D4C704500B3D7B5 /* HCMethodInfo.m in Sources */,
 				BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */,
 				BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */,
+				BFBD43771D4C704500B3D7B5 /* HCTypeDecoder.m in Sources */,
 				BF8C3ECF1D029F1100D34E22 /* NSNumber+HCExtend.m in Sources */,
+				BFBD43761D4C704500B3D7B5 /* HCPropertyInfo.m in Sources */,
 				BFC49DC81D40C34E0076A90C /* HCHUDPresentationAnimationController.m in Sources */,
 				BFDA8E861CB4D7A100910331 /* HCScheduled.m in Sources */,
+				BFBD43741D4C704500B3D7B5 /* HCIvarInfo.m in Sources */,
 				BF8C3F251D1D06D600D34E22 /* NSDictionary+HCExtend.m in Sources */,
 				BF49CB1D1C1A5A2900C3CF4E /* AppDelegate.m in Sources */,
-				BF49CB6D1C1A6BD300C3CF4E /* HCTestDBModel.m in Sources */,
 				BFC573441CC9F79A007015CE /* UIDevice+HCExtend.m in Sources */,
 				BFDA8E921CB4D7AB00910331 /* UIView+Action.m in Sources */,
 				BFDA8E901CB4D7AB00910331 /* HCActionInstant.m in Sources */,
 				BFC49D611D30E9830076A90C /* HCHUDPresentationController.m in Sources */,
 				BF49CB1A1C1A5A2900C3CF4E /* main.m in Sources */,
-				BF0DED671CA50B1F00B10C46 /* HCMethodInfo.m in Sources */,
 				BF3F9D911CB399EF00390AF2 /* UIButton+HCCheckMenu.m in Sources */,
 				BFAB465A1CB5F182009E9C8B /* NSString+HCValidation.m in Sources */,
 				BF3F9D891CB38F0400390AF2 /* UIImage+HCExtend.m in Sources */,
 				BF0DED6B1CA50B1F00B10C46 /* NSArray+HCExtend.m in Sources */,
 				BF0DED6C1CA50B1F00B10C46 /* NSObject+HCExtend.m in Sources */,
-				BF0DED661CA50B1F00B10C46 /* HCIvarInfo.m in Sources */,
 				BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */,
 				BF0DED6E1CA50B1F00B10C46 /* UILabel+StringFrame.m in Sources */,
 				BFAB46571CB5E95F009E9C8B /* HCClock.m in Sources */,
 				BFC573411CC9F5A2007015CE /* HCLocalizable.m in Sources */,
-				BF49CB5A1C1A5A6A00C3CF4E /* HCDBTable.m in Sources */,
-				BFB513C31C9A8173005AAEDF /* HCDBTableField.m in Sources */,
-				BF49CB5B1C1A5A6A00C3CF4E /* HCDBManager.m in Sources */,
 				BF8C3F221D1D045E00D34E22 /* NSData+HCExtend.m in Sources */,
 				BFD546591CDC82E100AA3B02 /* HCFileHelper.m in Sources */,
 				BFDA8E911CB4D7AB00910331 /* HCActionInterval.m in Sources */,
 				BF0DED651CA50B1F00B10C46 /* HCDiskCache.m in Sources */,
 				BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */,
-				BFBDBFA21CA11AA700918F43 /* HCTestDBModel_depth2.m in Sources */,
-				BFB513C61C9A88AD005AAEDF /* HCDBModel.m in Sources */,
-				BF6C37871CB7397100DBAA1B /* HCVersionTable.m in Sources */,
 				BF49CB601C1A5CA500C3CF4E /* HCMainTableViewTableViewController.m in Sources */,
 				BFA36ACA1CF931F800DDD03E /* NSDate+HCExtend.m in Sources */,
 				BF3F9D8D1CB3964F00390AF2 /* UIView+HCExtend.m in Sources */,
-				BF49CB631C1A5D5D00C3CF4E /* HCDBViewController.m in Sources */,
 				BFC49D5B1D30E3C30076A90C /* HUDViewController.m in Sources */,
 				BFBD436A1D4C546A00B3D7B5 /* HCIBeaconService.m in Sources */,
-				BF0DED691CA50B1F00B10C46 /* HCPropertyInfo.m in Sources */,
 				BF0DED711CA5113600B10C46 /* NSString+HCExtend.m in Sources */,
-				BF28FB6A1C87CD2C0014CBBC /* NSObject+HCDBExtend.m in Sources */,
 				BF0DED6D1CA50B1F00B10C46 /* UIColor+HCExtend.m in Sources */,
-				BF49CB671C1A69C000C3CF4E /* HCTestDAO.m in Sources */,
 				BFAECB511CB79268001C9819 /* HCHTTPRequest.m in Sources */,
 				BF0DED681CA50B1F00B10C46 /* HCProfileService.m in Sources */,
-				BF49CB591C1A5A6A00C3CF4E /* HCDBHelper.m in Sources */,
 				BF8C3F161D19094200D34E22 /* HCQRScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

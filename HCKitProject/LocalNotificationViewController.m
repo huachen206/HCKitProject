@@ -18,7 +18,7 @@
 - (IBAction)action:(id)sender {
     NSDate *now = [NSDate new];
     NSInteger delay = 10;
-    NSString *alertBody = [NSString stringWithFormat:@"now:%@,delay:%ld",now,delay];
+    NSString *alertBody = [NSString stringWithFormat:@"now:%@,delay:%ld",now,(long)delay];
 
     [[self class] registerLocalNotification:delay alertBody:alertBody];
 
