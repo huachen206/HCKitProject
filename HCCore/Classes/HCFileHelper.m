@@ -53,5 +53,18 @@
     return resultFileName;
 }
 
++(NSString *)documentsPath{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+}
++(NSString *)homePath{
+    return NSHomeDirectory();
+
+}
++(NSString *)cachePath{
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+}
++(NSString *)tmpPath{
+    return NSTemporaryDirectory();
+}
 
 @end
