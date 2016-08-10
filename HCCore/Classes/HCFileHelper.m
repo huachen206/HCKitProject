@@ -47,6 +47,22 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager removeItemAtPath:folderPath error:nil];
 }
+-(void)copyFolderAtPath:(NSString *)atPath toPath:(NSString *)toPath{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:atPath];
+    NSString *path;
+    while ((path = [dirEnum nextObject]) != nil) {
+        NSString *orignPath = [atPath stringByAppendingPathComponent:path];
+        NSString *tagPath = [toPath stringByAppendingPathComponent:path];
+        if ([path containsString:@"."]) {
+            [fileManager copyItemAtPath:orignPath toPath:tagPath error:nil];
+        }else{
+            [HCFileHelper createFolderAtPath:tagPath];
+            [self copyFolderAtPath:orignPath toPath:tagPath];
+        }
+    }
+}
+
 +(BOOL)copyFolderAtPath:(NSString *)atPath toPath:(NSString *)toPath{
     BOOL success = YES;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -54,15 +70,17 @@
         NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:atPath];
         NSString *path;
         while ((path = [dirEnum nextObject]) != nil) {
-            success = success && [fileManager moveItemAtPath:atPath
-                        toPath:toPath
-                         error:NULL];
+            NSString *orignPath = [atPath stringByAppendingPathComponent:path];
+            NSString *tagPath = [toPath stringByAppendingPathComponent:path];
+            if ([path containsString:@"."]) {
+                [fileManager copyItemAtPath:orignPath toPath:tagPath error:nil];
+            }else{
+                [self copyFolderAtPath:orignPath toPath:tagPath];
+            }
         }
-        
-        if (success) {
-            [self deleteFolderAtPath:atPath];
-        }else{
+        if (!success) {
             [self deleteFolderAtPath:toPath];
+            DebugLog(@"copy Folder Fail");
         }
     }
     return success;
