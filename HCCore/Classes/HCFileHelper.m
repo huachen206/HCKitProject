@@ -43,6 +43,30 @@
     return success;
 }
 
++ (void)deleteFolderAtPath:(NSString *)folderPath {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:folderPath error:nil];
+}
++(BOOL)copyFolderAtPath:(NSString *)atPath toPath:(NSString *)toPath{
+    BOOL success = YES;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([self createFolderAtPath:toPath]) {
+        NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:atPath];
+        NSString *path;
+        while ((path = [dirEnum nextObject]) != nil) {
+            success = success && [fileManager moveItemAtPath:atPath
+                        toPath:toPath
+                         error:NULL];
+        }
+        
+        if (success) {
+            [self deleteFolderAtPath:atPath];
+        }else{
+            [self deleteFolderAtPath:toPath];
+        }
+    }
+    return success;
+}
 
 + (NSString *)fileNameAtDirectory:(NSString *)directory {
     NSString *resultFileName = @"";

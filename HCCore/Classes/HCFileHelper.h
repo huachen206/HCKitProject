@@ -40,6 +40,22 @@
  */
 +(BOOL)copyItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath;
 /**
+ *  将一个文件夹内的文件拷贝指另一个路径。
+ *
+ *  @param atPath 源路劲
+ *  @param toPath 目标路劲
+ *
+ *  @return 成功或失败
+ */
++(BOOL)copyFolderAtPath:(NSString *)atPath toPath:(NSString *)toPath;
+/**
+ *  删除一个文件夹及其内容
+ *
+ *  @param folderPath 要删除的文件夹路劲
+ */
++ (void)deleteFolderAtPath:(NSString *)folderPath;
+
+/**
  *  从一个文件路径中得到文件名
  *
  *  @param directory 文件路径
