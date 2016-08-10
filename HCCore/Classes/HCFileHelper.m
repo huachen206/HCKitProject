@@ -20,10 +20,10 @@
 }
 
 + (BOOL)createFolderAtPath:(NSString *)folderPath {
-    BOOL success = NO;
+    BOOL success = YES;
     if (![self isExistAtPath:folderPath]) {
         NSError *error;
-        success = [DefaultManager createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:&error];
+        success = success && [DefaultManager createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:&error];
         if (error) {
             DebugLog(@"%@",error);
         }
@@ -67,7 +67,6 @@
     }
     return success;
 }
-
 + (NSString *)fileNameAtDirectory:(NSString *)directory {
     NSString *resultFileName = @"";
     if (directory.length > 0) {
