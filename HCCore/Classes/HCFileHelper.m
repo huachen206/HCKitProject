@@ -9,6 +9,11 @@
 
 #import "HCFileHelper.h"
 #import "HCUtilityMacro.h"
+@interface HCFileHelper()
+
+@end
+
+
 @implementation HCFileHelper
 
 + (BOOL)isExistAtPath:(NSString *)filePath {
@@ -33,12 +38,10 @@
 
 +(BOOL)copyItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath {
     BOOL success = NO;
-    if ([self createFileAtPath:dstPath]) {
-        NSError *error;
-        success = [DefaultManager copyItemAtPath:srcPath toPath:dstPath error:&error];
-        if (error) {
-            DebugLog(@"%@",error);
-        }
+    NSError *error;
+    success = [DefaultManager copyItemAtPath:srcPath toPath:dstPath error:&error];
+    if (error) {
+        DebugLog(@"%@",error);
     }
     return success;
 }
@@ -46,21 +49,6 @@
 + (void)deleteFolderAtPath:(NSString *)folderPath {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager removeItemAtPath:folderPath error:nil];
-}
--(void)copyFolderAtPath:(NSString *)atPath toPath:(NSString *)toPath{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:atPath];
-    NSString *path;
-    while ((path = [dirEnum nextObject]) != nil) {
-        NSString *orignPath = [atPath stringByAppendingPathComponent:path];
-        NSString *tagPath = [toPath stringByAppendingPathComponent:path];
-        if ([path containsString:@"."]) {
-            [fileManager copyItemAtPath:orignPath toPath:tagPath error:nil];
-        }else{
-            [HCFileHelper createFolderAtPath:tagPath];
-            [self copyFolderAtPath:orignPath toPath:tagPath];
-        }
-    }
 }
 
 +(BOOL)copyFolderAtPath:(NSString *)atPath toPath:(NSString *)toPath{

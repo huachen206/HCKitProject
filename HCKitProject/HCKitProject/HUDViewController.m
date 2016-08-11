@@ -9,7 +9,7 @@
 #import "HUDViewController.h"
 #import "HCAlert.h"
 #import "HCHUD.h"
-#import <SVProgressHUD/SVProgressHUD.h>
+//#import <SVProgressHUD/SVProgressHUD.h>
 #import "UIColor+HCExtend.h"
 
 
@@ -24,14 +24,14 @@
     self.title = @"HUD";
     [HCHUD HUD].options.defaultStyle = HCHUDStyleDark;
 //    [HCHUD HUD].dimingColor = [UIColor hc_colorForBlackWithAlpha:0.5];
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+//    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     
 }
 static bool flag;
 - (IBAction)hudAction:(id)sender {
     
     if (flag) {
-        [SVProgressHUD show];
+//        [SVProgressHUD show];
     }else{
         [HCHUD showWithImage:[UIImage imageNamed:@"success"] withText:@"success"];
 //        [HCHUD showWithText:@"success"];
@@ -42,7 +42,7 @@ static bool flag;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self dismissViewControllerAnimated:YES completion:nil];
         [HCHUD dismiss];
-        [SVProgressHUD dismiss];
+//        [SVProgressHUD dismiss];
     });
     
     

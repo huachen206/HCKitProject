@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface HCFileHelper : NSObject
+
+
 /**
  *  文件路径是否存在
  *
