@@ -77,7 +77,7 @@
     NSString *resultFileName = @"";
     if (directory.length > 0) {
         NSRange range = [directory rangeOfString:@"/" options:NSBackwardsSearch];
-        resultFileName = [directory substringFromIndex:range.location];
+        resultFileName = [directory substringFromIndex:range.location+1];
     }
     return resultFileName;
 }
