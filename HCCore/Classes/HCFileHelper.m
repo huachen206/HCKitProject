@@ -61,9 +61,9 @@
             NSString *orignPath = [atPath stringByAppendingPathComponent:path];
             NSString *tagPath = [toPath stringByAppendingPathComponent:path];
             if ([path containsString:@"."]) {
-                [fileManager copyItemAtPath:orignPath toPath:tagPath error:nil];
+                success = success &&[fileManager copyItemAtPath:orignPath toPath:tagPath error:nil];
             }else{
-                [self copyFolderAtPath:orignPath toPath:tagPath];
+                success = success &&[self copyFolderAtPath:orignPath toPath:tagPath];
             }
         }
         if (!success) {
@@ -74,12 +74,7 @@
     return success;
 }
 + (NSString *)fileNameAtDirectory:(NSString *)directory {
-    NSString *resultFileName = @"";
-    if (directory.length > 0) {
-        NSRange range = [directory rangeOfString:@"/" options:NSBackwardsSearch];
-        resultFileName = [directory substringFromIndex:range.location+1];
-    }
-    return resultFileName;
+    return [directory lastPathComponent];
 }
 
 +(NSString *)documentsPath{
