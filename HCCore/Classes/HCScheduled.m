@@ -53,7 +53,7 @@
 
 
 -(void)scheduled:(ScheduledBlock)block{
-    if (blockStop||!_paused) {
+    if (blockStop||_paused) {
         return;
     }
     self.actionBlock = block;
