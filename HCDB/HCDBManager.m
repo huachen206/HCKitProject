@@ -7,6 +7,7 @@
 //
 
 #import "HCDBManager.h"
+#import "HCDAO.h"
 @implementation HCDBManager
 
 + (instancetype)shared {
@@ -15,29 +16,27 @@
     dispatch_once(&onceToken, ^{
         if (!shared_) {
             shared_ = [[HCDBManager alloc]init];
-            shared_.arry_dbHelper = [[NSMutableArray alloc] init];
+            shared_.array_dao = [[NSMutableArray alloc] init];
         }
     });
-    
     return shared_;
 }
 
 -(void)closeAll{
-    for (HCDBHelper *dbhelper in self.arry_dbHelper) {
-        [dbhelper close];
+    for (HCDAO* dao in self.array_dao) {
+        [dao.baseDBHelper close];
     }
 }
 
--(void)addDBHelper:(HCDBHelper *)helper{
-    [self.arry_dbHelper addObject:helper];
-}
-
--(HCDBHelper *)dbHelperWithDbPath:(NSString *)dbPath{
-    for (HCDBHelper *helper in self.arry_dbHelper) {
-        if ([helper.dbPath isEqualToString:dbPath]) {
-            return helper;
+-(HCDAO*)daoWithDBPath:(NSString *)dbPath{
+    for (HCDAO* dao in self.array_dao) {
+        if ([dao.baseDBHelper.dbPath isEqualToString:dbPath]) {
+            return dao;
         }
     }
     return nil;
+}
+-(void)addDAO:(HCDAO *)dao{
+    [self.array_dao addObject:dao];
 }
 @end

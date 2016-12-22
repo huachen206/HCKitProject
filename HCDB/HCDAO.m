@@ -10,13 +10,17 @@
 #import "HCVersionTable.h"
 @implementation HCDAO
 +(instancetype)dao{
-    static id _sharedInstance = nil;
-    static dispatch_once_t onceToke;
-    dispatch_once(&onceToke, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    return _sharedInstance;
+    return [self daoWithDBPath:[HCDBHelper defaultDBPath]];
 }
++(instancetype)daoWithDBPath:(NSString *)dbPath{
+    id dao = [[HCDBManager shared] daoWithDBPath:dbPath];
+    if (!dao) {
+        dao = [[self alloc] initWithDBPath:dbPath];
+        [[HCDBManager shared] addDAO:dao];
+    }
+    return dao;
+}
+
 -(HCVersionTable *)versionTable{
     if (!_versionTable) {
         _versionTable = [HCVersionTable table];
@@ -26,8 +30,9 @@
     return _versionTable;
 }
 
--(id)init{
-    if (self = [super init]) {
+-(id)initWithDBPath:(NSString *)dbPath{
+    if (self == [super init]) {
+        self.baseDBHelper = [[HCDBHelper alloc] initWithDbPath:dbPath];
         BOOL flag =[self.baseDBHelper open];
         HCDBQuickCheck(flag);
         //versiontable单独初始化
@@ -58,20 +63,9 @@
                 [self setValue:table forKey:info.propertyName];
             }
         }
+
     }
     return self;
-}
-
-//需要指定sql文件路径时子类重写这个方法。
--(HCDBHelper *)baseDBHelper{
-    if (!_baseDBHelper) {
-        _baseDBHelper =[[HCDBManager shared] dbHelperWithDbPath:[HCDBHelper defaultDBPath]];
-        if (!_baseDBHelper) {
-            _baseDBHelper = [[HCDBHelper alloc] initDefault];
-            [[HCDBManager shared] addDBHelper:_baseDBHelper];
-        }
-    }
-    return _baseDBHelper;
 }
 
 -(FMDatabaseQueue*)fmDbQueue{
@@ -79,6 +73,12 @@
         _fmDbQueue = self.baseDBHelper.fmDbQueue;
     }
     return _fmDbQueue;
+}
+-(BOOL)open{
+    return [self.baseDBHelper open];
+}
+-(void)close{
+    [self.baseDBHelper close];
 }
 
 @end

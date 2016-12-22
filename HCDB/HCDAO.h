@@ -47,5 +47,8 @@ return;                                                 \
 @property (nonatomic,strong) HCVersionTable *versionTable;
 
 +(instancetype)dao;
++(instancetype)daoWithDBPath:(NSString *)dbPath;
 
+-(BOOL)open;
+-(void)close;
 @end

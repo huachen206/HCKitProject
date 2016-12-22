@@ -101,6 +101,7 @@
         self.displayLink.paused = NO;
     }else if(self.actionBlock){
         _paused = NO;
+        
         float *delay = (float *)malloc(sizeof(float));
         BOOL *stop = (BOOL *)malloc(sizeof(BOOL));
         self.actionBlock(delay,stop,self);

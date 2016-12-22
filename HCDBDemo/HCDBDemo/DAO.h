@@ -12,5 +12,6 @@
 @interface DAO : HCDAO
 @property (nonatomic,strong) Table_carModel *carTable;
 @property (nonatomic,strong) Table_planeModel *planeTable;
++(instancetype)daoWithAccount:(NSString*)name;
 
 @end

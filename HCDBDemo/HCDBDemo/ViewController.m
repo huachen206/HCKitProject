@@ -31,6 +31,10 @@
     
     
     [[DAO dao].carTable deleteWithModel:car];
+    
+    [[DAO daoWithAccount:@"huachen"].carTable insertWithModel:car];
+    [[DAO daoWithAccount:@"zhouzhou"].carTable insertWithModel:car];
+
 
 }
 

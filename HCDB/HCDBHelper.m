@@ -23,21 +23,27 @@
 }
 -(id)initWithDbPath:(NSString *)dbPath{
     if (self = [super init]) {
-        
+        NSString* foldPath = [dbPath stringByDeletingLastPathComponent];
+        NSError *error = nil;
+        if (![[NSFileManager defaultManager] fileExistsAtPath:foldPath]) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:foldPath withIntermediateDirectories:NO attributes:nil error:&error];
+            NSAssert(!error, @"无法创建文件夹");
+        }
         self.dbPath = dbPath;
     }
     return self;
 }
 
 -(id)initWithDbFileName:(NSString *)fileName{
-    if (self = [super init]) {
-        NSString *docsPath = getDocumentPath();
-        NSString *dbFolderPath = [docsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",@"DBFile"]];
-        NSError *error = nil;
-        if (![[NSFileManager defaultManager] fileExistsAtPath:dbFolderPath]) {
-            [[NSFileManager defaultManager] createDirectoryAtPath:dbFolderPath withIntermediateDirectories:NO attributes:nil error:&error];
-        }
-        self.dbPath = [docsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@/%@.db",@"DBFile",fileName]];
+    NSString *docsPath = getDocumentPath();
+    if (self = [self initWithDbPath:[docsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@/%@.db",@"DBFile",fileName]]]) {
+//        NSString *docsPath = getDocumentPath();
+//        NSString *dbFolderPath = [docsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",@"DBFile"]];
+//        NSError *error = nil;
+//        if (![[NSFileManager defaultManager] fileExistsAtPath:dbFolderPath]) {
+//            [[NSFileManager defaultManager] createDirectoryAtPath:dbFolderPath withIntermediateDirectories:NO attributes:nil error:&error];
+//        }
+//        self.dbPath = [docsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@/%@.db",@"DBFile",fileName]];
     }
     return self;
 }

@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "HCDBHelper.h"
+@class HCDAO;
 @interface HCDBManager : NSObject
-@property (nonatomic,strong) NSMutableArray *arry_dbHelper;
+@property (nonatomic,strong) NSMutableArray *array_dao;
 
 + (instancetype)shared;
--(void)addDBHelper:(HCDBHelper *)helper;
--(HCDBHelper *)dbHelperWithDbPath:(NSString *)dbPath;
+
+-(HCDAO*)daoWithDBPath:(NSString *)dbPath;
+-(void)addDAO:(HCDAO *)dao;
 -(void)closeAll;
+
+
 @end
