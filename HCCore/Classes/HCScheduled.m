@@ -72,6 +72,8 @@
     }else{
         _valid = NO;
     }
+    free(delay);
+    free(stop);
 }
 
 -(void)invalidate{
