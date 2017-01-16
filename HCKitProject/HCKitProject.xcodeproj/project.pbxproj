@@ -670,6 +670,7 @@
 				TargetAttributes = {
 					BF49CB141C1A5A2900C3CF4E = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 9K9256C42S;
 					};
 					BF49CB2D1C1A5A2900C3CF4E = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -995,6 +996,7 @@
 			baseConfigurationReference = 782998681762793D7908B6B4 /* Pods-HCKitProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9K9256C42S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HCKitProject/PrefixHeader.pch";
 				INFOPLIST_FILE = HCKitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1009,6 +1011,7 @@
 			baseConfigurationReference = B013CC250C58D0B2963D3743 /* Pods-HCKitProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9K9256C42S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HCKitProject/PrefixHeader.pch";
 				INFOPLIST_FILE = HCKitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

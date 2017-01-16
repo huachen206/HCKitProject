@@ -34,6 +34,7 @@
             break;
         }
     }
+    free(stop);
     return results;
 }
 @end
