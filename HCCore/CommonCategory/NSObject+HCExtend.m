@@ -51,7 +51,7 @@
 +(NSUInteger)hc_depthToBoot{
     NSUInteger depth = 0;
     if ([[self class] hc_isCustomClass]) {
-        depth = 1+ [[self superclass] hc_isCustomClass];
+        depth = 1+ [[self superclass] hc_depthToBoot];
     }
     return depth;
 }
