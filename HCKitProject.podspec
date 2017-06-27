@@ -44,14 +44,14 @@ Pod::Spec.new do |s|
       	ht.dependency 'HCKitProject/Core'
 		ht.ios.dependency  'AFNetworking', '~> 3.0.4'
   end
-  s.subspec 'Swift' do |sw|
-  	    	sw.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
+  s.subspec 'Swift_Core' do |sw_core|
+  	    	sw_core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
   end
-  
+
   s.subspec 'Swift_DB' do |sw_db|
   	   	sw_db.source_files = 'HCDB/*.{h,m}'
       	sw_db.resource = 'HCDB/Resources/*'
-      	sw_db.dependency 'HCKitProject/Core'
+      	sw_db.dependency 'HCKitProject/Swift_Core'
 		sw_db.ios.dependency  'FMDB', '~> 2.5'
   end
 end
