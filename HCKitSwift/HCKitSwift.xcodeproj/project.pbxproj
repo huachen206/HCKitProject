@@ -1,0 +1,970 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70E5A490DA9F80BF09531997 /* Pods_HCKitSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AA550B2354DC76F02ADAD2 /* Pods_HCKitSwiftTests.framework */; };
+		7EAB58279DA02B7B02EAD91F /* Pods_HCKitSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0223536515F79B40D95BB569 /* Pods_HCKitSwiftUITests.framework */; };
+		B8E9B3CAD24A91A9F60456E7 /* Pods_HCKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD77FBA36963D7BC93A17DA5 /* Pods_HCKitSwift.framework */; };
+		BF157B8F1F0100290028079B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF157B8E1F0100290028079B /* AppDelegate.swift */; };
+		BF157B911F0100290028079B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF157B901F0100290028079B /* ViewController.swift */; };
+		BF157B941F0100290028079B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF157B921F0100290028079B /* Main.storyboard */; };
+		BF157B961F0100290028079B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF157B951F0100290028079B /* Assets.xcassets */; };
+		BF157B991F0100290028079B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF157B971F0100290028079B /* LaunchScreen.storyboard */; };
+		BF157BA41F0100290028079B /* HCKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF157BA31F0100290028079B /* HCKitSwiftTests.swift */; };
+		BF157BAF1F0100290028079B /* HCKitSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF157BAE1F0100290028079B /* HCKitSwiftUITests.swift */; };
+		BF157C071F01089A0028079B /* HCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BC21F01089A0028079B /* HCAlert.m */; };
+		BF157C081F01089A0028079B /* HCClock.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BC41F01089A0028079B /* HCClock.m */; };
+		BF157C091F01089A0028079B /* HCDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BC61F01089A0028079B /* HCDiskCache.m */; };
+		BF157C0A1F01089A0028079B /* HCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BC81F01089A0028079B /* HCFileHelper.m */; };
+		BF157C0B1F01089A0028079B /* HCHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BCA1F01089A0028079B /* HCHUD.m */; };
+		BF157C0C1F01089A0028079B /* HCHUDPresentationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BCC1F01089A0028079B /* HCHUDPresentationAnimationController.m */; };
+		BF157C0D1F01089A0028079B /* HCHUDPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BCE1F01089A0028079B /* HCHUDPresentationController.m */; };
+		BF157C0E1F01089A0028079B /* HCIdCardNoRulesChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BD01F01089A0028079B /* HCIdCardNoRulesChecker.m */; };
+		BF157C0F1F01089A0028079B /* HCLocalizable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BD31F01089A0028079B /* HCLocalizable.m */; };
+		BF157C101F01089A0028079B /* HCProfileService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BD51F01089A0028079B /* HCProfileService.m */; };
+		BF157C111F01089A0028079B /* HCQRScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BD71F01089A0028079B /* HCQRScanner.m */; };
+		BF157C121F01089A0028079B /* HCScheduled.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BD91F01089A0028079B /* HCScheduled.m */; };
+		BF157C131F01089A0028079B /* HCUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BDB1F01089A0028079B /* HCUnit.m */; };
+		BF157C141F01089A0028079B /* NSArray+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BDF1F01089A0028079B /* NSArray+HCExtend.m */; };
+		BF157C151F01089A0028079B /* NSData+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BE11F01089A0028079B /* NSData+HCExtend.m */; };
+		BF157C161F01089A0028079B /* NSDate+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BE31F01089A0028079B /* NSDate+HCExtend.m */; };
+		BF157C171F01089A0028079B /* NSDictionary+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BE51F01089A0028079B /* NSDictionary+HCExtend.m */; };
+		BF157C181F01089A0028079B /* NSNumber+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BE71F01089A0028079B /* NSNumber+HCExtend.m */; };
+		BF157C191F01089A0028079B /* NSObject+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BE91F01089A0028079B /* NSObject+HCExtend.m */; };
+		BF157C1A1F01089A0028079B /* NSString+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BEB1F01089A0028079B /* NSString+HCExtend.m */; };
+		BF157C1B1F01089A0028079B /* NSString+HCValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BED1F01089A0028079B /* NSString+HCValidation.m */; };
+		BF157C1C1F01089A0028079B /* UIButton+HCCheckMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BEF1F01089A0028079B /* UIButton+HCCheckMenu.m */; };
+		BF157C1D1F01089A0028079B /* UIColor+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BF11F01089A0028079B /* UIColor+HCExtend.m */; };
+		BF157C1E1F01089A0028079B /* UIDevice+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BF31F01089A0028079B /* UIDevice+HCExtend.m */; };
+		BF157C1F1F01089A0028079B /* UIImage+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BF51F01089A0028079B /* UIImage+HCExtend.m */; };
+		BF157C201F01089A0028079B /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BF71F01089A0028079B /* UILabel+StringFrame.m */; };
+		BF157C211F01089A0028079B /* UIView+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BF91F01089A0028079B /* UIView+HCExtend.m */; };
+		BF157C221F01089A0028079B /* UIViewController+HCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157BFB1F01089A0028079B /* UIViewController+HCExtend.m */; };
+		BF157C231F01089A0028079B /* HCIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C001F01089A0028079B /* HCIvarInfo.m */; };
+		BF157C241F01089A0028079B /* HCMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C021F01089A0028079B /* HCMethodInfo.m */; };
+		BF157C251F01089A0028079B /* HCPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C041F01089A0028079B /* HCPropertyInfo.m */; };
+		BF157C261F01089A0028079B /* HCTypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C061F01089A0028079B /* HCTypeDecoder.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF157BA01F0100290028079B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF157B831F0100290028079B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF157B8A1F0100290028079B;
+			remoteInfo = HCKitSwift;
+		};
+		BF157BAB1F0100290028079B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF157B831F0100290028079B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF157B8A1F0100290028079B;
+			remoteInfo = HCKitSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B8548D4AD831C118A69E11 /* Pods-HCKitSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwiftUITests/Pods-HCKitSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0223536515F79B40D95BB569 /* Pods_HCKitSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HCKitSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		086E3D7466C7C1F44B72F10D /* Pods-HCKitSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwiftUITests/Pods-HCKitSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		27E18D91B003755CF429E374 /* Pods-HCKitSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwift/Pods-HCKitSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		43A31BFD4E8DA2CEB4E0EA6F /* Pods-HCKitSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwiftTests/Pods-HCKitSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8AA550B2354DC76F02ADAD2 /* Pods_HCKitSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HCKitSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD77FBA36963D7BC93A17DA5 /* Pods_HCKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HCKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF157B8B1F0100290028079B /* HCKitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCKitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF157B8E1F0100290028079B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF157B901F0100290028079B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF157B931F0100290028079B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF157B951F0100290028079B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF157B981F0100290028079B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF157B9A1F0100290028079B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF157B9F1F0100290028079B /* HCKitSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCKitSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF157BA31F0100290028079B /* HCKitSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCKitSwiftTests.swift; sourceTree = "<group>"; };
+		BF157BA51F0100290028079B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF157BAA1F0100290028079B /* HCKitSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCKitSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF157BAE1F0100290028079B /* HCKitSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCKitSwiftUITests.swift; sourceTree = "<group>"; };
+		BF157BB01F0100290028079B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF157BBC1F0101E00028079B /* HCKitSwift-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HCKitSwift-Bridging.h"; sourceTree = "<group>"; };
+		BF157BC11F01089A0028079B /* HCAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAlert.h; sourceTree = "<group>"; };
+		BF157BC21F01089A0028079B /* HCAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAlert.m; sourceTree = "<group>"; };
+		BF157BC31F01089A0028079B /* HCClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCClock.h; sourceTree = "<group>"; };
+		BF157BC41F01089A0028079B /* HCClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCClock.m; sourceTree = "<group>"; };
+		BF157BC51F01089A0028079B /* HCDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDiskCache.h; sourceTree = "<group>"; };
+		BF157BC61F01089A0028079B /* HCDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDiskCache.m; sourceTree = "<group>"; };
+		BF157BC71F01089A0028079B /* HCFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCFileHelper.h; sourceTree = "<group>"; };
+		BF157BC81F01089A0028079B /* HCFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCFileHelper.m; sourceTree = "<group>"; };
+		BF157BC91F01089A0028079B /* HCHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUD.h; sourceTree = "<group>"; };
+		BF157BCA1F01089A0028079B /* HCHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHUD.m; sourceTree = "<group>"; };
+		BF157BCB1F01089A0028079B /* HCHUDPresentationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUDPresentationAnimationController.h; sourceTree = "<group>"; };
+		BF157BCC1F01089A0028079B /* HCHUDPresentationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHUDPresentationAnimationController.m; sourceTree = "<group>"; };
+		BF157BCD1F01089A0028079B /* HCHUDPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHUDPresentationController.h; sourceTree = "<group>"; };
+		BF157BCE1F01089A0028079B /* HCHUDPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHUDPresentationController.m; sourceTree = "<group>"; };
+		BF157BCF1F01089A0028079B /* HCIdCardNoRulesChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIdCardNoRulesChecker.h; sourceTree = "<group>"; };
+		BF157BD01F01089A0028079B /* HCIdCardNoRulesChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIdCardNoRulesChecker.m; sourceTree = "<group>"; };
+		BF157BD11F01089A0028079B /* HCKitProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKitProject.h; sourceTree = "<group>"; };
+		BF157BD21F01089A0028079B /* HCLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCLocalizable.h; sourceTree = "<group>"; };
+		BF157BD31F01089A0028079B /* HCLocalizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCLocalizable.m; sourceTree = "<group>"; };
+		BF157BD41F01089A0028079B /* HCProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCProfileService.h; sourceTree = "<group>"; };
+		BF157BD51F01089A0028079B /* HCProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCProfileService.m; sourceTree = "<group>"; };
+		BF157BD61F01089A0028079B /* HCQRScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCQRScanner.h; sourceTree = "<group>"; };
+		BF157BD71F01089A0028079B /* HCQRScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCQRScanner.m; sourceTree = "<group>"; };
+		BF157BD81F01089A0028079B /* HCScheduled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCScheduled.h; sourceTree = "<group>"; };
+		BF157BD91F01089A0028079B /* HCScheduled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCScheduled.m; sourceTree = "<group>"; };
+		BF157BDA1F01089A0028079B /* HCUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUnit.h; sourceTree = "<group>"; };
+		BF157BDB1F01089A0028079B /* HCUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCUnit.m; sourceTree = "<group>"; };
+		BF157BDD1F01089A0028079B /* HCCommonCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCCommonCategory.h; sourceTree = "<group>"; };
+		BF157BDE1F01089A0028079B /* NSArray+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BDF1F01089A0028079B /* NSArray+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BE01F01089A0028079B /* NSData+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BE11F01089A0028079B /* NSData+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BE21F01089A0028079B /* NSDate+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BE31F01089A0028079B /* NSDate+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BE41F01089A0028079B /* NSDictionary+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BE51F01089A0028079B /* NSDictionary+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BE61F01089A0028079B /* NSNumber+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BE71F01089A0028079B /* NSNumber+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BE81F01089A0028079B /* NSObject+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BE91F01089A0028079B /* NSObject+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BEA1F01089A0028079B /* NSString+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BEB1F01089A0028079B /* NSString+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BEC1F01089A0028079B /* NSString+HCValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HCValidation.h"; sourceTree = "<group>"; };
+		BF157BED1F01089A0028079B /* NSString+HCValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HCValidation.m"; sourceTree = "<group>"; };
+		BF157BEE1F01089A0028079B /* UIButton+HCCheckMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HCCheckMenu.h"; sourceTree = "<group>"; };
+		BF157BEF1F01089A0028079B /* UIButton+HCCheckMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HCCheckMenu.m"; sourceTree = "<group>"; };
+		BF157BF01F01089A0028079B /* UIColor+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BF11F01089A0028079B /* UIColor+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BF21F01089A0028079B /* UIDevice+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BF31F01089A0028079B /* UIDevice+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BF41F01089A0028079B /* UIImage+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BF51F01089A0028079B /* UIImage+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BF61F01089A0028079B /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
+		BF157BF71F01089A0028079B /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
+		BF157BF81F01089A0028079B /* UIView+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BF91F01089A0028079B /* UIView+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BFA1F01089A0028079B /* UIViewController+HCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HCExtend.h"; sourceTree = "<group>"; };
+		BF157BFB1F01089A0028079B /* UIViewController+HCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HCExtend.m"; sourceTree = "<group>"; };
+		BF157BFC1F01089A0028079B /* HCUtilityFuc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUtilityFuc.h; sourceTree = "<group>"; };
+		BF157BFD1F01089A0028079B /* HCUtilityMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUtilityMacro.h; sourceTree = "<group>"; };
+		BF157BFF1F01089A0028079B /* HCIvarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIvarInfo.h; sourceTree = "<group>"; };
+		BF157C001F01089A0028079B /* HCIvarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIvarInfo.m; sourceTree = "<group>"; };
+		BF157C011F01089A0028079B /* HCMethodInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMethodInfo.h; sourceTree = "<group>"; };
+		BF157C021F01089A0028079B /* HCMethodInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMethodInfo.m; sourceTree = "<group>"; };
+		BF157C031F01089A0028079B /* HCPropertyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPropertyInfo.h; sourceTree = "<group>"; };
+		BF157C041F01089A0028079B /* HCPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPropertyInfo.m; sourceTree = "<group>"; };
+		BF157C051F01089A0028079B /* HCTypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTypeDecoder.h; sourceTree = "<group>"; };
+		BF157C061F01089A0028079B /* HCTypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTypeDecoder.m; sourceTree = "<group>"; };
+		DF88B5ACF8DEADC59A6ACF0E /* Pods-HCKitSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwift/Pods-HCKitSwift.release.xcconfig"; sourceTree = "<group>"; };
+		EF31AAB1062A6B73B890F368 /* Pods-HCKitSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwiftTests/Pods-HCKitSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF157B881F0100290028079B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8E9B3CAD24A91A9F60456E7 /* Pods_HCKitSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF157B9C1F0100290028079B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70E5A490DA9F80BF09531997 /* Pods_HCKitSwiftTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF157BA71F0100290028079B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAB58279DA02B7B02EAD91F /* Pods_HCKitSwiftUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D4315B79CC7B438452DE0CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD77FBA36963D7BC93A17DA5 /* Pods_HCKitSwift.framework */,
+				A8AA550B2354DC76F02ADAD2 /* Pods_HCKitSwiftTests.framework */,
+				0223536515F79B40D95BB569 /* Pods_HCKitSwiftUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9ED6A621FED1C6584A70C258 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27E18D91B003755CF429E374 /* Pods-HCKitSwift.debug.xcconfig */,
+				DF88B5ACF8DEADC59A6ACF0E /* Pods-HCKitSwift.release.xcconfig */,
+				EF31AAB1062A6B73B890F368 /* Pods-HCKitSwiftTests.debug.xcconfig */,
+				43A31BFD4E8DA2CEB4E0EA6F /* Pods-HCKitSwiftTests.release.xcconfig */,
+				086E3D7466C7C1F44B72F10D /* Pods-HCKitSwiftUITests.debug.xcconfig */,
+				00B8548D4AD831C118A69E11 /* Pods-HCKitSwiftUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF157B821F0100290028079B = {
+			isa = PBXGroup;
+			children = (
+				BF157BBF1F01089A0028079B /* HCCore */,
+				BF157B8D1F0100290028079B /* HCKitSwift */,
+				BF157BA21F0100290028079B /* HCKitSwiftTests */,
+				BF157BAD1F0100290028079B /* HCKitSwiftUITests */,
+				BF157B8C1F0100290028079B /* Products */,
+				9ED6A621FED1C6584A70C258 /* Pods */,
+				1D4315B79CC7B438452DE0CE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF157B8C1F0100290028079B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF157B8B1F0100290028079B /* HCKitSwift.app */,
+				BF157B9F1F0100290028079B /* HCKitSwiftTests.xctest */,
+				BF157BAA1F0100290028079B /* HCKitSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF157B8D1F0100290028079B /* HCKitSwift */ = {
+			isa = PBXGroup;
+			children = (
+				BF157B8E1F0100290028079B /* AppDelegate.swift */,
+				BF157B901F0100290028079B /* ViewController.swift */,
+				BF157B921F0100290028079B /* Main.storyboard */,
+				BF157B951F0100290028079B /* Assets.xcassets */,
+				BF157B971F0100290028079B /* LaunchScreen.storyboard */,
+				BF157B9A1F0100290028079B /* Info.plist */,
+				BF157BBC1F0101E00028079B /* HCKitSwift-Bridging.h */,
+			);
+			path = HCKitSwift;
+			sourceTree = "<group>";
+		};
+		BF157BA21F0100290028079B /* HCKitSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF157BA31F0100290028079B /* HCKitSwiftTests.swift */,
+				BF157BA51F0100290028079B /* Info.plist */,
+			);
+			path = HCKitSwiftTests;
+			sourceTree = "<group>";
+		};
+		BF157BAD1F0100290028079B /* HCKitSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF157BAE1F0100290028079B /* HCKitSwiftUITests.swift */,
+				BF157BB01F0100290028079B /* Info.plist */,
+			);
+			path = HCKitSwiftUITests;
+			sourceTree = "<group>";
+		};
+		BF157BBF1F01089A0028079B /* HCCore */ = {
+			isa = PBXGroup;
+			children = (
+				BF157BC01F01089A0028079B /* Classes */,
+				BF157BDC1F01089A0028079B /* CommonCategory */,
+				BF157BFC1F01089A0028079B /* HCUtilityFuc.h */,
+				BF157BFD1F01089A0028079B /* HCUtilityMacro.h */,
+				BF157BFE1F01089A0028079B /* RuntimeInfo */,
+			);
+			name = HCCore;
+			path = ../HCCore;
+			sourceTree = "<group>";
+		};
+		BF157BC01F01089A0028079B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF157BC11F01089A0028079B /* HCAlert.h */,
+				BF157BC21F01089A0028079B /* HCAlert.m */,
+				BF157BC31F01089A0028079B /* HCClock.h */,
+				BF157BC41F01089A0028079B /* HCClock.m */,
+				BF157BC51F01089A0028079B /* HCDiskCache.h */,
+				BF157BC61F01089A0028079B /* HCDiskCache.m */,
+				BF157BC71F01089A0028079B /* HCFileHelper.h */,
+				BF157BC81F01089A0028079B /* HCFileHelper.m */,
+				BF157BC91F01089A0028079B /* HCHUD.h */,
+				BF157BCA1F01089A0028079B /* HCHUD.m */,
+				BF157BCB1F01089A0028079B /* HCHUDPresentationAnimationController.h */,
+				BF157BCC1F01089A0028079B /* HCHUDPresentationAnimationController.m */,
+				BF157BCD1F01089A0028079B /* HCHUDPresentationController.h */,
+				BF157BCE1F01089A0028079B /* HCHUDPresentationController.m */,
+				BF157BCF1F01089A0028079B /* HCIdCardNoRulesChecker.h */,
+				BF157BD01F01089A0028079B /* HCIdCardNoRulesChecker.m */,
+				BF157BD11F01089A0028079B /* HCKitProject.h */,
+				BF157BD21F01089A0028079B /* HCLocalizable.h */,
+				BF157BD31F01089A0028079B /* HCLocalizable.m */,
+				BF157BD41F01089A0028079B /* HCProfileService.h */,
+				BF157BD51F01089A0028079B /* HCProfileService.m */,
+				BF157BD61F01089A0028079B /* HCQRScanner.h */,
+				BF157BD71F01089A0028079B /* HCQRScanner.m */,
+				BF157BD81F01089A0028079B /* HCScheduled.h */,
+				BF157BD91F01089A0028079B /* HCScheduled.m */,
+				BF157BDA1F01089A0028079B /* HCUnit.h */,
+				BF157BDB1F01089A0028079B /* HCUnit.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BF157BDC1F01089A0028079B /* CommonCategory */ = {
+			isa = PBXGroup;
+			children = (
+				BF157BDD1F01089A0028079B /* HCCommonCategory.h */,
+				BF157BDE1F01089A0028079B /* NSArray+HCExtend.h */,
+				BF157BDF1F01089A0028079B /* NSArray+HCExtend.m */,
+				BF157BE01F01089A0028079B /* NSData+HCExtend.h */,
+				BF157BE11F01089A0028079B /* NSData+HCExtend.m */,
+				BF157BE21F01089A0028079B /* NSDate+HCExtend.h */,
+				BF157BE31F01089A0028079B /* NSDate+HCExtend.m */,
+				BF157BE41F01089A0028079B /* NSDictionary+HCExtend.h */,
+				BF157BE51F01089A0028079B /* NSDictionary+HCExtend.m */,
+				BF157BE61F01089A0028079B /* NSNumber+HCExtend.h */,
+				BF157BE71F01089A0028079B /* NSNumber+HCExtend.m */,
+				BF157BE81F01089A0028079B /* NSObject+HCExtend.h */,
+				BF157BE91F01089A0028079B /* NSObject+HCExtend.m */,
+				BF157BEA1F01089A0028079B /* NSString+HCExtend.h */,
+				BF157BEB1F01089A0028079B /* NSString+HCExtend.m */,
+				BF157BEC1F01089A0028079B /* NSString+HCValidation.h */,
+				BF157BED1F01089A0028079B /* NSString+HCValidation.m */,
+				BF157BEE1F01089A0028079B /* UIButton+HCCheckMenu.h */,
+				BF157BEF1F01089A0028079B /* UIButton+HCCheckMenu.m */,
+				BF157BF01F01089A0028079B /* UIColor+HCExtend.h */,
+				BF157BF11F01089A0028079B /* UIColor+HCExtend.m */,
+				BF157BF21F01089A0028079B /* UIDevice+HCExtend.h */,
+				BF157BF31F01089A0028079B /* UIDevice+HCExtend.m */,
+				BF157BF41F01089A0028079B /* UIImage+HCExtend.h */,
+				BF157BF51F01089A0028079B /* UIImage+HCExtend.m */,
+				BF157BF61F01089A0028079B /* UILabel+StringFrame.h */,
+				BF157BF71F01089A0028079B /* UILabel+StringFrame.m */,
+				BF157BF81F01089A0028079B /* UIView+HCExtend.h */,
+				BF157BF91F01089A0028079B /* UIView+HCExtend.m */,
+				BF157BFA1F01089A0028079B /* UIViewController+HCExtend.h */,
+				BF157BFB1F01089A0028079B /* UIViewController+HCExtend.m */,
+			);
+			path = CommonCategory;
+			sourceTree = "<group>";
+		};
+		BF157BFE1F01089A0028079B /* RuntimeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BF157BFF1F01089A0028079B /* HCIvarInfo.h */,
+				BF157C001F01089A0028079B /* HCIvarInfo.m */,
+				BF157C011F01089A0028079B /* HCMethodInfo.h */,
+				BF157C021F01089A0028079B /* HCMethodInfo.m */,
+				BF157C031F01089A0028079B /* HCPropertyInfo.h */,
+				BF157C041F01089A0028079B /* HCPropertyInfo.m */,
+				BF157C051F01089A0028079B /* HCTypeDecoder.h */,
+				BF157C061F01089A0028079B /* HCTypeDecoder.m */,
+			);
+			path = RuntimeInfo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF157B8A1F0100290028079B /* HCKitSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF157BB31F0100290028079B /* Build configuration list for PBXNativeTarget "HCKitSwift" */;
+			buildPhases = (
+				5C171E948CE456E2E7A9516D /* [CP] Check Pods Manifest.lock */,
+				BF157B871F0100290028079B /* Sources */,
+				BF157B881F0100290028079B /* Frameworks */,
+				BF157B891F0100290028079B /* Resources */,
+				A9F564523D3A389581E2ED33 /* [CP] Embed Pods Frameworks */,
+				45C00E51FBD08BA663FDECCF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HCKitSwift;
+			productName = HCKitSwift;
+			productReference = BF157B8B1F0100290028079B /* HCKitSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF157B9E1F0100290028079B /* HCKitSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF157BB61F0100290028079B /* Build configuration list for PBXNativeTarget "HCKitSwiftTests" */;
+			buildPhases = (
+				4910A22B5FDD296CA43F3992 /* [CP] Check Pods Manifest.lock */,
+				BF157B9B1F0100290028079B /* Sources */,
+				BF157B9C1F0100290028079B /* Frameworks */,
+				BF157B9D1F0100290028079B /* Resources */,
+				E640AA9C129DC99FB1EAC408 /* [CP] Embed Pods Frameworks */,
+				0DD4A3595CA8487FA0438702 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF157BA11F0100290028079B /* PBXTargetDependency */,
+			);
+			name = HCKitSwiftTests;
+			productName = HCKitSwiftTests;
+			productReference = BF157B9F1F0100290028079B /* HCKitSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF157BA91F0100290028079B /* HCKitSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF157BB91F0100290028079B /* Build configuration list for PBXNativeTarget "HCKitSwiftUITests" */;
+			buildPhases = (
+				A8F8058466AD2B25B7D1A351 /* [CP] Check Pods Manifest.lock */,
+				BF157BA61F0100290028079B /* Sources */,
+				BF157BA71F0100290028079B /* Frameworks */,
+				BF157BA81F0100290028079B /* Resources */,
+				C4D7A1FA9C9A0ECB863D45BB /* [CP] Embed Pods Frameworks */,
+				A753CBB89B0153AB32D07669 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF157BAC1F0100290028079B /* PBXTargetDependency */,
+			);
+			name = HCKitSwiftUITests;
+			productName = HCKitSwiftUITests;
+			productReference = BF157BAA1F0100290028079B /* HCKitSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF157B831F0100290028079B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = HuaChen;
+				TargetAttributes = {
+					BF157B8A1F0100290028079B = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9K9256C42S;
+						ProvisioningStyle = Automatic;
+					};
+					BF157B9E1F0100290028079B = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9K9256C42S;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BF157B8A1F0100290028079B;
+					};
+					BF157BA91F0100290028079B = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9K9256C42S;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BF157B8A1F0100290028079B;
+					};
+				};
+			};
+			buildConfigurationList = BF157B861F0100290028079B /* Build configuration list for PBXProject "HCKitSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF157B821F0100290028079B;
+			productRefGroup = BF157B8C1F0100290028079B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF157B8A1F0100290028079B /* HCKitSwift */,
+				BF157B9E1F0100290028079B /* HCKitSwiftTests */,
+				BF157BA91F0100290028079B /* HCKitSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF157B891F0100290028079B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF157B991F0100290028079B /* LaunchScreen.storyboard in Resources */,
+				BF157B961F0100290028079B /* Assets.xcassets in Resources */,
+				BF157B941F0100290028079B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF157B9D1F0100290028079B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF157BA81F0100290028079B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DD4A3595CA8487FA0438702 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitSwiftTests/Pods-HCKitSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45C00E51FBD08BA663FDECCF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitSwift/Pods-HCKitSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4910A22B5FDD296CA43F3992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C171E948CE456E2E7A9516D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A753CBB89B0153AB32D07669 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitSwiftUITests/Pods-HCKitSwiftUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8F8058466AD2B25B7D1A351 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A9F564523D3A389581E2ED33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitSwift/Pods-HCKitSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4D7A1FA9C9A0ECB863D45BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitSwiftUITests/Pods-HCKitSwiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E640AA9C129DC99FB1EAC408 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HCKitSwiftTests/Pods-HCKitSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF157B871F0100290028079B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF157B911F0100290028079B /* ViewController.swift in Sources */,
+				BF157C241F01089A0028079B /* HCMethodInfo.m in Sources */,
+				BF157C1B1F01089A0028079B /* NSString+HCValidation.m in Sources */,
+				BF157C1F1F01089A0028079B /* UIImage+HCExtend.m in Sources */,
+				BF157C0F1F01089A0028079B /* HCLocalizable.m in Sources */,
+				BF157C261F01089A0028079B /* HCTypeDecoder.m in Sources */,
+				BF157C1D1F01089A0028079B /* UIColor+HCExtend.m in Sources */,
+				BF157C121F01089A0028079B /* HCScheduled.m in Sources */,
+				BF157C0B1F01089A0028079B /* HCHUD.m in Sources */,
+				BF157C0E1F01089A0028079B /* HCIdCardNoRulesChecker.m in Sources */,
+				BF157C231F01089A0028079B /* HCIvarInfo.m in Sources */,
+				BF157C071F01089A0028079B /* HCAlert.m in Sources */,
+				BF157C111F01089A0028079B /* HCQRScanner.m in Sources */,
+				BF157C191F01089A0028079B /* NSObject+HCExtend.m in Sources */,
+				BF157C201F01089A0028079B /* UILabel+StringFrame.m in Sources */,
+				BF157C0A1F01089A0028079B /* HCFileHelper.m in Sources */,
+				BF157C091F01089A0028079B /* HCDiskCache.m in Sources */,
+				BF157C161F01089A0028079B /* NSDate+HCExtend.m in Sources */,
+				BF157C221F01089A0028079B /* UIViewController+HCExtend.m in Sources */,
+				BF157C181F01089A0028079B /* NSNumber+HCExtend.m in Sources */,
+				BF157C131F01089A0028079B /* HCUnit.m in Sources */,
+				BF157C251F01089A0028079B /* HCPropertyInfo.m in Sources */,
+				BF157C0C1F01089A0028079B /* HCHUDPresentationAnimationController.m in Sources */,
+				BF157C1E1F01089A0028079B /* UIDevice+HCExtend.m in Sources */,
+				BF157C141F01089A0028079B /* NSArray+HCExtend.m in Sources */,
+				BF157C211F01089A0028079B /* UIView+HCExtend.m in Sources */,
+				BF157B8F1F0100290028079B /* AppDelegate.swift in Sources */,
+				BF157C081F01089A0028079B /* HCClock.m in Sources */,
+				BF157C171F01089A0028079B /* NSDictionary+HCExtend.m in Sources */,
+				BF157C151F01089A0028079B /* NSData+HCExtend.m in Sources */,
+				BF157C1C1F01089A0028079B /* UIButton+HCCheckMenu.m in Sources */,
+				BF157C101F01089A0028079B /* HCProfileService.m in Sources */,
+				BF157C1A1F01089A0028079B /* NSString+HCExtend.m in Sources */,
+				BF157C0D1F01089A0028079B /* HCHUDPresentationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF157B9B1F0100290028079B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF157BA41F0100290028079B /* HCKitSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF157BA61F0100290028079B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF157BAF1F0100290028079B /* HCKitSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF157BA11F0100290028079B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF157B8A1F0100290028079B /* HCKitSwift */;
+			targetProxy = BF157BA01F0100290028079B /* PBXContainerItemProxy */;
+		};
+		BF157BAC1F0100290028079B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF157B8A1F0100290028079B /* HCKitSwift */;
+			targetProxy = BF157BAB1F0100290028079B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF157B921F0100290028079B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF157B931F0100290028079B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF157B971F0100290028079B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF157B981F0100290028079B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF157BB11F0100290028079B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF157BB21F0100290028079B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF157BB41F0100290028079B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27E18D91B003755CF429E374 /* Pods-HCKitSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9K9256C42S;
+				INFOPLIST_FILE = HCKitSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roidmi.HCKitSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HCKitSwift/HCKitSwift-Bridging.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BF157BB51F0100290028079B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF88B5ACF8DEADC59A6ACF0E /* Pods-HCKitSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9K9256C42S;
+				INFOPLIST_FILE = HCKitSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roidmi.HCKitSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HCKitSwift/HCKitSwift-Bridging.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BF157BB71F0100290028079B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF31AAB1062A6B73B890F368 /* Pods-HCKitSwiftTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9K9256C42S;
+				INFOPLIST_FILE = HCKitSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roidmi.HCKitSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCKitSwift.app/HCKitSwift";
+			};
+			name = Debug;
+		};
+		BF157BB81F0100290028079B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A31BFD4E8DA2CEB4E0EA6F /* Pods-HCKitSwiftTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9K9256C42S;
+				INFOPLIST_FILE = HCKitSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roidmi.HCKitSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCKitSwift.app/HCKitSwift";
+			};
+			name = Release;
+		};
+		BF157BBA1F0100290028079B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 086E3D7466C7C1F44B72F10D /* Pods-HCKitSwiftUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 9K9256C42S;
+				INFOPLIST_FILE = HCKitSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roidmi.HCKitSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HCKitSwift;
+			};
+			name = Debug;
+		};
+		BF157BBB1F0100290028079B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B8548D4AD831C118A69E11 /* Pods-HCKitSwiftUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 9K9256C42S;
+				INFOPLIST_FILE = HCKitSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roidmi.HCKitSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HCKitSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF157B861F0100290028079B /* Build configuration list for PBXProject "HCKitSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF157BB11F0100290028079B /* Debug */,
+				BF157BB21F0100290028079B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF157BB31F0100290028079B /* Build configuration list for PBXNativeTarget "HCKitSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF157BB41F0100290028079B /* Debug */,
+				BF157BB51F0100290028079B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF157BB61F0100290028079B /* Build configuration list for PBXNativeTarget "HCKitSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF157BB71F0100290028079B /* Debug */,
+				BF157BB81F0100290028079B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF157BB91F0100290028079B /* Build configuration list for PBXNativeTarget "HCKitSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF157BBA1F0100290028079B /* Debug */,
+				BF157BBB1F0100290028079B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF157B831F0100290028079B /* Project object */;
+}

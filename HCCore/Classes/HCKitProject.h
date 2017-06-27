@@ -13,6 +13,7 @@
 #import "HCUtilityFuc.h"
 #import "HCUtilityMacro.h"
 
+#import "HCAlert.h"
 #import "HCClock.h"
 #import "HCIdCardNoRulesChecker.h"
 #import "HCScheduled.h"

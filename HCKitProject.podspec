@@ -44,7 +44,9 @@ Pod::Spec.new do |s|
       	ht.dependency 'HCKitProject/Core'
 		ht.ios.dependency  'AFNetworking', '~> 3.0.4'
   end
-
+  s.subspec 'swift' do |sw|
+  	    	core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
+  end
 
 end
 
