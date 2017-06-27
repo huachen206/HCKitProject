@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     	db.source_files = 'HCDB/*.{h,m}'
       	db.resource = 'HCDB/Resources/*'
       	db.dependency 'HCKitProject/Core'
-		db.ios.dependency  'FMDB', '~> 2.3'
+		db.ios.dependency  'FMDB', '~> 2.5'
   end
 
   s.subspec 'HCHTTPRequest' do |ht|
@@ -47,11 +47,12 @@ Pod::Spec.new do |s|
   s.subspec 'Swift' do |sw|
   	    	sw.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
   end
+  
   s.subspec 'Swift_DB' do |sw_db|
-  	   	db.source_files = 'HCDB/*.{h,m}'
-      	db.resource = 'HCDB/Resources/*'
-      	db.dependency 'HCKitProject/Core'
-		db.ios.dependency  'FMDB', '~> 2.3'
+  	   	sw_db.source_files = 'HCDB/*.{h,m}'
+      	sw_db.resource = 'HCDB/Resources/*'
+      	sw_db.dependency 'HCKitProject/Core'
+		sw_db.ios.dependency  'FMDB', '~> 2.5'
   end
 end
 
