@@ -19,13 +19,7 @@ typedef void(^ScannerResultBlock)(HCQRScanner *scanner,NSString *result);
 
 @class UIView;
 @class HCQRScannerView;
-/**
- *  二维码扫描回调
- *
- *  @param scanner  本身
- *  @param result   结果字符串
- *  @param dontStop 扫描到结果后是否不停止。
- */
+
 
 @interface HCQRScanner : NSObject
 

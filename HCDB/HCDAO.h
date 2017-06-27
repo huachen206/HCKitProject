@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HCDBHelper.h"
-#import "FMDB.h"
+#import <FMDB/FMDB.h>
 #import "HCDBManager.h"
 #import "HCDBTable.h"
 #import "HCUtilityMacro.h"

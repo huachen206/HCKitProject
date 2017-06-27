@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMDB.h"
+//#import "FMDB.h"
+#import <FMDB/FMDB.h>
 static inline NSString *getDocumentPath()
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -23,7 +24,6 @@ static inline NSString *getDocumentPath()
 /**
  *  @param fileName db文件名，不带后缀
  *
- *  @return
  */
 -(id)initWithDbFileName:(NSString *)fileName;
 /**

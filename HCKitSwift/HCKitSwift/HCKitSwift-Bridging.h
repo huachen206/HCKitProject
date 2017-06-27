@@ -11,4 +11,7 @@
 
 #import "HCKitProject.h"
 
+//#import <FMDB/FMDB.h>
+
+#import "HCDAO.h"
 #endif /* HCKitSwift_Bridging_h */
