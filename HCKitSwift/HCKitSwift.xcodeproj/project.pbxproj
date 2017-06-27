@@ -49,6 +49,15 @@
 		BF157C241F01089A0028079B /* HCMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C021F01089A0028079B /* HCMethodInfo.m */; };
 		BF157C251F01089A0028079B /* HCPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C041F01089A0028079B /* HCPropertyInfo.m */; };
 		BF157C261F01089A0028079B /* HCTypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C061F01089A0028079B /* HCTypeDecoder.m */; };
+		BF157C3A1F01E3090028079B /* HCDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C291F01E3090028079B /* HCDAO.m */; };
+		BF157C3B1F01E3090028079B /* HCDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C2B1F01E3090028079B /* HCDBHelper.m */; };
+		BF157C3C1F01E3090028079B /* HCDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C2D1F01E3090028079B /* HCDBManager.m */; };
+		BF157C3D1F01E3090028079B /* HCDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C2F1F01E3090028079B /* HCDBModel.m */; };
+		BF157C3E1F01E3090028079B /* HCDBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C311F01E3090028079B /* HCDBTable.m */; };
+		BF157C3F1F01E3090028079B /* HCDBTableField.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C331F01E3090028079B /* HCDBTableField.m */; };
+		BF157C401F01E3090028079B /* HCVersionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C351F01E3090028079B /* HCVersionTable.m */; };
+		BF157C411F01E3090028079B /* NSObject+HCDBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF157C371F01E3090028079B /* NSObject+HCDBExtend.m */; };
+		BF157C421F01E3090028079B /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF157C391F01E3090028079B /* HCEncoding.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +167,23 @@
 		BF157C041F01089A0028079B /* HCPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCPropertyInfo.m; sourceTree = "<group>"; };
 		BF157C051F01089A0028079B /* HCTypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCTypeDecoder.h; sourceTree = "<group>"; };
 		BF157C061F01089A0028079B /* HCTypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCTypeDecoder.m; sourceTree = "<group>"; };
+		BF157C281F01E3090028079B /* HCDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDAO.h; sourceTree = "<group>"; };
+		BF157C291F01E3090028079B /* HCDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDAO.m; sourceTree = "<group>"; };
+		BF157C2A1F01E3090028079B /* HCDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBHelper.h; sourceTree = "<group>"; };
+		BF157C2B1F01E3090028079B /* HCDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBHelper.m; sourceTree = "<group>"; };
+		BF157C2C1F01E3090028079B /* HCDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBManager.h; sourceTree = "<group>"; };
+		BF157C2D1F01E3090028079B /* HCDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBManager.m; sourceTree = "<group>"; };
+		BF157C2E1F01E3090028079B /* HCDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBModel.h; sourceTree = "<group>"; };
+		BF157C2F1F01E3090028079B /* HCDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBModel.m; sourceTree = "<group>"; };
+		BF157C301F01E3090028079B /* HCDBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBTable.h; sourceTree = "<group>"; };
+		BF157C311F01E3090028079B /* HCDBTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTable.m; sourceTree = "<group>"; };
+		BF157C321F01E3090028079B /* HCDBTableField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDBTableField.h; sourceTree = "<group>"; };
+		BF157C331F01E3090028079B /* HCDBTableField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDBTableField.m; sourceTree = "<group>"; };
+		BF157C341F01E3090028079B /* HCVersionTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCVersionTable.h; sourceTree = "<group>"; };
+		BF157C351F01E3090028079B /* HCVersionTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCVersionTable.m; sourceTree = "<group>"; };
+		BF157C361F01E3090028079B /* NSObject+HCDBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCDBExtend.h"; sourceTree = "<group>"; };
+		BF157C371F01E3090028079B /* NSObject+HCDBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCDBExtend.m"; sourceTree = "<group>"; };
+		BF157C391F01E3090028079B /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HCEncoding.plist; sourceTree = "<group>"; };
 		DF88B5ACF8DEADC59A6ACF0E /* Pods-HCKitSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwift/Pods-HCKitSwift.release.xcconfig"; sourceTree = "<group>"; };
 		EF31AAB1062A6B73B890F368 /* Pods-HCKitSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCKitSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCKitSwiftTests/Pods-HCKitSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +242,7 @@
 		BF157B821F0100290028079B = {
 			isa = PBXGroup;
 			children = (
+				BF157C271F01E3090028079B /* HCDB */,
 				BF157BBF1F01089A0028079B /* HCCore */,
 				BF157B8D1F0100290028079B /* HCKitSwift */,
 				BF157BA21F0100290028079B /* HCKitSwiftTests */,
@@ -368,6 +395,39 @@
 			path = RuntimeInfo;
 			sourceTree = "<group>";
 		};
+		BF157C271F01E3090028079B /* HCDB */ = {
+			isa = PBXGroup;
+			children = (
+				BF157C281F01E3090028079B /* HCDAO.h */,
+				BF157C291F01E3090028079B /* HCDAO.m */,
+				BF157C2A1F01E3090028079B /* HCDBHelper.h */,
+				BF157C2B1F01E3090028079B /* HCDBHelper.m */,
+				BF157C2C1F01E3090028079B /* HCDBManager.h */,
+				BF157C2D1F01E3090028079B /* HCDBManager.m */,
+				BF157C2E1F01E3090028079B /* HCDBModel.h */,
+				BF157C2F1F01E3090028079B /* HCDBModel.m */,
+				BF157C301F01E3090028079B /* HCDBTable.h */,
+				BF157C311F01E3090028079B /* HCDBTable.m */,
+				BF157C321F01E3090028079B /* HCDBTableField.h */,
+				BF157C331F01E3090028079B /* HCDBTableField.m */,
+				BF157C341F01E3090028079B /* HCVersionTable.h */,
+				BF157C351F01E3090028079B /* HCVersionTable.m */,
+				BF157C361F01E3090028079B /* NSObject+HCDBExtend.h */,
+				BF157C371F01E3090028079B /* NSObject+HCDBExtend.m */,
+				BF157C381F01E3090028079B /* Resources */,
+			);
+			name = HCDB;
+			path = ../HCDB;
+			sourceTree = "<group>";
+		};
+		BF157C381F01E3090028079B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF157C391F01E3090028079B /* HCEncoding.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF157C421F01E3090028079B /* HCEncoding.plist in Resources */,
 				BF157B991F0100290028079B /* LaunchScreen.storyboard in Resources */,
 				BF157B961F0100290028079B /* Assets.xcassets in Resources */,
 				BF157B941F0100290028079B /* Main.storyboard in Resources */,
@@ -660,6 +721,7 @@
 				BF157C261F01089A0028079B /* HCTypeDecoder.m in Sources */,
 				BF157C1D1F01089A0028079B /* UIColor+HCExtend.m in Sources */,
 				BF157C121F01089A0028079B /* HCScheduled.m in Sources */,
+				BF157C3A1F01E3090028079B /* HCDAO.m in Sources */,
 				BF157C0B1F01089A0028079B /* HCHUD.m in Sources */,
 				BF157C0E1F01089A0028079B /* HCIdCardNoRulesChecker.m in Sources */,
 				BF157C231F01089A0028079B /* HCIvarInfo.m in Sources */,
@@ -675,10 +737,17 @@
 				BF157C131F01089A0028079B /* HCUnit.m in Sources */,
 				BF157C251F01089A0028079B /* HCPropertyInfo.m in Sources */,
 				BF157C0C1F01089A0028079B /* HCHUDPresentationAnimationController.m in Sources */,
+				BF157C3F1F01E3090028079B /* HCDBTableField.m in Sources */,
+				BF157C3D1F01E3090028079B /* HCDBModel.m in Sources */,
 				BF157C1E1F01089A0028079B /* UIDevice+HCExtend.m in Sources */,
 				BF157C141F01089A0028079B /* NSArray+HCExtend.m in Sources */,
+				BF157C411F01E3090028079B /* NSObject+HCDBExtend.m in Sources */,
 				BF157C211F01089A0028079B /* UIView+HCExtend.m in Sources */,
 				BF157B8F1F0100290028079B /* AppDelegate.swift in Sources */,
+				BF157C3C1F01E3090028079B /* HCDBManager.m in Sources */,
+				BF157C3B1F01E3090028079B /* HCDBHelper.m in Sources */,
+				BF157C401F01E3090028079B /* HCVersionTable.m in Sources */,
+				BF157C3E1F01E3090028079B /* HCDBTable.m in Sources */,
 				BF157C081F01089A0028079B /* HCClock.m in Sources */,
 				BF157C171F01089A0028079B /* NSDictionary+HCExtend.m in Sources */,
 				BF157C151F01089A0028079B /* NSData+HCExtend.m in Sources */,

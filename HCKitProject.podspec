@@ -47,6 +47,11 @@ Pod::Spec.new do |s|
   s.subspec 'Swift' do |sw|
   	    	sw.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
   end
-
+  s.subspec 'Swift_DB' do |sw_db|
+  	   	db.source_files = 'HCDB/*.{h,m}'
+      	db.resource = 'HCDB/Resources/*'
+      	db.dependency 'HCKitProject/Core'
+		db.ios.dependency  'FMDB', '~> 2.3'
+  end
 end
 

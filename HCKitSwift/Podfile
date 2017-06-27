@@ -4,9 +4,8 @@
 target 'HCKitSwift' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-	
-#	pod 'HCKitProject/Core', :git => 'https://github.com/huachen206/HCKitProject.git'
-#	pod 'HCKitProject/HCDB', :git => 'https://github.com/huachen206/HCKitProject.git'
+  
+  pod 'FMDB', '~> 2.5'
 
   target 'HCKitSwiftTests' do
     inherit! :search_paths
