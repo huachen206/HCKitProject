@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "HCKitProject"
-  s.version      = "0.4.6"
-  s.ios.deployment_target = '7.0'
+  s.version      = "0.4.7"
+  s.ios.deployment_target = '11.0'
   s.license = 'MIT'
   s.summary      = "a Encapsulation of FMDB."
   s.homepage     = "https://github.com/huachen206/HCKitProject.git"
@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   s.subspec 'HCHTTPRequest' do |ht|
     	ht.source_files = 'HCRequestApi/*.{h,m}'
       	ht.dependency 'HCKitProject/Core'
-		ht.ios.dependency  'AFNetworking', '~> 3.0.4'
+		ht.ios.dependency  'AFNetworking', '~> 3.2.0'
   end
   s.subspec 'Swift_Core' do |sw_core|
   	    	sw_core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
