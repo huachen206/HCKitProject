@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   s.subspec 'HCHTTPRequest' do |ht|
     	ht.source_files = 'HCRequestApi/*.{h,m}'
       	ht.dependency 'HCKitProject/Core'
-		ht.ios.dependency  'AFNetworking', '~> 3.2.0'
+		ht.ios.dependency  'AFNetworking', '~> 4'
   end
   s.subspec 'Swift_Core' do |sw_core|
   	    	sw_core.source_files = 'HCCore/*.{h,m}','HCCore/Classes/*.{h,m}','HCCore/CommonCategory/*.{h,m}','HCCore/RuntimeInfo/*.{h,m}'
