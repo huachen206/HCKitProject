@@ -71,9 +71,9 @@
 		BFBE861A1D54839600B134B6 /* NSObject+HCDBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85EA1D54839600B134B6 /* NSObject+HCDBExtend.m */; };
 		BFBE861B1D54839600B134B6 /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBE85EC1D54839600B134B6 /* HCEncoding.plist */; };
 		BFBE861C1D54839600B134B6 /* HCIBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85EF1D54839600B134B6 /* HCIBeaconService.m */; };
-		BFBE861D1D54839600B134B6 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85F21D54839600B134B6 /* HCHTTPRequest.m */; };
 		BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */; };
 		BFC49D5B1D30E3C30076A90C /* HUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D5A1D30E3C30076A90C /* HUDViewController.m */; };
+		BFF79C7324D903A700498AC7 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF79C7124D903A700498AC7 /* HCHTTPRequest.m */; };
 		BFFF93421D473C7D00E13833 /* angle-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFF93361D473C7D00E13833 /* angle-mask.png */; };
 		BFFF93431D473C7D00E13833 /* angle-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFF93371D473C7D00E13833 /* angle-mask@2x.png */; };
 		BFFF93441D473C7D00E13833 /* angle-mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFF93381D473C7D00E13833 /* angle-mask@3x.png */; };
@@ -233,12 +233,12 @@
 		BFBE85EC1D54839600B134B6 /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HCEncoding.plist; sourceTree = "<group>"; };
 		BFBE85EE1D54839600B134B6 /* HCIBeaconService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIBeaconService.h; sourceTree = "<group>"; };
 		BFBE85EF1D54839600B134B6 /* HCIBeaconService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIBeaconService.m; sourceTree = "<group>"; };
-		BFBE85F11D54839600B134B6 /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
-		BFBE85F21D54839600B134B6 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
 		BFC49D1C1D2754290076A90C /* HCKitHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKitHTTPRequest.h; sourceTree = "<group>"; };
 		BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKitHTTPRequest.m; sourceTree = "<group>"; };
 		BFC49D591D30E3C30076A90C /* HUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDViewController.h; sourceTree = "<group>"; };
 		BFC49D5A1D30E3C30076A90C /* HUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDViewController.m; sourceTree = "<group>"; };
+		BFF79C7124D903A700498AC7 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
+		BFF79C7224D903A700498AC7 /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
 		BFFF93361D473C7D00E13833 /* angle-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask.png"; sourceTree = "<group>"; };
 		BFFF93371D473C7D00E13833 /* angle-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@2x.png"; sourceTree = "<group>"; };
 		BFFF93381D473C7D00E13833 /* angle-mask@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@3x.png"; sourceTree = "<group>"; };
@@ -291,10 +291,10 @@
 		BF49CB0C1C1A5A2800C3CF4E = {
 			isa = PBXGroup;
 			children = (
+				BFF79C7024D903A700498AC7 /* HCRequestApi */,
 				BFBE85921D54839500B134B6 /* HCCore */,
 				BFBE85DA1D54839600B134B6 /* HCDB */,
 				BFBE85ED1D54839600B134B6 /* HCIBeacon */,
-				BFBE85F01D54839600B134B6 /* HCRequestApi */,
 				BFBE85851D54837700B134B6 /* HCAction */,
 				BF49CB171C1A5A2900C3CF4E /* HCKitProject */,
 				BF49CB311C1A5A2900C3CF4E /* HCKitProjectTests */,
@@ -302,6 +302,7 @@
 				BF49CB161C1A5A2900C3CF4E /* Products */,
 				C5614B44FF17FDE528DB8BFA /* Pods */,
 				85A6671FFE01BC69B3C05E42 /* Frameworks */,
+				BFF79C6F24D900E500498AC7 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -560,16 +561,6 @@
 			path = ../HCIBeacon;
 			sourceTree = "<group>";
 		};
-		BFBE85F01D54839600B134B6 /* HCRequestApi */ = {
-			isa = PBXGroup;
-			children = (
-				BFBE85F11D54839600B134B6 /* HCHTTPRequest.h */,
-				BFBE85F21D54839600B134B6 /* HCHTTPRequest.m */,
-			);
-			name = HCRequestApi;
-			path = ../HCRequestApi;
-			sourceTree = "<group>";
-		};
 		BFC49D581D30E3A70076A90C /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +580,28 @@
 				BFC49D5A1D30E3C30076A90C /* HUDViewController.m */,
 			);
 			name = HUD;
+			sourceTree = "<group>";
+		};
+		BFF79C6F24D900E500498AC7 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				BFBE857B1D54824200B134B6 /* HCIBeacon */,
+				BFBE85791D54824200B134B6 /* HCCore */,
+				BFBE857A1D54824200B134B6 /* HCDB */,
+				BFBE85761D54822300B134B6 /* HCRequestApi */,
+				BFBE85781D54824200B134B6 /* HCAction */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		BFF79C7024D903A700498AC7 /* HCRequestApi */ = {
+			isa = PBXGroup;
+			children = (
+				BFF79C7124D903A700498AC7 /* HCHTTPRequest.m */,
+				BFF79C7224D903A700498AC7 /* HCHTTPRequest.h */,
+			);
+			name = HCRequestApi;
+			path = ../HCRequestApi;
 			sourceTree = "<group>";
 		};
 		C5614B44FF17FDE528DB8BFA /* Pods */ = {
@@ -685,6 +698,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -789,7 +803,7 @@
 				BFBE86001D54839600B134B6 /* NSArray+HCExtend.m in Sources */,
 				BFBE86061D54839600B134B6 /* NSString+HCExtend.m in Sources */,
 				BFBE860C1D54839600B134B6 /* UILabel+StringFrame.m in Sources */,
-				BFBE861D1D54839600B134B6 /* HCHTTPRequest.m in Sources */,
+				BFF79C7324D903A700498AC7 /* HCHTTPRequest.m in Sources */,
 				BFBE86181D54839600B134B6 /* HCDBTableField.m in Sources */,
 				BFBE85901D54837700B134B6 /* HCActionInterval.m in Sources */,
 				BFBE85FD1D54839600B134B6 /* HCQRScanner.m in Sources */,

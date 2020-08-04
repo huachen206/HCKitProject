@@ -19,6 +19,7 @@
 }
 @property (nonatomic,copy) NSString *urlString;
 @property (nonatomic,strong) NSDictionary *parameters;
+@property (nonatomic,strong) NSDictionary *headers;
 
 @property (nonatomic,strong) NSURLSessionDataTask *dataTask;
 @property (nonatomic,copy) NSString *method;
@@ -94,7 +95,7 @@
 
     
     if ([self.method isEqualToString:@"POST"]) {
-        self.dataTask =[[[self class] httpSessionManager] POST:self.urlString parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+        self.dataTask = [[[self class] httpSessionManager] POST:self.urlString parameters:self.parameters headers:self.headers progress:^(NSProgress * _Nonnull uploadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (successBlock) {
@@ -106,7 +107,7 @@
             }
         }];
     }else if([self.method isEqualToString:@"GET"]){
-        self.dataTask = [[[self class] httpSessionManager] GET:self.urlString parameters:self.parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        self.dataTask = [[[self class] httpSessionManager] GET:self.urlString parameters:self.parameters headers:self.headers progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (successBlock) {
@@ -132,6 +133,9 @@
 }
 -(NSDictionary*)parameters{
     return _parameters;
+}
+- (NSDictionary *)headers{
+    return _headers;
 }
 
 @end

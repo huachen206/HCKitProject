@@ -36,6 +36,6 @@
 -(void)cancel;
 -(NSString*_Nullable)urlString;
 -(NSDictionary*_Nullable)parameters;
-
+-(NSDictionary*_Nullable)headers;
 
 @end
