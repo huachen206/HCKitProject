@@ -20,11 +20,6 @@
 		BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F051D177C5800D34E22 /* LocalNotificationViewController.m */; };
 		BF8C3F0F1D18FF9A00D34E22 /* QRCoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C3F0E1D18FF9A00D34E22 /* QRCoderViewController.m */; };
 		BFAECB551CB79C5D001C9819 /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAECB541CB79C5D001C9819 /* ClassInfo.m */; };
-		BFBE85771D54822300B134B6 /* HCRequestApi in Resources */ = {isa = PBXBuildFile; fileRef = BFBE85761D54822300B134B6 /* HCRequestApi */; };
-		BFBE857C1D54824200B134B6 /* HCAction in Resources */ = {isa = PBXBuildFile; fileRef = BFBE85781D54824200B134B6 /* HCAction */; };
-		BFBE857D1D54824200B134B6 /* HCCore in Resources */ = {isa = PBXBuildFile; fileRef = BFBE85791D54824200B134B6 /* HCCore */; };
-		BFBE857E1D54824200B134B6 /* HCDB in Resources */ = {isa = PBXBuildFile; fileRef = BFBE857A1D54824200B134B6 /* HCDB */; };
-		BFBE857F1D54824200B134B6 /* HCIBeacon in Resources */ = {isa = PBXBuildFile; fileRef = BFBE857B1D54824200B134B6 /* HCIBeacon */; };
 		BFBE858E1D54837700B134B6 /* HCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85871D54837700B134B6 /* HCAction.m */; };
 		BFBE858F1D54837700B134B6 /* HCActionInstant.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85891D54837700B134B6 /* HCActionInstant.m */; };
 		BFBE85901D54837700B134B6 /* HCActionInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE858B1D54837700B134B6 /* HCActionInterval.m */; };
@@ -70,10 +65,10 @@
 		BFBE86191D54839600B134B6 /* HCVersionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85E81D54839600B134B6 /* HCVersionTable.m */; };
 		BFBE861A1D54839600B134B6 /* NSObject+HCDBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85EA1D54839600B134B6 /* NSObject+HCDBExtend.m */; };
 		BFBE861B1D54839600B134B6 /* HCEncoding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBE85EC1D54839600B134B6 /* HCEncoding.plist */; };
-		BFBE861C1D54839600B134B6 /* HCIBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE85EF1D54839600B134B6 /* HCIBeaconService.m */; };
 		BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */; };
 		BFC49D5B1D30E3C30076A90C /* HUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC49D5A1D30E3C30076A90C /* HUDViewController.m */; };
-		BFF79C7324D903A700498AC7 /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF79C7124D903A700498AC7 /* HCHTTPRequest.m */; };
+		BFF1DB6D24DB88A50087A87F /* HCIBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF1DB6B24DB88A50087A87F /* HCIBeaconService.m */; };
+		BFF1DB7124DB88DA0087A87F /* HCHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF1DB6F24DB88DA0087A87F /* HCHTTPRequest.m */; };
 		BFFF93421D473C7D00E13833 /* angle-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFF93361D473C7D00E13833 /* angle-mask.png */; };
 		BFFF93431D473C7D00E13833 /* angle-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFF93371D473C7D00E13833 /* angle-mask@2x.png */; };
 		BFFF93441D473C7D00E13833 /* angle-mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFF93381D473C7D00E13833 /* angle-mask@3x.png */; };
@@ -133,11 +128,6 @@
 		BF8C3F101D1903F400D34E22 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BFAECB531CB79C5D001C9819 /* ClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
 		BFAECB541CB79C5D001C9819 /* ClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
-		BFBE85761D54822300B134B6 /* HCRequestApi */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HCRequestApi; path = /Users/huachen/GitRepository/HCKitProject/HCRequestApi; sourceTree = "<absolute>"; };
-		BFBE85781D54824200B134B6 /* HCAction */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HCAction; path = /Users/huachen/GitRepository/HCKitProject/HCAction; sourceTree = "<absolute>"; };
-		BFBE85791D54824200B134B6 /* HCCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HCCore; path = /Users/huachen/GitRepository/HCKitProject/HCCore; sourceTree = "<absolute>"; };
-		BFBE857A1D54824200B134B6 /* HCDB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HCDB; path = /Users/huachen/GitRepository/HCKitProject/HCDB; sourceTree = "<absolute>"; };
-		BFBE857B1D54824200B134B6 /* HCIBeacon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HCIBeacon; path = /Users/huachen/GitRepository/HCKitProject/HCIBeacon; sourceTree = "<absolute>"; };
 		BFBE85861D54837700B134B6 /* HCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAction.h; sourceTree = "<group>"; };
 		BFBE85871D54837700B134B6 /* HCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAction.m; sourceTree = "<group>"; };
 		BFBE85881D54837700B134B6 /* HCActionInstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCActionInstant.h; sourceTree = "<group>"; };
@@ -231,14 +221,14 @@
 		BFBE85E91D54839600B134B6 /* NSObject+HCDBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HCDBExtend.h"; sourceTree = "<group>"; };
 		BFBE85EA1D54839600B134B6 /* NSObject+HCDBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HCDBExtend.m"; sourceTree = "<group>"; };
 		BFBE85EC1D54839600B134B6 /* HCEncoding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HCEncoding.plist; sourceTree = "<group>"; };
-		BFBE85EE1D54839600B134B6 /* HCIBeaconService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIBeaconService.h; sourceTree = "<group>"; };
-		BFBE85EF1D54839600B134B6 /* HCIBeaconService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIBeaconService.m; sourceTree = "<group>"; };
 		BFC49D1C1D2754290076A90C /* HCKitHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKitHTTPRequest.h; sourceTree = "<group>"; };
 		BFC49D1D1D2754290076A90C /* HCKitHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKitHTTPRequest.m; sourceTree = "<group>"; };
 		BFC49D591D30E3C30076A90C /* HUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDViewController.h; sourceTree = "<group>"; };
 		BFC49D5A1D30E3C30076A90C /* HUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDViewController.m; sourceTree = "<group>"; };
-		BFF79C7124D903A700498AC7 /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
-		BFF79C7224D903A700498AC7 /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
+		BFF1DB6B24DB88A50087A87F /* HCIBeaconService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCIBeaconService.m; sourceTree = "<group>"; };
+		BFF1DB6C24DB88A50087A87F /* HCIBeaconService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCIBeaconService.h; sourceTree = "<group>"; };
+		BFF1DB6F24DB88DA0087A87F /* HCHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHTTPRequest.m; sourceTree = "<group>"; };
+		BFF1DB7024DB88DA0087A87F /* HCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHTTPRequest.h; sourceTree = "<group>"; };
 		BFFF93361D473C7D00E13833 /* angle-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask.png"; sourceTree = "<group>"; };
 		BFFF93371D473C7D00E13833 /* angle-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@2x.png"; sourceTree = "<group>"; };
 		BFFF93381D473C7D00E13833 /* angle-mask@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@3x.png"; sourceTree = "<group>"; };
@@ -291,10 +281,10 @@
 		BF49CB0C1C1A5A2800C3CF4E = {
 			isa = PBXGroup;
 			children = (
-				BFF79C7024D903A700498AC7 /* HCRequestApi */,
+				BFF1DB6E24DB88DA0087A87F /* HCRequestApi */,
+				BFF1DB6A24DB88A50087A87F /* HCIBeacon */,
 				BFBE85921D54839500B134B6 /* HCCore */,
 				BFBE85DA1D54839600B134B6 /* HCDB */,
-				BFBE85ED1D54839600B134B6 /* HCIBeacon */,
 				BFBE85851D54837700B134B6 /* HCAction */,
 				BF49CB171C1A5A2900C3CF4E /* HCKitProject */,
 				BF49CB311C1A5A2900C3CF4E /* HCKitProjectTests */,
@@ -302,7 +292,6 @@
 				BF49CB161C1A5A2900C3CF4E /* Products */,
 				C5614B44FF17FDE528DB8BFA /* Pods */,
 				85A6671FFE01BC69B3C05E42 /* Frameworks */,
-				BFF79C6F24D900E500498AC7 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -551,16 +540,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BFBE85ED1D54839600B134B6 /* HCIBeacon */ = {
-			isa = PBXGroup;
-			children = (
-				BFBE85EE1D54839600B134B6 /* HCIBeaconService.h */,
-				BFBE85EF1D54839600B134B6 /* HCIBeaconService.m */,
-			);
-			name = HCIBeacon;
-			path = ../HCIBeacon;
-			sourceTree = "<group>";
-		};
 		BFC49D581D30E3A70076A90C /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,23 +561,21 @@
 			name = HUD;
 			sourceTree = "<group>";
 		};
-		BFF79C6F24D900E500498AC7 /* Recovered References */ = {
+		BFF1DB6A24DB88A50087A87F /* HCIBeacon */ = {
 			isa = PBXGroup;
 			children = (
-				BFBE857B1D54824200B134B6 /* HCIBeacon */,
-				BFBE85791D54824200B134B6 /* HCCore */,
-				BFBE857A1D54824200B134B6 /* HCDB */,
-				BFBE85761D54822300B134B6 /* HCRequestApi */,
-				BFBE85781D54824200B134B6 /* HCAction */,
+				BFF1DB6B24DB88A50087A87F /* HCIBeaconService.m */,
+				BFF1DB6C24DB88A50087A87F /* HCIBeaconService.h */,
 			);
-			name = "Recovered References";
+			name = HCIBeacon;
+			path = ../HCIBeacon;
 			sourceTree = "<group>";
 		};
-		BFF79C7024D903A700498AC7 /* HCRequestApi */ = {
+		BFF1DB6E24DB88DA0087A87F /* HCRequestApi */ = {
 			isa = PBXGroup;
 			children = (
-				BFF79C7124D903A700498AC7 /* HCHTTPRequest.m */,
-				BFF79C7224D903A700498AC7 /* HCHTTPRequest.h */,
+				BFF1DB7024DB88DA0087A87F /* HCHTTPRequest.h */,
+				BFF1DB6F24DB88DA0087A87F /* HCHTTPRequest.m */,
 			);
 			name = HCRequestApi;
 			path = ../HCRequestApi;
@@ -720,24 +697,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFFF93491D473C7D00E13833 /* info@2x.png in Resources */,
-				BFBE857F1D54824200B134B6 /* HCIBeacon in Resources */,
 				BFFF934B1D473C7D00E13833 /* success.png in Resources */,
 				BFFF934C1D473C7D00E13833 /* success@2x.png in Resources */,
 				BFFF93421D473C7D00E13833 /* angle-mask.png in Resources */,
-				BFBE857D1D54824200B134B6 /* HCCore in Resources */,
-				BFBE857E1D54824200B134B6 /* HCDB in Resources */,
 				BF49CB281C1A5A2900C3CF4E /* LaunchScreen.storyboard in Resources */,
 				BFFF934D1D473C7D00E13833 /* success@3x.png in Resources */,
 				BFFF93431D473C7D00E13833 /* angle-mask@2x.png in Resources */,
 				BFFF93481D473C7D00E13833 /* info.png in Resources */,
 				BFFF93461D473C7D00E13833 /* error@2x.png in Resources */,
 				BF49CB251C1A5A2900C3CF4E /* Assets.xcassets in Resources */,
-				BFBE85771D54822300B134B6 /* HCRequestApi in Resources */,
 				BFFF93471D473C7D00E13833 /* error@3x.png in Resources */,
 				BFFF93441D473C7D00E13833 /* angle-mask@3x.png in Resources */,
 				BFFF93451D473C7D00E13833 /* error.png in Resources */,
 				BF49CB231C1A5A2900C3CF4E /* Main.storyboard in Resources */,
-				BFBE857C1D54824200B134B6 /* HCAction in Resources */,
 				BFFF934A1D473C7D00E13833 /* info@3x.png in Resources */,
 				BFBE861B1D54839600B134B6 /* HCEncoding.plist in Resources */,
 			);
@@ -803,7 +775,7 @@
 				BFBE86001D54839600B134B6 /* NSArray+HCExtend.m in Sources */,
 				BFBE86061D54839600B134B6 /* NSString+HCExtend.m in Sources */,
 				BFBE860C1D54839600B134B6 /* UILabel+StringFrame.m in Sources */,
-				BFF79C7324D903A700498AC7 /* HCHTTPRequest.m in Sources */,
+				BFF1DB7124DB88DA0087A87F /* HCHTTPRequest.m in Sources */,
 				BFBE86181D54839600B134B6 /* HCDBTableField.m in Sources */,
 				BFBE85901D54837700B134B6 /* HCActionInterval.m in Sources */,
 				BFBE85FD1D54839600B134B6 /* HCQRScanner.m in Sources */,
@@ -818,7 +790,6 @@
 				BFBE86161D54839600B134B6 /* HCDBModel.m in Sources */,
 				BFBE86141D54839600B134B6 /* HCDBHelper.m in Sources */,
 				BFBE85FA1D54839600B134B6 /* HCIdCardNoRulesChecker.m in Sources */,
-				BFBE861C1D54839600B134B6 /* HCIBeaconService.m in Sources */,
 				BFBE85F41D54839600B134B6 /* HCClock.m in Sources */,
 				BFBE85FC1D54839600B134B6 /* HCProfileService.m in Sources */,
 				BFBE858E1D54837700B134B6 /* HCAction.m in Sources */,
@@ -826,6 +797,7 @@
 				BFBE85F31D54839600B134B6 /* HCAlert.m in Sources */,
 				BF8C3F061D177C5800D34E22 /* LocalNotificationViewController.m in Sources */,
 				BFBE86021D54839600B134B6 /* NSDate+HCExtend.m in Sources */,
+				BFF1DB6D24DB88A50087A87F /* HCIBeaconService.m in Sources */,
 				BFBE86111D54839600B134B6 /* HCPropertyInfo.m in Sources */,
 				BFBE85F91D54839600B134B6 /* HCHUDPresentationController.m in Sources */,
 				BFC49D1E1D2754290076A90C /* HCKitHTTPRequest.m in Sources */,

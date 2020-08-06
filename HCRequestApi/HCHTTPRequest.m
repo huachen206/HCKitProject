@@ -17,9 +17,6 @@
 //    SUCCESSBLOCK _successBlock;
 //    FAILBLOCK _failBlock;
 }
-@property (nonatomic,copy) NSString *urlString;
-@property (nonatomic,strong) NSDictionary *parameters;
-@property (nonatomic,strong) NSDictionary *headers;
 
 @property (nonatomic,strong) NSURLSessionDataTask *dataTask;
 @property (nonatomic,copy) NSString *method;
@@ -127,15 +124,4 @@
         [self.dataTask cancel];
     }
 }
-
--(NSString*)urlString{
-    return _urlString;
-}
--(NSDictionary*)parameters{
-    return _parameters;
-}
-- (NSDictionary *)headers{
-    return _headers;
-}
-
 @end

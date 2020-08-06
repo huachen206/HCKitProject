@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 @class AFHTTPSessionManager;
 @interface HCHTTPRequest : NSObject
+@property (nonatomic,strong) NSDictionary *_Nullable headers;
+@property (nonatomic,copy) NSString *_Nonnull urlString;
+@property (nonatomic,strong) NSDictionary *_Nullable parameters;
+
 /**
  *  子类通过重写此静态方法来配置HTTPSessionManager。
  *
@@ -34,8 +38,5 @@
 -(id _Nonnull)success:(void(^_Nullable)(id _Nullable responseObject))successBlock;
 -(id _Nonnull)success:(void(^_Nullable)(id _Nullable responseObject))successBlock failure:(void(^_Nullable)(NSError * _Nonnull error))failureBlock;
 -(void)cancel;
--(NSString*_Nullable)urlString;
--(NSDictionary*_Nullable)parameters;
--(NSDictionary*_Nullable)headers;
 
 @end
